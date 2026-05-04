@@ -1,0 +1,142 @@
+/* AI × HI — The Symbiotic Mind
+   Scaffold styles — design pass to follow */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0f0f0f;
+  --white: #fafafa;
+  --grey: #6b6b6b;
+  --accent: #1a1a1a;
+  --border: #e0e0e0;
+  --font: 'Georgia', serif;
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --max: 680px;
+  --gap: 2rem;
+}
+
+html { font-size: 18px; }
+
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.7;
+  padding: 0 1.5rem;
+}
+
+a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { opacity: 0.6; }
+
+/* Layout */
+.site-header {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site-logo {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav { font-family: var(--font-sans); font-size: 0.85rem; }
+nav a { margin-left: 1.5rem; text-decoration: none; color: var(--grey); }
+nav a:hover { color: var(--black); opacity: 1; }
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--gap) 0 4rem;
+}
+
+.site-footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--grey);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Home */
+.hero { padding: 3rem 0 2.5rem; }
+.hero-label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 1.2rem;
+}
+.hero h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 1.25rem; font-weight: normal; }
+.hero .tagline { font-size: 1.05rem; color: var(--grey); max-width: 520px; }
+
+.anchor {
+  margin: 3rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.authors {
+  margin: 2.5rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--grey);
+}
+
+/* Posts list */
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.post-list li:first-child { border-top: 1px solid var(--border); }
+.post-list .post-meta {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--grey);
+  margin-bottom: 0.3rem;
+}
+.post-list h2 { font-size: 1.05rem; font-weight: normal; margin-bottom: 0.4rem; }
+.post-list .excerpt { font-size: 0.93rem; color: var(--grey); }
+
+/* Post */
+.post-header { margin-bottom: 2.5rem; }
+.post-header .post-meta {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--grey);
+  margin-bottom: 0.75rem;
+}
+.post-header h1 { font-size: 1.7rem; line-height: 1.3; font-weight: normal; }
+
+.post-body p { margin-bottom: 1.3rem; }
+.post-body h2 { font-size: 1.15rem; margin: 2rem 0 0.75rem; }
+
+.credit {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--grey);
+}
+
+/* About */
+.about-body p { margin-bottom: 1.3rem; }
+.about-body h2 { font-size: 1.1rem; margin: 2rem 0 0.75rem; font-family: var(--font-sans); }
