@@ -403,6 +403,100 @@ main {
   margin: 2.5rem 0 0.75rem;
 }
 
+/* ── Author link ─────────────────────────────────────────── */
+
+.author-link {
+  margin-top: 0.35rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+}
+
+/* ── Homepage post teaser ────────────────────────────────── */
+
+.homepage-post {
+  max-width: var(--prose);
+  margin: 0 auto;
+}
+
+.homepage-post .post-meta {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.4rem;
+}
+
+.homepage-post h2 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ── LinkedIn preview section ────────────────────────────── */
+
+.linkedin-preview {
+  max-width: var(--prose);
+  margin: 4rem auto 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.linkedin-preview-label {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+}
+
+.linkedin-post {
+  background: var(--paper-off);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.linkedin-post-header {
+  margin-bottom: 1.25rem;
+}
+
+.linkedin-post-author {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.linkedin-post-role {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-top: 0.2rem;
+}
+
+.linkedin-post-body p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.linkedin-post-body p:last-child {
+  margin-bottom: 0;
+}
+
+.linkedin-credit {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  margin-top: 1rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
 /* ── Responsive ──────────────────────────────────────────── */
 
 @media (max-width: 600px) {
