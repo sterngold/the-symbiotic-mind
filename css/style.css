@@ -548,13 +548,36 @@ main {
 .post-cover {
   margin: 0 0 2.5rem;
   padding: 0;
+  overflow: hidden;
 }
 
 .post-cover img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   border-radius: 4px;
+}
+
+/* ── RSS link ────────────────────────────────────────────── */
+
+.rss-link {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #e07020;
+  text-decoration: none;
+  border: 1px solid rgba(224, 112, 32, 0.35);
+  border-radius: 3px;
+  padding: 2px 6px;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.rss-link:hover {
+  color: #c05010;
+  border-color: rgba(192, 80, 16, 0.5);
+  text-decoration: none;
 }
 
 /* ── Comments ────────────────────────────────────────────── */
