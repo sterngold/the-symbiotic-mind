@@ -543,6 +543,20 @@ main {
   .site-footer { flex-direction: column; gap: 0.25rem; }
 }
 
+/* ── Post cover ──────────────────────────────────────────── */
+
+.post-cover {
+  margin: 0 0 2.5rem;
+  padding: 0;
+}
+
+.post-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
 /* ── Comments ────────────────────────────────────────────── */
 
 .post-comments {
