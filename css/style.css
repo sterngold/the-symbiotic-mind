@@ -542,3 +542,12 @@ main {
   .author-divider { display: none; }
   .site-footer { flex-direction: column; gap: 0.25rem; }
 }
+
+/* ── Comments ────────────────────────────────────────────── */
+
+.post-comments {
+  max-width: 680px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border, #e5e7eb);
+}

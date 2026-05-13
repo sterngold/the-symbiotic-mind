@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Symbiotic Mind</title>
+    <link>https://symbiotic-mind.com</link>
+    <atom:link href="https://symbiotic-mind.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>AI × HI — a discovery journey on human-AI symbiosis. Vlad Sterngold &amp; Milena Nikolova.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 May 2026 07:30:00 +0200</lastBuildDate>
+    <item>
+      <title>My API, Not My Resume</title>
+      <link>https://symbiotic-mind.com/posts/002-my-api-not-my-resume</link>
+      <description>Professional identity is changing. The competitive unit is now the human plus their AI team. Most employment contracts don't know this yet.</description>
+      <author>vlad@sterngold.nl (Vlad Sterngold)</author>
+      <pubDate>Wed, 14 May 2026 07:30:00 +0200</pubDate>
+      <guid>https://symbiotic-mind.com/posts/002-my-api-not-my-resume</guid>
+    </item>
+    <item>
+      <title>You Are Not Using AI. You Are in a Relationship With It.</title>
+      <link>https://symbiotic-mind.com/posts/001-you-are-not-using-ai</link>
+      <description>I caught myself using &quot;please&quot; and &quot;thank you&quot; with AI — until I realised I had simply transferred my coworker behaviour to my coworking relationship with AI.</description>
+      <author>milena@behaviorsmart.com (Milena S. Nikolova, PhD)</author>
+      <pubDate>Wed, 06 May 2026 07:45:00 +0200</pubDate>
+      <guid>https://symbiotic-mind.com/posts/001-you-are-not-using-ai</guid>
+    </item>
+  </channel>
+</rss>
