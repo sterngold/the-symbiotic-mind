@@ -1,0 +1,46 @@
+---
+pagination:
+  data: podcast.episodes
+  size: 1
+  alias: ep
+permalink: "/episodes/{{ ep.slug }}/index.html"
+eleventyComputed:
+  title: "{{ ep.title }}"
+  description: "{{ ep.description | safe }}"
+  ogType: "article"
+  ogImage: "{{ ep.image or podcast.show.image }}"
+layout: layouts/base.njk
+---
+
+<article>
+
+  <header class="post-header">
+    <div class="post-meta">{{ ep.pubDate | postDate }} &middot; Episode {{ ep.number }} &middot; {{ ep.duration }}</div>
+    <h1>{{ ep.title }}</h1>
+  </header>
+
+  {% if ep.youtubeId %}
+  <div class="video-retell-frame" style="margin: 2rem 0;">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ ep.youtubeId }}"
+            loading="lazy" allow="fullscreen" allowfullscreen
+            title="{{ ep.title }}"></iframe>
+  </div>
+  {% endif %}
+
+  <audio controls preload="none" src="{{ ep.audio.url }}" style="width:100%; margin: 1rem 0 2rem;"></audio>
+
+  <div class="post-body">
+    <p>{{ ep.description | safe }}</p>
+  </div>
+
+  <p class="listen-subscribe">
+    <a href="/podcast.xml" class="post-tag">RSS feed</a>
+    {% if ep.transcriptUrl %}<a href="{{ ep.transcriptUrl }}" class="post-tag">Transcript</a>{% endif %}
+    <a href="{{ podcast.show.youtubeChannelUrl }}" class="post-tag">All videos</a>
+  </p>
+
+</article>
+
+{% include "partials/newsletter.njk" %}
+
+{% include "partials/giscus.njk" %}

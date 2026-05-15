@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+permalink: /watch/index.html
+title: "Watch"
+description: "Video conversations and field notes from The Symbiotic Mind on YouTube."
+---
+
+<div class="about-header">
+  <h1>Watch</h1>
+  <p class="about-sub">Video conversations and field notes. The visual track of the same recordings that become the podcast.</p>
+</div>
+
+<div class="about-body">
+  <p>Find every video on <a href="{{ podcast.show.youtubeChannelUrl }}">YouTube — @symbioticmind</a>. The channel is organised in four playlists:</p>
+  <ul>
+    <li><strong>Field Notes</strong> — short 3–8 min essays-on-camera tied to a post.</li>
+    <li><strong>Conversations</strong> — long-form dialogues between Vlad and Milena.</li>
+    <li><strong>Built with AI</strong> — Vlad's dev workflow with Claude Code, multi-model setups, Ollama.</li>
+    <li><strong>Research Reads</strong> — walking through a paper or a finding that changed our thinking.</li>
+  </ul>
+
+  <p>If you'd rather subscribe by feed: <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCxxxxxxxxxxxxxxxxxxxxxx">YouTube channel RSS</a> (replace channel ID once the channel exists).</p>
+</div>
+
+{% if podcast.episodes.length %}
+<p class="section-label">Recent episodes</p>
+<ul class="post-list">
+{% for ep in podcast.episodes %}
+  {% if ep.youtubeId %}
+  <li>
+    <div class="post-meta">{{ ep.pubDate | postDate }} &middot; Episode {{ ep.number }}</div>
+    <h2><a href="/episodes/{{ ep.slug }}/">{{ ep.title }}</a></h2>
+    <div class="video-retell-frame" style="margin-top:0.75rem;">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ ep.youtubeId }}"
+              loading="lazy" allow="fullscreen" allowfullscreen
+              title="{{ ep.title }}"></iframe>
+    </div>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>
+{% endif %}
+
+{% include "partials/newsletter.njk" %}

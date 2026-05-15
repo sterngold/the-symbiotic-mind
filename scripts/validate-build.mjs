@@ -68,7 +68,24 @@ must("llms.txt");
 must("feed/vlad.xml");
 must("feed/milena.xml");
 
-// 7) Posts pages must include OG meta + JSON-LD
+// 7) Podcast feed (must always exist; episode count may be zero before launch).
+const podcast = must("podcast.xml");
+if (podcast) {
+  if (!/<rss[^>]*xmlns:itunes=/.test(podcast))
+    errors.push("podcast.xml missing xmlns:itunes");
+  if (!/<itunes:owner>/.test(podcast))
+    errors.push("podcast.xml missing <itunes:owner>");
+  if (!/<itunes:image\s+href="https?:\/\//.test(podcast))
+    errors.push("podcast.xml: <itunes:image> must use an absolute https URL");
+  const items = podcast.match(/<item>/g) || [];
+  const enclosures = podcast.match(/<enclosure\s/g) || [];
+  if (items.length !== enclosures.length)
+    errors.push(`podcast.xml: ${items.length} items but ${enclosures.length} <enclosure>s`);
+  if (items.length && !/<lastBuildDate>/.test(podcast))
+    warnings.push("podcast.xml has episodes but no <lastBuildDate>");
+}
+
+// 8) Posts pages must include OG meta + JSON-LD
 const postsDir = path.join(SITE, "posts");
 const postDirs = fs.readdirSync(postsDir, { withFileTypes: true })
   .filter((d) => d.isDirectory())
