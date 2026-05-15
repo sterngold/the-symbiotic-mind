@@ -1,0 +1,7 @@
+<header class="site-header">
+  <a class="site-logo" href="/">The Symbiotic Mind</a>
+  <nav>
+    <a href="/posts/"{% if page.url.startsWith('/posts') %} class="active"{% endif %}>Writing</a>
+    <a href="/about/"{% if page.url.startsWith('/about') %} class="active"{% endif %}>About</a>
+  </nav>
+</header>

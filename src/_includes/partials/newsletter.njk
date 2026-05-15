@@ -1,0 +1,37 @@
+{# Newsletter signup. Renders Buttondown, listmonk, or both depending on site.newsletter.provider. #}
+<aside class="newsletter">
+  <p class="newsletter-eyebrow">Subscribe</p>
+  <h3 class="newsletter-title">New writing on AI × HI, every other Wednesday.</h3>
+  <p class="newsletter-sub">No spam. No SEO bait. Just the next piece, the moment it's out.</p>
+
+  {% if site.newsletter.provider == "buttondown" or site.newsletter.provider == "both" %}
+  <form
+    action="{{ site.newsletter.buttondown.embedUrl }}"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/{{ site.newsletter.buttondown.username }}', 'popupwindow')"
+    class="newsletter-form newsletter-form-buttondown">
+    <label for="bd-email" class="visually-hidden">Your email</label>
+    <input type="email" name="email" id="bd-email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+    <p class="newsletter-provider">Powered by Buttondown.</p>
+  </form>
+  {% endif %}
+
+  {% if site.newsletter.provider == "listmonk" or site.newsletter.provider == "both" %}
+  {% if site.newsletter.listmonk.formActionUrl %}
+  <form method="post" action="{{ site.newsletter.listmonk.formActionUrl }}" class="newsletter-form newsletter-form-listmonk">
+    <label for="lm-email" class="visually-hidden">Your email</label>
+    <input type="email" name="email" id="lm-email" placeholder="you@example.com" required>
+    <input type="hidden" name="nonce">
+    {% if site.newsletter.listmonk.listUuid %}
+    <input type="hidden" name="l" value="{{ site.newsletter.listmonk.listUuid }}">
+    {% endif %}
+    <button type="submit">Subscribe (self-hosted)</button>
+    <p class="newsletter-provider">Self-hosted via listmonk.</p>
+  </form>
+  {% else %}
+  <p class="newsletter-provider"><em>Self-hosted listmonk form: set <code>site.newsletter.listmonk.formActionUrl</code> in <code>src/_data/site.js</code> when ready.</em></p>
+  {% endif %}
+  {% endif %}
+</aside>

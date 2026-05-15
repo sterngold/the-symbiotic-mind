@@ -1,0 +1,8 @@
+# Preserve old extensionless and .html URLs after the move to /posts/<slug>/.
+/posts/001-you-are-not-using-ai          /posts/001-you-are-not-using-ai/          301
+/posts/002-my-api-not-my-resume          /posts/002-my-api-not-my-resume/          301
+/posts/001-you-are-not-using-ai.html     /posts/001-you-are-not-using-ai/          301
+/posts/002-my-api-not-my-resume.html     /posts/002-my-api-not-my-resume/          301
+/about.html                              /about/                                   301
+# Fallback to 404 — disables the previous catch-all-to-homepage behavior.
+/*                                       /404.html                                 404

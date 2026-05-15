@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+permalink: /tags/index.html
+title: "Topics"
+description: "All topics on The Symbiotic Mind."
+---
+
+<div class="posts-header">
+  <h1>Topics</h1>
+</div>
+
+<ul class="post-list">
+{% for tag in collections.tags %}
+  <li><h2><a href="/tags/{{ tag }}/">#{{ tag }}</a></h2></li>
+{% endfor %}
+</ul>

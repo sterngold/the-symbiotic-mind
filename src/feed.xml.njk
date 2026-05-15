@@ -1,0 +1,33 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>{{ site.description }}</description>
+    <language>{{ site.language }}</language>
+    <lastBuildDate>{{ collections.posts[0].date | rfc822 }}</lastBuildDate>
+    <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+    {% for post in collections.posts %}
+    {% set authorObj = authors[post.data.author] %}
+    <item>
+      <title>{{ post.data.title | escape }}</title>
+      <link>{{ post.url | absUrl(site.url) }}</link>
+      <guid isPermaLink="true">{{ post.url | absUrl(site.url) }}</guid>
+      <pubDate>{{ post.date | rfc822 }}</pubDate>
+      <dc:creator>{{ authorObj.name | escape }}</dc:creator>
+      <author>{{ authorObj.email }} ({{ authorObj.name | escape }})</author>
+      {% for t in post.data.tags %}{% if t != "post" %}<category>{{ t }}</category>{% endif %}{% endfor %}
+      <description>{{ post.data.description | escape }}</description>
+      <content:encoded><![CDATA[{{ post.templateContent | safe }}]]></content:encoded>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

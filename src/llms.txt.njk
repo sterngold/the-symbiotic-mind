@@ -1,0 +1,23 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# The Symbiotic Mind
+
+> AI × HI — a discovery journey on human-AI symbiosis by Vlad Sterngold (Amsterdam) and Milena S. Nikolova, PhD (Lausanne). The unit of value is the combined AI × HI system. We write about relationship design between humans and AI, not tool usage.
+
+## Writing
+
+{% for post in collections.posts %}- [{{ post.data.title | safe }}]({{ post.url | absUrl(site.url) }}): {{ post.data.description | safe }}
+{% endfor %}
+
+## Authors
+
+- [Vlad Sterngold](https://sterngold.ai): AI practitioner and builder. Amsterdam.
+- [Milena S. Nikolova, PhD](https://behavior-smart.com): Behavioral scientist, BehaviorSMART. Lausanne.
+
+## Feeds
+
+- RSS (full content): {{ site.url }}/feed.xml
+- JSON Feed: {{ site.url }}/feed.json
+- Per-author feeds: {{ site.url }}/feed/vlad.xml, {{ site.url }}/feed/milena.xml
