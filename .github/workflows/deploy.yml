@@ -7,6 +7,11 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Use a repo variable CLOUDFLARE_PAGES_PROJECT to set the Cloudflare Pages project name.
+# Defaults to "the-symbiotic-mind" — change in repo Settings → Secrets and variables → Actions → Variables.
+env:
+  CLOUDFLARE_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT || 'the-symbiotic-mind' }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,10 +32,22 @@ jobs:
       - name: Validate build outputs
         run: node scripts/validate-build.mjs
 
+      # Skip the deploy step (don't fail the run) when Cloudflare secrets aren't set yet.
+      # This lets the build + validator keep guarding PRs even before Pages is wired up.
+      - name: Check Cloudflare credentials
+        id: cf-check
+        run: |
+          if [[ -n "${{ secrets.CLOUDFLARE_API_TOKEN }}" && -n "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]]; then
+            echo "ready=true" >> $GITHUB_OUTPUT
+          else
+            echo "ready=false" >> $GITHUB_OUTPUT
+            echo "::warning::Skipping Cloudflare Pages deploy — CLOUDFLARE_API_TOKEN and/or CLOUDFLARE_ACCOUNT_ID secrets are missing."
+          fi
+
       - name: Deploy to Cloudflare Pages
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.cf-check.outputs.ready == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=symbiotic-mind --branch=main
+          command: pages deploy _site --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT }} --branch=main
