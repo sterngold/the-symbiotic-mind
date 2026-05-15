@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% set pageTitle = title or site.title %}
+  {% set pageDesc = description or site.description %}
+  {% set canonicalUrl = (page.url | absUrl(site.url)) %}
+  {% set ogImage = (ogImage or site.defaultOgImage) | absUrl(site.url) %}
+
+  <title>{% if title %}{{ title }} — {% endif %}AI × HI</title>
+  <meta name="description" content="{{ pageDesc }}">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  <meta property="og:image" content="{{ ogImage }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDesc }}">
+  <meta name="twitter:image" content="{{ ogImage }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
+  <link rel="alternate" type="application/feed+json" title="{{ site.title }}" href="/feed.json">
+  {% if site.webmention.enabled %}
+  <link rel="webmention" href="https://webmention.io/{{ site.webmention.domain }}/webmention">
+  <link rel="pingback" href="https://webmention.io/{{ site.webmention.domain }}/xmlrpc">
+  {% endif %}
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+  {% include "partials/header.njk" %}
+
+  <main>
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+</body>
+</html>

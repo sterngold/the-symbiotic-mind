@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+{% set authorObj = authors[author] %}
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "image": [{{ (ogImage or site.defaultOgImage) | absUrl(site.url) | dump | safe }}],
+  "datePublished": "{{ date | isoDate }}",
+  "dateModified": "{{ (updated or date) | isoDate }}",
+  "author": [{
+    "@type": "Person",
+    "name": {{ authorObj.name | dump | safe }},
+    "url": {{ authorObj.url | dump | safe }}
+  }],
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Symbiotic Mind",
+    "url": "{{ site.url }}"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absUrl(site.url) }}"
+  }
+}
+</script>
+{% endblock %}
+
+<article>
+
+  <header class="post-header">
+    <div class="post-meta">{{ date | postDate }} &middot; <a href="/authors/{{ authorObj.slug }}/">{{ authorObj.name }}</a> &middot; {{ content | readingTime }} read</div>
+    <h1>{{ title }}</h1>
+    {% if deck %}<p class="post-deck">{{ deck }}</p>{% endif %}
+  </header>
+
+  {% if cover %}
+  <figure class="post-cover">
+    <img src="{{ cover.src }}" alt="{{ cover.alt }}">
+  </figure>
+  {% endif %}
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  {% if videoRetell %}
+  <aside class="video-retell">
+    <p class="video-retell-caption">Prefer this in video format? Here is how an AI member of the team turned this article into a video story.</p>
+    <div class="video-retell-frame">
+      <iframe
+        src="{{ videoRetell.url }}"
+        loading="lazy"
+        allow="fullscreen"
+        allowfullscreen
+        title="Video retell — {{ title }}"></iframe>
+    </div>
+  </aside>
+  {% endif %}
+
+  <footer class="post-credit">
+    <p><strong>Vlad Sterngold</strong> is an AI practitioner and builder based in Amsterdam. <strong>Milena S. Nikolova, PhD</strong> is a behavioral scientist and founder of BehaviorSMART based in Lausanne. This post is part of <em>AI × HI — The Symbiotic Mind</em>, their discovery journey on human-AI symbiosis.</p>
+  </footer>
+
+  {% if tags and tags.length %}
+  <p class="post-tags">
+    {% for t in tags %}{% if t != "post" %}<a href="/tags/{{ t }}/" class="post-tag">#{{ t }}</a> {% endif %}{% endfor %}
+  </p>
+  {% endif %}
+
+  <p class="post-reply"><a href="mailto:hello@symbiotic-mind.com?subject=Re%3A%20{{ title | escape }}">Reply by email</a></p>
+
+</article>
+
+{% include "partials/newsletter.njk" %}
+
+{% include "partials/giscus.njk" %}
