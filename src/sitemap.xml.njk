@@ -13,6 +13,14 @@ eleventyExcludeFromCollections: true
   <url><loc>{{ site.url }}/posts/</loc></url>
   <url><loc>{{ site.url }}/tags/</loc></url>
   <url><loc>{{ site.url }}/search/</loc></url>
+  <url><loc>{{ site.url }}/listen/</loc></url>
+  <url><loc>{{ site.url }}/watch/</loc></url>
+  {% for ep in podcast.episodes %}
+  <url>
+    <loc>{{ site.url }}/episodes/{{ ep.slug }}/</loc>
+    <lastmod>{{ ep.pubDate | isoDate }}</lastmod>
+  </url>
+  {% endfor %}
   {% for post in collections.posts %}
   <url>
     <loc>{{ post.url | absUrl(site.url) }}</loc>

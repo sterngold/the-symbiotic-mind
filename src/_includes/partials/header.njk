@@ -2,6 +2,8 @@
   <a class="site-logo" href="/">The Symbiotic Mind</a>
   <nav>
     <a href="/posts/"{% if page.url.startsWith('/posts') %} class="active"{% endif %}>Writing</a>
+    <a href="/listen/"{% if page.url.startsWith('/listen') or page.url.startsWith('/episodes') %} class="active"{% endif %}>Listen</a>
+    <a href="/watch/"{% if page.url.startsWith('/watch') %} class="active"{% endif %}>Watch</a>
     <a href="/about/"{% if page.url.startsWith('/about') %} class="active"{% endif %}>About</a>
   </nav>
 </header>

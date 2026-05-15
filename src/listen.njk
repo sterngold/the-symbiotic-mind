@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+permalink: /listen/index.html
+title: "Listen"
+description: "The Symbiotic Mind podcast — long-form conversations on human-AI symbiosis."
+---
+
+<div class="about-header">
+  <h1>Listen</h1>
+  <p class="about-sub">The audio companion to The Symbiotic Mind. Long-form conversations between Vlad and Milena on the relationship design problem of AI × HI.</p>
+</div>
+
+<div class="about-body">
+  <p>Subscribe in your podcast app of choice — the feed auto-distributes to Apple Podcasts, Spotify, Overcast, Pocket Casts, and every other major directory.</p>
+
+  <p class="listen-subscribe">
+    <a href="/podcast.xml" class="post-tag">RSS feed</a>
+    <a href="https://podcasts.apple.com/podcast/idTBD" class="post-tag">Apple Podcasts</a>
+    <a href="https://open.spotify.com/show/TBD" class="post-tag">Spotify</a>
+    <a href="https://overcast.fm/itunes-TBD" class="post-tag">Overcast</a>
+    <a href="https://pca.st/TBD" class="post-tag">Pocket Casts</a>
+    <a href="{{ podcast.show.youtubeChannelUrl }}" class="post-tag">YouTube</a>
+  </p>
+</div>
+
+{% if podcast.episodes.length %}
+<ul class="post-list">
+{% for ep in podcast.episodes %}
+  <li>
+    <div class="post-meta">{{ ep.pubDate | postDate }} &middot; Episode {{ ep.number }} &middot; {{ ep.duration }}</div>
+    <h2><a href="/episodes/{{ ep.slug }}/">{{ ep.title }}</a></h2>
+    <p class="post-excerpt">{{ ep.description }}</p>
+    <audio controls preload="none" src="{{ ep.audio.url }}" style="width:100%; margin-top:0.75rem;"></audio>
+  </li>
+{% endfor %}
+</ul>
+{% else %}
+<div class="about-body">
+  <p><em>No episodes yet. Subscribe to the feed and the first episode will land directly in your podcast app the moment it ships.</em></p>
+</div>
+{% endif %}
+
+{% include "partials/newsletter.njk" %}
