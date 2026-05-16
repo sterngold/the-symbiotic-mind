@@ -10,11 +10,17 @@ export default {
     role: "AI practitioner and builder",
     location: "Amsterdam",
     bio: "AI practitioner and builder based in Amsterdam. Daily user of AI systems, builder of AI products, and writer on human-AI symbiosis.",
-    url: "https://sterngold.ai",
+    // Canonical bio lives on sterngold.nl (personal authority engine).
+    url: "https://sterngold.nl",
     sameAs: [
+      "https://sterngold.nl",
       "https://sterngold.ai",
+      "https://werkanders.com",
+      "https://andersreality.com",
+      "https://www.linkedin.com/in/sterngold/",
+      "https://medium.com/@Sterngold",
+      "https://vladsterngold.substack.com/",
       "https://github.com/sterngold",
-      // "https://www.linkedin.com/in/sterngold/", // add when confirmed
     ],
   },
   milena: {
@@ -29,7 +35,8 @@ export default {
     sameAs: [
       "https://behavior-smart.com",
       "https://behavior-smart.com/milena-nikolova/",
-      // "https://www.linkedin.com/in/milena1827/", // add when confirmed
+      // Add Milena's LinkedIn / ResearchGate / ORCID URLs when she confirms them:
+      // "https://www.linkedin.com/in/milena1827/",
     ],
   },
 };
