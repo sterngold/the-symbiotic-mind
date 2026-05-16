@@ -15,6 +15,8 @@ videoRetell:
   url: "https://www.canva.com/design/DAHJko_01Os/v1dAeZboqNhJr3IjwAjjaw/view?embed"
 ---
 
+## A job interview that doesn't exist yet
+
 I am interviewing for a job that doesn't exist, nor there is a company who does that. Probably.
 
 I said to the recruiter and the senior VP, who was slightly goofy in a good way: I'm Vlad, very happy to be here. On the way up I passed your tech team and we got my digital team hooked in. My personal API was accepted, no problems, I was audited a month ago by an EU AI compliance org and got my stamp, good for another six months. So your agents and mine are now running whatever it is that agents drink when they test each other, I saw the brief you sent me in advance and I love the technical questions and I'm sure my team will do well. Now let's talk culture, strategy, and how I can help you move forward.
@@ -22,6 +24,8 @@ I said to the recruiter and the senior VP, who was slightly goofy in a good way:
 What's not to get here? Somewhere in the future, I hope that version of me is having this conversation and AI is actually not a buzzword but how we work and operate.
 
 ---
+
+## The Lada and the self-driving car
 
 I learned to drive in the nineties, winter, in an Eastern European town, on a very old-school Lada where even the gear stick could come out in your hand if you grabbed it wrong. I never quite mastered getting the car moving on an uphill road and I kept mixing up my feet, not sure where the clutch ended and the brake started. At the end of three brutal weeks of not liking the mechanics of driving, I got out and just wished self-driving cars into existence. They are here now, operating them is another story as we don't have the laws or the regulations yet.
 
@@ -31,6 +35,8 @@ Say, if I have my own digital team of agents, trained on everything on the inter
 
 ---
 
+## The legal infrastructure doesn't exist yet
+
 The legal infrastructure for this doesn't exist yet. Employment contracts were written before anyone's agents were at the table: non-competes, IP agreements, trade secrets, all designed for a world where the thing that learned and built and knew things was you, the human. Now consider: if you work at a company for a year with your AI team, what can you take back when you leave? Who owns what was built together? If AI does the work, who pays the tax? Will companies start paying more for people who arrive with a pre-built team, the way they once paid more for people who brought their own clients?
 
 Microsoft's Work Trend Index 2026 calls the working layer mostly solved. It's mode-fit, knowing when to ask versus when to delegate versus when to collaborate, is already the new professional skill. The ownership layer is still blank, and what we'd need is a way to track what my agents did and what they learned, so when we decide to part ways the audit is possible: this is what the company keeps, this is what I take back, these are the skills that developed during our time here, this is the institutional knowledge that stays. We don't have a name for that mechanism yet.
@@ -39,7 +45,9 @@ The question behind the mechanism is the harder one: what happens when the thing
 
 ---
 
-Milena Nikolova seeded this in April, before we'd even started writing together: "The competitive unit becomes the human plus their AI team. Employer-employee bargains change because the capacity a professional brings is now a package, not just a skillset." A 2026 Harvard Business School working paper tracked 244 BCG management consultants working on real client tasks with AI tools available and found three patterns.
+## Cyborgs, centaurs, self-automators
+
+[Milena Nikolova](/authors/milena/) seeded this in April, before we'd even started writing together: "The competitive unit becomes the human plus their AI team. Employer-employee bargains change because the capacity a professional brings is now a package, not just a skillset." A 2026 Harvard Business School working paper tracked 244 BCG management consultants working on real client tasks with AI tools available and found three patterns.
 
 - Some fused with it, AI woven into the workflow and judgment intact, and they outperformed peers on both speed and quality — cyborgs.
 - Others directed it, keeping strategic judgment human and delegating execution, which also worked — centaurs.
@@ -51,11 +59,15 @@ Your professional identity has always been partly about what you know and partly
 
 ---
 
+## Johnny Mnemonic, Motoko, and the question
+
 Johnny Mnemonic carried data in his head that corporations wanted access to. Motoko Kusanagi in Ghost in the Shell was inseparable from her network, her professional capacity was her augmented self, queryable, extensible, impossible to fully separate from the organic part. We've been imagining this for decades, in American and Japanese and Eastern European film, in different registers: sometimes as horror, sometimes as liberation, sometimes as a question we couldn't quite answer yet.
 
 The question is getting simpler now.
 
 Do you have an API? Are we ready to work like that?
+
+*See also: Milena's companion piece, [You Are Not Using AI. You Are in a Relationship With It.](/posts/001-you-are-not-using-ai/) — the behavioral frame this builds on.*
 
 <p><small><em>Sources: Microsoft <a href="https://www.microsoft.com/en-us/worklab/work-trend-index">Work Trend Index 2026 — Beyond the Prompt</a>; Randazzo, Lifshitz, Kellogg, Dell'Acqua, Mollick, Candelon, Lakhani — Cyborgs, Centaurs and Self-Automators: The Three Modes of Human-GenAI Knowledge Work, HBS Working Paper 26-036 (2026); Nikolova, M. — Boundborn framework seed, unpublished (April 2026).</em></small></p>
 

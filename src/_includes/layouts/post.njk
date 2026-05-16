@@ -19,17 +19,20 @@ ogType: article
     "name": {{ authorObj.name | dump | safe }},
     "url": {{ authorObj.url | dump | safe }}
   }],
-  "publisher": {
-    "@type": "Organization",
-    "name": "The Symbiotic Mind",
-    "url": "{{ site.url }}"
-  },
+  "publisher": { "@id": "{{ site.url }}/#organization" },
+  "isPartOf": { "@id": "{{ site.url }}/#website" },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ page.url | absUrl(site.url) }}"
   }
 }
 </script>
+{% set crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Writing', url: '/posts/' },
+  { name: title, url: page.url }
+] %}
+{% include "partials/breadcrumbs.njk" %}
 {% endblock %}
 
 <article>
@@ -75,6 +78,22 @@ ogType: article
   {% endif %}
 
   <p class="post-reply"><a href="mailto:hello@symbiotic-mind.com?subject=Re%3A%20{{ title | escape }}">Reply by email</a></p>
+
+  {# Read-next: surface the most recent OTHER post (cross-author link).
+     This is intentionally simple — last published post that isn't this one. #}
+  {% set otherPosts = [] %}
+  {% for p in collections.posts %}
+    {% if p.url != page.url %}{% set otherPosts = (otherPosts.push(p), otherPosts) %}{% endif %}
+  {% endfor %}
+  {% if otherPosts.length %}
+  {% set next = otherPosts[0] %}
+  <aside class="read-next">
+    <p class="section-label">Read next</p>
+    <div class="post-meta">{{ next.date | postDate }} &middot; {{ authors[next.data.author].name }}</div>
+    <h3><a href="{{ next.url }}">{{ next.data.title }}</a></h3>
+    {% if next.data.description %}<p class="post-excerpt">{{ next.data.description }}</p>{% endif %}
+  </aside>
+  {% endif %}
 
 </article>
 

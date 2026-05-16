@@ -6,9 +6,18 @@ pagination:
 permalink: "/tags/{{ tag }}/index.html"
 eleventyComputed:
   title: "#{{ tag }}"
-  description: "Posts tagged #{{ tag }} on The Symbiotic Mind."
+  description: "Essays tagged #{{ tag }} on The Symbiotic Mind — behavioral science and practitioner perspectives on human-AI symbiosis."
 layout: layouts/base.njk
 ---
+
+{% block head %}
+{% set crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Topics', url: '/tags/' },
+  { name: '#' + tag, url: page.url }
+] %}
+{% include "partials/breadcrumbs.njk" %}
+{% endblock %}
 
 <div class="posts-header">
   <h1>#{{ tag }}</h1>

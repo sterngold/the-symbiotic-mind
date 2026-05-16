@@ -9,7 +9,18 @@
   {% set canonicalUrl = (page.url | absUrl(site.url)) %}
   {% set ogImage = (ogImage or site.defaultOgImage) | absUrl(site.url) %}
 
-  <title>{% if title %}{{ title }} — {% endif %}AI × HI</title>
+  {# Page title resolution:
+     - Posts and pages can override via `seoTitle` (most control)
+     - Otherwise fall back to `<title> — The Symbiotic Mind`
+     - Homepage (no `title`) uses just the site title
+  #}
+  {% if seoTitle %}
+  <title>{{ seoTitle }}</title>
+  {% elif title %}
+  <title>{{ title }} — The Symbiotic Mind</title>
+  {% else %}
+  <title>The Symbiotic Mind — Human-AI Relationship Design</title>
+  {% endif %}
   <meta name="description" content="{{ pageDesc }}">
   <link rel="canonical" href="{{ canonicalUrl }}">
 
@@ -35,14 +46,68 @@
   <link rel="webmention" href="https://webmention.io/{{ site.webmention.domain }}/webmention">
   <link rel="pingback" href="https://webmention.io/{{ site.webmention.domain }}/xmlrpc">
   {% endif %}
+
+  {# ------------------------------------------------------------------ #}
+  {# Site-wide structured data: Organization + WebSite (with             #}
+  {# Sitelinks Search Box). Renders on every page.                       #}
+  {# ------------------------------------------------------------------ #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ site.url }}/#organization",
+        "name": "{{ site.title }}",
+        "url": "{{ site.url }}",
+        "logo": "{{ '/images/og-default.png' | absUrl(site.url) }}",
+        "description": "{{ site.description }}",
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Vlad Sterngold",
+            "url": "{{ authors.vlad.url }}"
+          },
+          {
+            "@type": "Person",
+            "name": "Milena S. Nikolova",
+            "url": "{{ authors.milena.url }}"
+          }
+        ],
+        "sameAs": [
+          "https://github.com/sterngold/the-symbiotic-mind"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}",
+        "name": "{{ site.title }}",
+        "description": "{{ site.description }}",
+        "publisher": { "@id": "{{ site.url }}/#organization" },
+        "inLanguage": "{{ site.language }}",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "{{ site.url }}/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
   <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
   {% block head %}{% endblock %}
 </head>
 <body>
 
+  <a class="visually-hidden" href="#main">Skip to content</a>
   {% include "partials/header.njk" %}
 
-  <main>
+  <main id="main">
     {% block content %}{{ content | safe }}{% endblock %}
   </main>
 

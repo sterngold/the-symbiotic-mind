@@ -2,7 +2,8 @@
 layout: layouts/base.njk
 permalink: /index.html
 title: ""
-description: "AI × HI is not a tool usage question. It is a relationship design problem. A discovery journey by Vlad Sterngold and Milena Nikolova."
+seoTitle: "The Symbiotic Mind — Human-AI Relationship Design"
+description: "AI isn't a tool. It's a relationship. Essays on human-AI symbiosis, behavioral science, and relationship design by Vlad Sterngold (AI practitioner, Amsterdam) and Milena S. Nikolova, PhD (behavioral scientist, Lausanne)."
 ---
 
 <section class="hero">
@@ -14,6 +15,14 @@ description: "AI × HI is not a tool usage question. It is a relationship design
 <blockquote class="anchor-quote">
   AI × HI is not about using AI better. It is about designing how we think and act with it.
 </blockquote>
+
+<div class="about-body intro-block">
+  <p>The Symbiotic Mind is an editorial publication on human-AI symbiosis, written by an AI practitioner and a behavioral scientist. We don't talk about how to use AI better. We design how humans think and act with it — and we write about what that actually looks like, in the work, in the writing, in the day.</p>
+
+  <p>Two angles on the same question: what happens to the human, on the other side of the screen, when AI enters the work? Vlad brings the practitioner's log — what it looks like to build AI systems and live inside them daily. Milena brings the behavioral science — the study of how humans actually change. Somewhere between those two lenses is something neither of us can see from our own side alone.</p>
+
+  <p>Not a hype publication. Not a how-to guide. A place for the serious questions about what happens to the human in a human-AI system — and how to answer them deliberately.</p>
+</div>
 
 <div class="authors-strip">
   <div class="author">
@@ -34,7 +43,10 @@ description: "AI × HI is not a tool usage question. It is a relationship design
 <div class="homepage-post">
   <div class="post-meta">{{ post.date | postDate }} &middot; {{ authors[post.data.author].name }}</div>
   <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+  {% if post.data.description %}<p class="post-excerpt">{{ post.data.description }}</p>{% endif %}
 </div>
 {% endfor %}
 
+<div id="subscribe">
 {% include "partials/newsletter.njk" %}
+</div>
