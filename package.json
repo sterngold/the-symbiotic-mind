@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "AI × HI — The Symbiotic Mind. Static site built with Eleventy.",
+  "description": "AI \u00d7 HI \u2014 The Symbiotic Mind. Static site built with Eleventy.",
   "scripts": {
-    "build": "npm run og && eleventy && npm run pagefind",
+    "build": "npm run og && eleventy && npm run pagefind && node scripts/indexnow-ping.mjs",
     "build:no-search": "npm run og && eleventy",
     "og": "node scripts/generate-og-images.mjs",
     "serve": "npm run og && eleventy --serve --port=8080",
