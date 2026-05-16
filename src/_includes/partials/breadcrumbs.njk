@@ -1,0 +1,20 @@
+{# Inline BreadcrumbList JSON-LD. Pass `crumbs` as a list of {name, url} objects.
+   Each url is a site-relative path; absolute URLs are generated here. #}
+{% if crumbs and crumbs.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for c in crumbs %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": {{ c.name | dump | safe }},
+      "item": "{{ c.url | absUrl(site.url) }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

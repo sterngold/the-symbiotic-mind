@@ -2,8 +2,42 @@
 layout: layouts/base.njk
 permalink: /listen/index.html
 title: "Listen"
-description: "The Symbiotic Mind podcast — long-form conversations on human-AI symbiosis."
+seoTitle: "Listen — The Symbiotic Mind Podcast"
+description: "Conversations on human-AI relationship design, behavioral science, and what it means to think alongside artificial intelligence. Hosted by Vlad Sterngold and Milena S. Nikolova, PhD."
 ---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastSeries",
+  "name": {{ podcast.show.title | dump | safe }},
+  "url": "{{ page.url | absUrl(site.url) }}",
+  "description": {{ podcast.show.description | dump | safe }},
+  "image": "{{ podcast.show.image | absUrl(site.url) }}",
+  "inLanguage": "{{ podcast.show.language }}",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Vlad Sterngold",
+      "url": "{{ authors.vlad.url }}"
+    },
+    {
+      "@type": "Person",
+      "name": "Milena S. Nikolova",
+      "url": "{{ authors.milena.url }}"
+    }
+  ],
+  "publisher": { "@id": "{{ site.url }}/#organization" },
+  "webFeed": "{{ '/podcast.xml' | absUrl(site.url) }}"
+}
+</script>
+{% set crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Listen', url: page.url }
+] %}
+{% include "partials/breadcrumbs.njk" %}
+{% endblock %}
 
 <div class="about-header">
   <h1>Listen</h1>

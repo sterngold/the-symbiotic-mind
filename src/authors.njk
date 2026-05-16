@@ -7,9 +7,44 @@ pagination:
 permalink: "/authors/{{ author.slug }}/index.html"
 eleventyComputed:
   title: "{{ author.name }}"
-  description: "Writing by {{ author.name }} on The Symbiotic Mind."
+  description: "Writing by {{ author.name }} on The Symbiotic Mind — {{ author.role }}, {{ author.location }}."
 layout: layouts/base.njk
 ---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": {{ author.name | dump | safe }}{% if author.honorific %},
+    "honorificSuffix": {{ author.honorific | dump | safe }}{% endif %},
+    "jobTitle": {{ author.role | dump | safe }},
+    "description": {{ author.bio | dump | safe }},
+    "url": "{{ page.url | absUrl(site.url) }}",
+    "homeLocation": {
+      "@type": "Place",
+      "name": {{ author.location | dump | safe }}
+    },
+    "sameAs": [
+      {% for s in author.sameAs %}{{ s | dump | safe }}{% if not loop.last %},{% endif %}{% endfor %}
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "The Symbiotic Mind",
+      "url": "{{ site.url }}"
+    }
+  }
+}
+</script>
+{% set crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Authors', url: '/authors/' },
+  { name: author.name, url: page.url }
+] %}
+{% include "partials/breadcrumbs.njk" %}
+{% endblock %}
 
 <div class="about-header">
   <h1>{{ author.name }}</h1>
@@ -18,7 +53,10 @@ layout: layouts/base.njk
 
 <div class="about-body">
   <p>{{ author.bio }}</p>
-  <p><a href="{{ author.url }}">{{ author.url }}</a> &middot; <a href="/feed/{{ author.slug }}.xml">RSS for {{ author.name }}</a></p>
+  <p>
+    <a href="{{ author.url }}">{{ author.url }}</a>
+    &middot; <a href="/feed/{{ author.slug }}.xml">RSS for {{ author.name }}</a>
+  </p>
 </div>
 
 <p class="section-label">Writing by {{ author.name }}</p>
