@@ -5,20 +5,23 @@
   "type": "module",
   "description": "AI × HI — The Symbiotic Mind. Static site built with Eleventy.",
   "scripts": {
-    "build": "eleventy && npm run pagefind",
-    "build:no-search": "eleventy",
-    "serve": "eleventy --serve --port=8080",
-    "clean": "rm -rf _site",
+    "build": "npm run og && eleventy && npm run pagefind",
+    "build:no-search": "npm run og && eleventy",
+    "og": "node scripts/generate-og-images.mjs",
+    "serve": "npm run og && eleventy --serve --port=8080",
+    "clean": "rm -rf _site src/images/og",
     "pagefind": "pagefind --site _site --output-subdir pagefind"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@resvg/resvg-js": "^2.6.2",
     "luxon": "^3.5.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-footnote": "^4.0.0",
-    "pagefind": "^1.1.1"
+    "pagefind": "^1.1.1",
+    "satori": "^0.26.0"
   }
 }
