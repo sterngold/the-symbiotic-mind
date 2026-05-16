@@ -10,7 +10,7 @@ const DRY = process.env.INDEXNOW_DRY === "1";
 const STRICT = process.env.STRICT_INDEXNOW === "1";
 
 if (process.env.SKIP_INDEXNOW) { console.log("[indexnow] SKIP_INDEXNOW set, skipping."); process.exit(0); }
-function bail(msg, code = 0) { console.warn(`[indexnow] ${msg}`); process.exit(STRICT ? 1 : code); }
+function bail(msg, code = 0) { console.warn(`[indexnow] ${msg}`); process.exit(STRICT ? 1 : 0); }
 
 async function main() {
   const path = resolve(SITEMAP);
