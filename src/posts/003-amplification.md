@@ -11,6 +11,7 @@ ogImage: "/images/003-cover.png"
 tags:
   - behavior
   - amplification
+youtubeId: "Rw6oSKGLvRQ"
 ---
 
 

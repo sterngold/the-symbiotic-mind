@@ -11,8 +11,6 @@ ogImage: "/images/001-cover.png"
 tags:
   - behavior
   - relationship-design
-videoRetell:
-  url: "https://www.canva.com/design/DAHIxdE3vBE/dCDpA5DHNc-XhBy_zLHcPQ/view?embed"
 youtubeId: "yUXxo6-Gp74"
 ---
 
