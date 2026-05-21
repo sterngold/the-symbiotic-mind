@@ -24,6 +24,30 @@ ogImage: "/images/og/watch.png"
   <p>If you'd rather subscribe by feed: <a href="https://www.youtube.com/feeds/videos.xml?channel_id={{ podcast.show.youtubeChannelId }}">YouTube channel RSS</a>.</p>
 </div>
 
+{# Video retells: any post carrying a youtubeId. These are AI-made companions to
+   the essays — not podcast episodes (those live in podcast.episodes[] and feed
+   the audio RSS). Auto-listed, newest first, so new posts appear here for free. #}
+{% set retellPosts = [] %}
+{% for p in collections.posts %}
+  {% if p.data.youtubeId %}{% set retellPosts = (retellPosts.push(p), retellPosts) %}{% endif %}
+{% endfor %}
+{% if retellPosts.length %}
+<p class="section-label">Essays, retold on video</p>
+<ul class="post-list">
+{% for p in retellPosts %}
+  <li>
+    <div class="post-meta">{{ p.date | postDate }} &middot; {{ authors[p.data.author].name }}</div>
+    <h2><a href="{{ p.url }}">{{ p.data.title }}</a></h2>
+    <div class="video-retell-frame" style="margin-top:0.75rem;">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ p.data.youtubeId }}"
+              loading="lazy" allow="fullscreen" allowfullscreen
+              title="{{ p.data.title }}"></iframe>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
 {% if podcast.episodes.length %}
 <p class="section-label">Recent episodes</p>
 <ul class="post-list">
