@@ -28,7 +28,8 @@ export default {
     ownerName: "Vlad Sterngold",
     ownerEmail: "vlad@sterngold.nl",
     image: "/images/podcast-cover.png", // 3000×3000 PNG required by Apple
-    youtubeChannelUrl: "https://www.youtube.com/@symbioticmind",
+    youtubeChannelUrl: "https://www.youtube.com/@symbiotic-mind",
+    youtubeChannelId: "UCXPq0wU1juoFnJl2ixImCsQ",
   },
   // Add episodes here. Empty array is fine — the feed still validates.
   episodes: [

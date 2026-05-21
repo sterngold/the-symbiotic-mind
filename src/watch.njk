@@ -13,7 +13,7 @@ ogImage: "/images/og/watch.png"
 </div>
 
 <div class="about-body">
-  <p>Find every video on <a href="{{ podcast.show.youtubeChannelUrl }}">YouTube — @symbioticmind</a>. The channel is organised in four playlists:</p>
+  <p>Find every video on <a href="{{ podcast.show.youtubeChannelUrl }}">YouTube — @symbiotic-mind</a>. The channel is organised in four playlists:</p>
   <ul>
     <li><strong>Field Notes</strong> — short 3–8 min essays-on-camera tied to a post.</li>
     <li><strong>Conversations</strong> — long-form dialogues between Vlad and Milena.</li>
@@ -21,7 +21,7 @@ ogImage: "/images/og/watch.png"
     <li><strong>Research Reads</strong> — walking through a paper or a finding that changed our thinking.</li>
   </ul>
 
-  <p>If you'd rather subscribe by feed: <a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCxxxxxxxxxxxxxxxxxxxxxx">YouTube channel RSS</a> (replace channel ID once the channel exists).</p>
+  <p>If you'd rather subscribe by feed: <a href="https://www.youtube.com/feeds/videos.xml?channel_id={{ podcast.show.youtubeChannelId }}">YouTube channel RSS</a>.</p>
 </div>
 
 {% if podcast.episodes.length %}
