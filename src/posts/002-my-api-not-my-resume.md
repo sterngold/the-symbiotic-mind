@@ -9,7 +9,7 @@ tags:
   - agents
 cover:
   src: "/images/002-cover.png"
-  alt: "A professional sits at a desk with a glowing API schema visible in the air beside them, suggesting the idea of a queryable personal digital team."
+  alt: "A figure in a rainbow jacket strides forward flanked by small geometric companion figures — a personal digital team — moving together across an open space."
 ogImage: "/images/002-cover.png"
 youtubeId: "S4BlgOI0j68"
 ---
