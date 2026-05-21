@@ -18,10 +18,10 @@ export default {
   // Newsletter — two providers, controlled by a single flag.
   // Set provider to "buttondown", "listmonk", or "both".
   newsletter: {
-    provider: "both",
+    provider: "buttondown",
     buttondown: {
-      username: "symbioticmind", // change to your Buttondown handle when created
-      embedUrl: "https://buttondown.com/api/emails/embed-subscribe/symbioticmind",
+      username: "sterngold", // live Buttondown handle — newsletter "The Symbiotic Mind"
+      embedUrl: "https://buttondown.com/api/emails/embed-subscribe/sterngold",
     },
     listmonk: {
       // Self-hosted endpoint, e.g. https://lists.example.com/subscription/form
