@@ -13,6 +13,7 @@ cover:
 ogImage: "/images/002-cover.png"
 videoRetell:
   url: "https://www.canva.com/design/DAHJko_01Os/v1dAeZboqNhJr3IjwAjjaw/view?embed"
+youtubeId: "S4BlgOI0j68"
 ---
 
 ## A job interview that doesn't exist yet
