@@ -13,6 +13,7 @@ tags:
   - relationship-design
 videoRetell:
   url: "https://www.canva.com/design/DAHIxdE3vBE/dCDpA5DHNc-XhBy_zLHcPQ/view?embed"
+youtubeId: "yUXxo6-Gp74"
 ---
 
 ## It started with something small
