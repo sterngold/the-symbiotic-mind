@@ -2,6 +2,13 @@
 
 This folder holds *drafts* — not published content. Everything here is meant to be reviewed, edited, and then either copied into Buttondown (newsletters) or used as the recording brief (episodes).
 
+## Article drafts
+
+- [`posts/`](./posts/) — in-progress article drafts. **Nothing here is built or published.**
+  When a draft's prose is final and reviewed, rename it `NNN-slug.md` and move it into
+  `src/posts/` — that, and only that, publishes it (any `.md` in `src/posts/` auto-publishes; there is no draft flag).
+  - `posts/relationship-design.md` — foundational "pillar" article skeleton (frame the series rests on).
+
 ## Newsletter
 
 - [`newsletter/000-welcome.md`](./newsletter/000-welcome.md) — Inaugural welcome email. Send manually, once. After this, RSS-to-email handles everything.
