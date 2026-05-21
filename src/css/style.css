@@ -403,6 +403,18 @@ main {
   font-weight: 600;
 }
 
+.me-ai {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.me-ai strong { color: var(--ink); font-weight: 600; }
+
 /* ── About ────────────────────────────────────────────────── */
 
 .about-header {

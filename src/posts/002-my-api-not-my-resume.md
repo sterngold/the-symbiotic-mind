@@ -11,8 +11,6 @@ cover:
   src: "/images/002-cover.png"
   alt: "A professional sits at a desk with a glowing API schema visible in the air beside them, suggesting the idea of a queryable personal digital team."
 ogImage: "/images/002-cover.png"
-videoRetell:
-  url: "https://www.canva.com/design/DAHJko_01Os/v1dAeZboqNhJr3IjwAjjaw/view?embed"
 youtubeId: "S4BlgOI0j68"
 ---
 
@@ -73,3 +71,5 @@ Do you have an API? Are we ready to work like that?
 <p><small><em>Sources: Microsoft <a href="https://www.microsoft.com/en-us/worklab/work-trend-index">Work Trend Index 2026 — Beyond the Prompt</a>; Randazzo, Lifshitz, Kellogg, Dell'Acqua, Mollick, Candelon, Lakhani — Cyborgs, Centaurs and Self-Automators: The Three Modes of Human-GenAI Knowledge Work, HBS Working Paper 26-036 (2026); Nikolova, M. — Boundborn framework seed, unpublished (April 2026).</em></small></p>
 
 <p><small><em>*This article reflects an AI &times; HI collaboration. The ideas, stories, and perspective are my own, developed through iterative interaction with AI as a thinking partner to sharpen structure, clarity, and expression.</em></small></p>
+
+<p class="me-ai">🗣 <strong>ME (85%)</strong>: story, angle, identity shift, final cut<br>🤖 <strong>AI (15%)</strong>: structure, research anchors, sentence tightening</p>
