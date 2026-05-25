@@ -19,11 +19,12 @@ layout: layouts/base.njk
   "@type": "ProfilePage",
   "mainEntity": {
     "@type": "Person",
+    "@id": {{ author.personId | dump | safe }},
     "name": {{ author.name | dump | safe }}{% if author.honorific %},
     "honorificSuffix": {{ author.honorific | dump | safe }}{% endif %},
     "jobTitle": {{ author.role | dump | safe }},
     "description": {{ author.bio | dump | safe }},
-    "url": "{{ page.url | absUrl(site.url) }}",
+    "url": {{ author.url | dump | safe }},
     "homeLocation": {
       "@type": "Place",
       "name": {{ author.location | dump | safe }}

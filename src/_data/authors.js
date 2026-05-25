@@ -11,16 +11,17 @@ export default {
     location: "Amsterdam",
     bio: "AI practitioner and builder based in Amsterdam. Daily user of AI systems, builder of AI products, and writer on human-AI symbiosis.",
     // Canonical bio lives on sterngold.nl (personal authority engine).
-    url: "https://sterngold.nl",
+    url: "https://sterngold.nl/",
+    personId: "https://sterngold.nl/#person",
     sameAs: [
-      "https://sterngold.nl",
-      "https://sterngold.ai",
-      "https://werkanders.com",
-      "https://andersreality.com",
       "https://www.linkedin.com/in/sterngold/",
       "https://medium.com/@Sterngold",
       "https://vladsterngold.substack.com/",
       "https://github.com/sterngold",
+      "https://sterngold.ai/",
+      "https://werkanders.com/",
+      "https://symbiotic-mind.com/",
+      "https://andersreality.com/",
     ],
   },
   milena: {
@@ -32,11 +33,13 @@ export default {
     location: "Lausanne",
     bio: "PhD behavioral scientist and founder of BehaviorSMART. Works with organizations across four continents on how humans actually change — what AI does and doesn't change about that, and how to design for the difference.",
     url: "https://behavior-smart.com",
+    personId: "https://behavior-smart.com/#person",
     sameAs: [
       "https://behavior-smart.com",
       "https://behavior-smart.com/milena-nikolova/",
-      // Add Milena's LinkedIn / ResearchGate / ORCID URLs when she confirms them:
-      // "https://www.linkedin.com/in/milena1827/",
+      "https://www.linkedin.com/in/milena1827/",
+      "https://orcid.org/0000-0002-3992-9138",
+      // ResearchGate: add when a real URL is provided.
     ],
   },
 };
