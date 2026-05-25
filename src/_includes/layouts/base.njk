@@ -71,16 +71,8 @@
         "logo": "{{ '/images/og-default.png' | absUrl(site.url) }}",
         "description": "{{ site.description }}",
         "founder": [
-          {
-            "@type": "Person",
-            "name": "Vlad Sterngold",
-            "url": "{{ authors.vlad.url }}"
-          },
-          {
-            "@type": "Person",
-            "name": "Milena S. Nikolova",
-            "url": "{{ authors.milena.url }}"
-          }
+          { "@id": {{ authors.vlad.personId | dump | safe }} },
+          { "@id": {{ authors.milena.personId | dump | safe }} }
         ],
         "sameAs": [
           "https://github.com/sterngold/the-symbiotic-mind",
