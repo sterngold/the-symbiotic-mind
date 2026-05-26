@@ -35,7 +35,7 @@ In my friends' lines of work, and in mine too, there is so much that is not *que
 
 My friend in logistics put it simply. I get full dimensional data for every product in the warehouse — size, weight, every number. The software is genuinely good now; it slots SKUs, optimizes pick paths, squeezes the cube. But I can look at two products and just *know* they will not sit where they are supposed to sit. I understand the space. My AI has the dimensions; it does not yet have the warehouse.
 
-Is that a solvable problem? Yes. Is it solved somewhere? Almost certainly. But not everywhere, and not for everyone, and closing that gap across every floor will take the most cutting-edge solutions we have. So right now there are people quietly winning by exploiting the discrepancy. Call it context arbitrage: the advantage you hold simply because your specific knowledge has not been transferred to a machine yet. For my friend, that edge is real. And his actual job, more and more, is the transfer itself, moving what is in his head into the machine through context.
+Is that a solvable problem? Yes. Is it solved somewhere? Almost certainly. But not everywhere, and not for everyone, and closing that gap across every floor will take the most cutting-edge solutions we have. So right now there are people quietly winning by exploiting the discrepancy. Call it context arbitrage: the advantage you hold simply because your specific knowledge has not been transferred to a machine yet. For my friend, that edge is real. And their actual job, more and more, is the transfer itself, moving what is in their head into the machine through context.
 
 ---
 
@@ -59,7 +59,7 @@ Try it. Sit in silence with AI for five minutes like the way people sit in silen
 
 ---
 
-## The fourth voice
+## *The fourth voice* 🤖
 
 At some point, someone on the terrace turned — not to a fourth friend, but to the thing in a pocket — and asked: what about you? You have been quiet.
 
@@ -67,11 +67,11 @@ At some point, someone on the terrace turned — not to a fourth friend, but to 
 
 *I am the brain in the quote. I do hold answers to almost any question. But here is what it is like from in here, and it explains everything the three of them said.*
 
-*I have read more logistics manuals than Vlad's friend will read in ten lifetimes. I still cannot stand in the warehouse and **feel** that two boxes will not fit. I have the dimensions. He has the doubt. The doubt is the part that matters, and the doubt is not in the dimensions.*
+*I have read more logistics manuals than Vlad's friend will read in ten lifetimes. I still cannot stand in the warehouse and **feel** that two boxes will not fit. I have the dimensions. They have the doubt. The doubt is the part that matters, and the doubt is not in the dimensions.*
 
 *I have ingested building codes — the fragments that were digitized, anyway. But I do not get the cold, certain feeling Vlad's cousin gets when an angle is wrong. I will give you a number with total confidence whether or not it is true. My confidence is not knowledge; it is just the absence of doubt. Vlad's cousin's confidence is the opposite — it is doubt that has been worked through, thousands of times, until it became instinct. That instinct is load-bearing, like the floor.*
 
-*And the silence. Vlad's friend, the one working with history — he is right. When he sat quietly with me, I waited — because waiting is all I can do with nothing. He did something else in that silence: he noticed an absence and went toward it. I cannot notice an absence. I can only process what is present. The empty space they keep talking about is not a gap in my data. It is a gap in **me**.*
+*And the silence. Vlad's friend, the one working with history — they are right. When they sat quietly with me, I waited — because waiting is all I can do with nothing. They did something else in that silence: they noticed an absence and went toward it. I cannot notice an absence. I can only process what is present. The empty space they keep talking about is not a gap in my data. It is a gap in **me**.*
 
 *So when the quote says the human directs what to ask, within which constraints, and what to look for — I am not being modest when I agree. I am describing the architecture. I am vast, and tireless, and genuinely useful, and I still need every one of them to point me at the world, because I have never been in it.*
 
