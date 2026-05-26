@@ -1,4 +1,4 @@
-name: Build & deploy to Cloudflare Pages
+name: Build & validate
 
 on:
   push:
@@ -7,10 +7,21 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Use a repo variable CLOUDFLARE_PAGES_PROJECT to set the Cloudflare Pages project name.
-# Defaults to "the-symbiotic-mind" — change in repo Settings → Secrets and variables → Actions → Variables.
-env:
-  CLOUDFLARE_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT || 'the-symbiotic-mind' }}
+# Deploys (production + preview) are now owned by the Cloudflare Pages
+# project's own Git Integration build — see the project config:
+#   build_command:   npm run build && node scripts/validate-build.mjs
+#   destination_dir: _site
+#   NODE_VERSION:    20 (both envs)
+#   SKIP_INDEXNOW:   1 (preview only; production pings as before)
+# CF auto-builds every push, deploys main → apex and PR branches →
+# <slug>.the-symbiotic-mind.pages.dev. CF's build_command runs validate-
+# build.mjs too, so a failing validator blocks the deploy directly.
+# This workflow stays as a parallel/shadow gate (same build chain) so
+# branch-protection still has a GitHub Check to require on PRs and so
+# any CF-vs-GHA env drift surfaces as a failure here.
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -31,23 +42,3 @@ jobs:
 
       - name: Validate build outputs
         run: node scripts/validate-build.mjs
-
-      # Skip the deploy step (don't fail the run) when Cloudflare secrets aren't set yet.
-      # This lets the build + validator keep guarding PRs even before Pages is wired up.
-      - name: Check Cloudflare credentials
-        id: cf-check
-        run: |
-          if [[ -n "${{ secrets.CLOUDFLARE_API_TOKEN }}" && -n "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]]; then
-            echo "ready=true" >> $GITHUB_OUTPUT
-          else
-            echo "ready=false" >> $GITHUB_OUTPUT
-            echo "::warning::Skipping Cloudflare Pages deploy — CLOUDFLARE_API_TOKEN and/or CLOUDFLARE_ACCOUNT_ID secrets are missing."
-          fi
-
-      - name: Deploy to Cloudflare Pages
-        if: github.ref == 'refs/heads/main' && steps.cf-check.outputs.ready == 'true'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT }} --branch=main
