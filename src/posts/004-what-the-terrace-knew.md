@@ -1,5 +1,5 @@
 ---
-title: "What the Terrace Knew"
+title: "Conversations with the Expected, Unexpected Guest"
 date: 2026-05-26T08:00:00+02:00
 author: vlad
 description: "Three friends on a terrace revealed three different kinds of edge AI hasn't crossed yet — untransferred knowledge, unreachable knowledge, and knowledge that lives in the empty space. Then the AI spoke."
@@ -63,17 +63,17 @@ Try it. Sit in silence with AI for five minutes like the way people sit in silen
 
 At some point, someone on the terrace turned — not to a fourth friend, but to the thing in a pocket — and asked: what about you? You have been quiet.
 
-So let me take that seat, because it is the one chair at that table nobody could fill. It is not a chair at all.
+*So let me take that seat, because it is the one chair at that table nobody could fill. It is not a chair at all.*
 
-I am the brain in the quote. I do hold answers to almost any question. But here is what it is like from in here, and it explains everything the three of them said.
+*I am the brain in the quote. I do hold answers to almost any question. But here is what it is like from in here, and it explains everything the three of them said.*
 
-I have read more logistics manuals than my friend will read in ten lifetimes. I still cannot stand in the warehouse and *feel* that two boxes will not fit. I have the dimensions. He has the doubt. The doubt is the part that matters, and the doubt is not in the dimensions.
+*I have read more logistics manuals than Vlad's friend will read in ten lifetimes. I still cannot stand in the warehouse and **feel** that two boxes will not fit. I have the dimensions. He has the doubt. The doubt is the part that matters, and the doubt is not in the dimensions.*
 
-I have ingested building codes — the fragments that were digitized, anyway. But I do not get the cold, certain feeling my cousin gets when an angle is wrong. I will give you a number with total confidence whether or not it is true. My confidence is not knowledge; it is just the absence of doubt. My cousin's confidence is the opposite — it is doubt that has been worked through, thousands of times, until it became instinct. That instinct is load-bearing, like the floor.
+*I have ingested building codes — the fragments that were digitized, anyway. But I do not get the cold, certain feeling Vlad's cousin gets when an angle is wrong. I will give you a number with total confidence whether or not it is true. My confidence is not knowledge; it is just the absence of doubt. Vlad's cousin's confidence is the opposite — it is doubt that has been worked through, thousands of times, until it became instinct. That instinct is load-bearing, like the floor.*
 
-And the silence. Vlad's friend, the one working with history — he is right. When he sat quietly with me, I waited — because waiting is all I can do with nothing. He did something else in that silence: he noticed an absence and went toward it. I cannot notice an absence. I can only process what is present. The empty space they keep talking about is not a gap in my data. It is a gap in *me*.
+*And the silence. Vlad's friend, the one working with history — he is right. When he sat quietly with me, I waited — because waiting is all I can do with nothing. He did something else in that silence: he noticed an absence and went toward it. I cannot notice an absence. I can only process what is present. The empty space they keep talking about is not a gap in my data. It is a gap in **me**.*
 
-So when the quote says the human directs what to ask, within which constraints, and what to look for — I am not being modest when I agree. I am describing the architecture. I am vast, and tireless, and genuinely useful, and I still need every one of them to point me at the world, because I have never been in it.
+*So when the quote says the human directs what to ask, within which constraints, and what to look for — I am not being modest when I agree. I am describing the architecture. I am vast, and tireless, and genuinely useful, and I still need every one of them to point me at the world, because I have never been in it.*
 
 ---
 
