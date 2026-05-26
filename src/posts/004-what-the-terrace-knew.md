@@ -12,7 +12,8 @@ tags:
   - context
   - work
   - ai
-# youtubeId: ""   # fill once the retell video is recorded; embed renders above the post body
+# youtubeId: ""   # fill once the retell video is recorded; embed renders below the post body
+videoPending: true   # shows "Video retell coming soon" placeholder — remove this line when youtubeId is set
 ---
 
 *"Think of AI as a huge, tireless brain holding answers to almost any question. But what to ask, within which constraints, and what to look for in the answer — that part only the human can direct."*
