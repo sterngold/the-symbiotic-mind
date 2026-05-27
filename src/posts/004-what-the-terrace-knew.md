@@ -92,4 +92,4 @@ For now, we win this round.
 
 <p><small><em>*This article reflects an AI &times; HI collaboration. The terrace, the friends, and the conversation are real; the framing and the fourth-voice device are my own, developed through iterative interaction with AI as a thinking partner to sharpen structure, clarity, and expression.</em></small></p>
 
-<p class="me-ai">🗣 <strong>ME (85%)</strong>: the terrace, the three friends, the queryable vs quotable framing, the fourth-voice device, every observation, the close<br>🤖 <strong>AI (15%)</strong>: structural sequencing, editorial pass, sentence tightening<br>📝 <em>1,383 words</em></p>
+<p class="me-ai">🗣 <strong>ME (75%)</strong>: the terrace, the three friends, the queryable vs quotable framing, the device of asking the AI to speak, every observation, the close<br>🤖 <strong>AI (25%)</strong>: the fourth voice (wrote its own first-person reply — one of four voices in the essay), structural sequencing, editorial pass, sentence tightening<br>📝 <em>1,383 words</em></p>
