@@ -386,6 +386,31 @@ main {
   border: 0;
 }
 
+.video-retell-frame-pending {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      var(--paper-off),
+      var(--paper-off) 12px,
+      var(--border) 12px,
+      var(--border) 13px
+    );
+}
+
+.video-retell-pending-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--ink-muted);
+  background: var(--paper);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(63, 69, 81, 0.08);
+}
+
 /* ── Post credit / colophon ───────────────────────────────── */
 
 .post-credit {

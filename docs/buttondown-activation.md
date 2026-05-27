@@ -12,7 +12,7 @@ A 10-minute path from zero to a working newsletter on symbiotic-mind.com, free u
 2. **Newsletter username**: `symbioticmind` (matches the Eleventy default in `src/_data/site.js`). If `symbioticmind` is taken, pick the closest match and remember it — we'll wire it in Step 4.
 3. **Newsletter name**: `The Symbiotic Mind`.
 4. **Description**:
-   > AI × HI — a discovery journey on human-AI symbiosis by Vlad Sterngold (Amsterdam) and Milena S. Nikolova, PhD (Lausanne). New writing every other Wednesday. No spam. No SEO bait.
+   > AI × HI — a discovery journey on human-AI symbiosis by Vlad Sterngold (Amsterdam) and Milena S. Nikolova, PhD (Lausanne). New writing every week. No spam. No SEO bait.
 5. **From name**: `Vlad & Milena — The Symbiotic Mind`
 6. **From email**: `hello@symbiotic-mind.com` (you'll verify it next).
 
@@ -32,7 +32,7 @@ Buttondown → **Settings → Automations → RSS-to-email**:
 
 1. **Feed URL**: `https://symbiotic-mind.com/feed.xml`
 2. **Check frequency**: Daily at 9:00 Europe/Berlin.
-3. **Send mode**: One email per new item (not digest). Your cadence is ~biweekly, not daily.
+3. **Send mode**: One email per new item (not digest). Your cadence is ~weekly, not daily.
 4. **Email template**: pick `Long-form` (full content rather than summary + link). The full `<content:encoded>` is in your RSS already, so subscribers get the whole post inline.
 5. **Subject line template**: `{{ title }}`
 6. **Preview text template**: `{{ description }}`
@@ -76,7 +76,7 @@ For your first newsletter, **don't rely on RSS-to-email** for the inaugural one 
 3. Body (markdown):
    > You signed up to read about how humans think and act differently in an AI world. We — Vlad in Amsterdam and Milena in Lausanne — wrote this together, from two angles.
    >
-   > New essays every other Wednesday. Long-form audio conversations starting later this season. Always full text in email, not preview-plus-clickbait.
+   > New essays every week. Long-form audio conversations starting later this season. Always full text in email, not preview-plus-clickbait.
    >
    > Start here:
    > - [You Are Not Using AI. You Are in a Relationship With It.](https://symbiotic-mind.com/posts/001-you-are-not-using-ai/) — Milena
