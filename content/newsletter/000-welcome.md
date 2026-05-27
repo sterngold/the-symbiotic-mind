@@ -31,6 +31,7 @@ Most of the AI conversation is about the tool — its speed, its capabilities, i
 
 The unit of value is the combined AI × HI system. It belongs to neither alone. And right now, most professionals are improvising that relationship instead of designing it.
 
+That's what we'll write about, every other Thursday.
 That's what we'll write about, every week.
 
 ### Two pieces to start
@@ -42,6 +43,7 @@ If you've read these already, skip them. If not, they're the foundation everythi
 
 ### What you'll get from us
 
+- **New writing** — every other Thursday. Long-form, full text in the email, not preview-plus-clickbait.
 - **New writing** — every week. Long-form, full text in the email, not preview-plus-clickbait.
 - **Conversations** — long-form audio episodes between us, starting later this season. The audio companion to the writing, on Apple, Spotify, Overcast, all the usual places.
 - **Field notes** — short pieces on what's actually changing for practitioners. Things we noticed this week.
@@ -84,6 +86,7 @@ AI × HI is not a tool usage question. It is a relationship design problem.
 
 The unit of value is the combined AI × HI system. It belongs to neither alone. And right now, most professionals are improvising that relationship instead of designing it.
 
+That's what we'll write about, every other Thursday.
 That's what we'll write about, every week.
 
 TWO PIECES TO START
@@ -98,6 +101,7 @@ If you've read these already, skip them. If not, they're the foundation everythi
 
 WHAT YOU'LL GET FROM US
 
+— New writing every other Thursday. Long-form, full text in email, not preview-plus-clickbait.
 — New writing every week. Long-form, full text in email, not preview-plus-clickbait.
 — Long-form audio conversations between us, starting later this season. Apple, Spotify, Overcast.
 — Field notes — short pieces on what's actually changing for practitioners.
