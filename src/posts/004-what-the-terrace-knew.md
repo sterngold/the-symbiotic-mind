@@ -1,5 +1,5 @@
 ---
-title: "Queryable vs Quotable"
+title: "Queryable vs Quotable *"
 deck: "Friends on a terrace, three kinds of edge AI hasn't crossed yet — and then the fourth voice spoke."
 date: 2026-05-26T08:00:00+02:00
 author: vlad
@@ -90,6 +90,8 @@ For now, we win this round.
 
 ---
 
-<p><small><em>*This article reflects an AI &times; HI collaboration. The terrace, the friends, and the conversation are real; the framing and the fourth-voice device are my own, developed through iterative interaction with AI as a thinking partner to sharpen structure, clarity, and expression.</em></small></p>
+<p><small><em>* I first wrote <strong>queryable</strong> — AI changed it to <strong>quotable</strong> while fixing grammar. An honest mistake; the two words look almost alike. I caught the swap by chance. Then I realized the "wrong" word was a different idea altogether, and the essay turned into a piece about both. The title is the artifact of that moment.</em></small></p>
+
+<p><small><em>This article reflects an AI &times; HI collaboration. The terrace, the friends, and the conversation are real; the framing and the fourth-voice device are my own, developed through iterative interaction with AI as a thinking partner to sharpen structure, clarity, and expression.</em></small></p>
 
 <p class="me-ai">🗣 <strong>ME (75%)</strong>: the terrace, the three friends, the queryable vs quotable framing, the device of asking the AI to speak, every observation, the close<br>🤖 <strong>AI (25%)</strong>: the fourth voice (wrote its own first-person reply — one of four voices in the essay), structural sequencing, editorial pass, sentence tightening<br>📝 <em>1,383 words</em></p>
