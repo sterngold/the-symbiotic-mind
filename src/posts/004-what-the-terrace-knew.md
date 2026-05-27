@@ -1,8 +1,9 @@
 ---
-title: "Conversations with the Expected, Unexpected Guest"
+title: "Queryable vs Quotable"
+deck: "Friends on a terrace, three kinds of edge AI hasn't crossed yet — and then the fourth voice spoke."
 date: 2026-05-26T08:00:00+02:00
 author: vlad
-description: "Three friends on a terrace revealed three different kinds of edge AI hasn't crossed yet — untransferred knowledge, unreachable knowledge, and knowledge that lives in the empty space. Then the AI spoke."
+description: "Friends on a terrace revealed three different kinds of edge AI hasn't crossed yet — untransferred knowledge, unreachable knowledge, and knowledge that lives in the empty space. Then the AI spoke."
 cover:
   src: "/images/004-cover.png"
   alt: "Warm watercolor at sunset. Four friends sit on a terrace overlooking distant hills — three human figures in muted earth tones gathered in conversation, and a fourth figure rendered in cool, faceted blue crystal sitting quietly alongside them. The empty sky stretches above; the fifth chair is not a chair at all."
@@ -12,8 +13,7 @@ tags:
   - context
   - work
   - ai
-# youtubeId: ""   # fill once the retell video is recorded; embed renders below the post body
-videoPending: true   # shows "Video retell coming soon" placeholder — remove this line when youtubeId is set
+youtubeId: "FbMfmtHdpHY"
 ---
 
 *"Think of AI as a huge, tireless brain holding answers to almost any question. But what to ask, within which constraints, and what to look for in the answer — that part only the human can direct."*
