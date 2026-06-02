@@ -29,7 +29,7 @@
   --gradient-pride: linear-gradient(90deg, #e40303, #ff8c00, #c8a200, #008026, #004dff, #750787);
 }
 
-/* Pride Month 2026 — subtle footer signal, reversible end of June (remove this block + the footer line) */
+/* Pride — year-round allyship signal in the footer (remove this block + the footer line to retire) */
 .pride-signal {
   font-family: var(--sans);
   font-size: 0.78rem;
