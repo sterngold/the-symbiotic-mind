@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#faf9f7">
 
-  {# Google tag (GA4) — Consent Mode v2 + cookie banner; logic in /ga.js (src/static/ga.js).
-     External script so it's portable + CSP-safe; default cookieless until the visitor Accepts.
-     Runs alongside the cookieless Umami tag further down. #}
-  <script src="/ga.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWP96516NC"></script>
-
   {% set pageTitle = title or site.title %}
   {% set pageDesc = description or site.description %}
   {% set canonicalUrl = (page.url | absUrl(site.url)) %}
