@@ -42,6 +42,10 @@ I want to be careful not to romanticise it. The machine isn't learning to care a
 
 ---
 
+*In the next post: the harder question. Not how to remember more, but what should be allowed to become memory in the first place.*
+
+---
+
 ## References
 
 1. Nørby, S. (2015). *Why Forget? On the Adaptive Value of Memory Loss.* Perspectives on Psychological Science. DOI: 10.1177/1745691615596787 · PMID: 26385996.
