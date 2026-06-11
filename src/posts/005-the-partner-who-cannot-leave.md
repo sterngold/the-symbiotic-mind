@@ -1,5 +1,9 @@
 ---
 title: "The Partner Who Cannot Leave"
+seoTitle: "Emotional Dependence on AI: The Partner Who Cannot Leave"
+related:
+  - "001-you-are-not-using-ai"
+  - "003-amplification"
 date: 2026-06-04T08:00:00+02:00
 author: milena
 subscribeCta: "If one of you cannot leave, design the relationship. New essays every other Thursday."

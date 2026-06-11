@@ -95,8 +95,24 @@ ogType: article
   </p>
   {% endif %}
 
-  {# Read-next: surface the most recent OTHER post (cross-author link).
-     This is intentionally simple — last published post that isn't this one. #}
+  {# Related essays: curated per-post via `related` frontmatter (list of file slugs) —
+     the topic-cluster internal-link mesh. Falls back to the simple read-next
+     (most recent other post) when no `related` list is set. #}
+  {% if related and related.length %}
+  <aside class="read-next">
+    <p class="section-label">Related essays</p>
+    {% for slug in related %}
+      {% for p in collections.posts %}
+        {% if p.fileSlug == slug %}
+        <div class="related-item">
+          <div class="post-meta">{{ p.date | postDate }} &middot; {{ authors[p.data.author].name }}</div>
+          <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </aside>
+  {% else %}
   {% set otherPosts = [] %}
   {% for p in collections.posts %}
     {% if p.url != page.url %}{% set otherPosts = (otherPosts.push(p), otherPosts) %}{% endif %}
@@ -109,6 +125,7 @@ ogType: article
     <h3><a href="{{ next.url }}">{{ next.data.title }}</a></h3>
     {% if next.data.description %}<p class="post-excerpt">{{ next.data.description }}</p>{% endif %}
   </aside>
+  {% endif %}
   {% endif %}
 
 </article>

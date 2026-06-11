@@ -746,3 +746,8 @@ main {
 .start-door h3 { margin: 0.25rem 0 0.5rem; }
 .start-door .post-excerpt { margin: 0; }
 .start-all { margin: 1.5rem 0 2.5rem; }
+
+/* ── Related essays (curated cluster links, 2026-06-11) ── */
+.related-item { margin-bottom: 1rem; }
+.related-item:last-child { margin-bottom: 0; }
+.related-item h3 { margin: 0.15rem 0 0; }

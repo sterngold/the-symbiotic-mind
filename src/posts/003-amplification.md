@@ -1,5 +1,9 @@
 ---
 title: "Amplification"
+seoTitle: "AI Amplification vs Automation: Which One Are You Living?"
+related:
+  - "001-you-are-not-using-ai"
+  - "005-the-partner-who-cannot-leave"
 date: 2026-05-22T08:00:00+02:00
 author: milena
 subscribeCta: "Make AI amplify you, not replace you. The next essay lands every other Thursday."

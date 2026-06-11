@@ -1,5 +1,9 @@
 ---
 title: "Down the memory river with AI"
+seoTitle: "AI Memory vs Human Memory: Why They Are Not the Same Thing"
+related:
+  - "002-my-api-not-my-resume"
+  - "004-what-the-terrace-knew"
 date: 2026-06-11T08:00:00+02:00
 author: vlad
 subscribeCta: "Human memory and AI memory differ more than you think. New essays every other Thursday."

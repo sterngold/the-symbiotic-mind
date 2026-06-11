@@ -1,5 +1,9 @@
 ---
 title: "Queryable vs Quotable *"
+seoTitle: "Queryable vs Quotable: What AI Can and Cannot Take From Your Voice"
+related:
+  - "006-down-the-memory-river"
+  - "002-my-api-not-my-resume"
 deck: "Friends on a terrace, three kinds of edge AI hasn't crossed yet — and then the fourth voice spoke."
 date: 2026-05-26T08:00:00+02:00
 author: vlad
