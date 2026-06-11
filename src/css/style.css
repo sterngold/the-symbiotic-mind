@@ -716,3 +716,33 @@ main {
   text-decoration: none;
 }
 .heading-anchor:hover { text-decoration: underline; }
+
+/* ── Substack embed (newsletter provider "substack", 2026-06-11) ── */
+.newsletter-form-substack { display: block; }
+.newsletter-substack-frame {
+  width: 100%;
+  max-width: 480px;
+  height: 150px;
+  border: 0;
+  background: transparent;
+}
+
+/* ── /start-here doors (reach plan Track B2, 2026-06-11) ── */
+.start-doors {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+.start-door {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border, #e2e2e2);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+.start-door:hover { border-color: var(--accent, #888); }
+.start-door h3 { margin: 0.25rem 0 0.5rem; }
+.start-door .post-excerpt { margin: 0; }
+.start-all { margin: 1.5rem 0 2.5rem; }

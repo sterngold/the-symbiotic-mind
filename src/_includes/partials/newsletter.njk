@@ -1,8 +1,32 @@
-{# Newsletter signup. Renders Buttondown, listmonk, or both depending on site.newsletter.provider. #}
+{# Newsletter signup. Renders Substack, Buttondown, listmonk, or both (bd+lm) per site.newsletter.provider.
+   A post can set `subscribeCta` in frontmatter to replace the default title with a topic-tied line. #}
 <aside class="newsletter" id="subscribe">
   <p class="newsletter-eyebrow">Subscribe</p>
+  {% if subscribeCta %}
+  <h3 class="newsletter-title">{{ subscribeCta }}</h3>
+  {% else %}
   <h3 class="newsletter-title">New writing on AI × HI, every other Thursday.</h3>
+  {% endif %}
   <p class="newsletter-sub">No spam. No SEO bait. Just the next piece, the moment it's out.</p>
+
+  {% if site.newsletter.provider == "substack" %}
+  <div class="newsletter-form newsletter-form-substack">
+    <iframe
+      src="{{ site.newsletter.substack.embedUrl }}"
+      loading="lazy"
+      title="Subscribe to The Symbiotic Mind on Substack"
+      class="newsletter-substack-frame"
+      frameborder="0"
+      scrolling="no"></iframe>
+    <p class="newsletter-provider">
+      Delivered via
+      <a href="{{ site.newsletter.substack.publicationUrl }}"
+         data-umami-event="subscribe_click"
+         data-umami-event-surface="newsletter-block"
+         rel="noopener">Substack</a>.
+    </p>
+  </div>
+  {% endif %}
 
   {% if site.newsletter.provider == "buttondown" or site.newsletter.provider == "both" %}
   <form

@@ -3,6 +3,7 @@ title: "Queryable vs Quotable *"
 deck: "Friends on a terrace, three kinds of edge AI hasn't crossed yet — and then the fourth voice spoke."
 date: 2026-05-26T08:00:00+02:00
 author: vlad
+subscribeCta: "Queryable or quotable, the next essay arrives every other Thursday."
 description: "Friends on a terrace revealed three different kinds of edge AI hasn't crossed yet — untransferred knowledge, unreachable knowledge, and knowledge that lives in the empty space. Then the AI spoke."
 cover:
   src: "/images/004-cover.png"
