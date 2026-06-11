@@ -15,10 +15,17 @@ export default {
     category: "Announcements",
     categoryId: "DIC_kwDORiRCPc4C4As0",
   },
-  // Newsletter — two providers, controlled by a single flag.
-  // Set provider to "buttondown", "listmonk", or "both".
+  // Newsletter — providers controlled by a single flag.
+  // Set provider to "substack", "buttondown", "listmonk", or "both" (buttondown+listmonk).
+  // 2026-06-11: Substack is the single promoted list (reach plan Track B1) — it carries
+  // the network effects (recommendations, Notes, restacks). Buttondown config retained
+  // dormant (0 subscribers, nothing migrated); listmonk retained for a future sovereign move.
   newsletter: {
-    provider: "buttondown",
+    provider: "substack",
+    substack: {
+      publicationUrl: "https://thesymbioticmind.substack.com",
+      embedUrl: "https://thesymbioticmind.substack.com/embed",
+    },
     buttondown: {
       username: "sterngold", // live Buttondown handle — newsletter "The Symbiotic Mind"
       embedUrl: "https://buttondown.com/api/emails/embed-subscribe/sterngold",

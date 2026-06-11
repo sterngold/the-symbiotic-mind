@@ -1,6 +1,7 @@
 <header class="site-header">
   <a class="site-logo" href="/">The Symbiotic Mind</a>
   <nav>
+    <a href="/start-here/"{% if page.url.startsWith('/start-here') %} class="active"{% endif %} data-umami-event="start_here_click" data-umami-event-surface="nav">Start here</a>
     <a href="/posts/"{% if page.url.startsWith('/posts') %} class="active"{% endif %}>Writing</a>
     <a href="/listen/"{% if page.url.startsWith('/listen') or page.url.startsWith('/episodes') %} class="active"{% endif %}>Listen</a>
     <a href="/watch/"{% if page.url.startsWith('/watch') %} class="active"{% endif %}>Watch</a>

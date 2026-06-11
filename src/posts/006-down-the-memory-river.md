@@ -2,6 +2,7 @@
 title: "Down the memory river with AI"
 date: 2026-06-11T08:00:00+02:00
 author: vlad
+subscribeCta: "Human memory and AI memory differ more than you think. New essays every other Thursday."
 description: "Human memory and AI memory are not the same kind of thing, and treating them as one will quietly mislead you. A naive builder's field notes: what each kind of memory is for, why giving an AI more memory can make it worse, and why the real skill is knowing what to keep, and what to ask."
 deck: ""
 cover:
