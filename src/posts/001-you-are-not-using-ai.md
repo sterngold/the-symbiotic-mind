@@ -1,5 +1,9 @@
 ---
 title: "You Are Not Using AI. You Are in a Relationship With It."
+seoTitle: "You Are in a Relationship With AI, Not Using a Tool — The Symbiotic Mind"
+related:
+  - "005-the-partner-who-cannot-leave"
+  - "002-my-api-not-my-resume"
 date: 2026-05-06T07:45:00+02:00
 author: milena
 subscribeCta: "If AI is a relationship, not a tool, learn to design it. New essays every other Thursday."

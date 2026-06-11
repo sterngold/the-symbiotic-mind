@@ -1,5 +1,9 @@
 ---
 title: "My API, Not My Resume"
+seoTitle: "AI and Professional Identity: My API, Not My Resume"
+related:
+  - "006-down-the-memory-river"
+  - "004-what-the-terrace-knew"
 date: 2026-05-14T07:30:00+02:00
 author: vlad
 subscribeCta: "Your professional identity is changing with AI. Follow how, every other Thursday."
