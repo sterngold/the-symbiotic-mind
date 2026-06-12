@@ -1,0 +1,32 @@
+# https://pre-commit.com
+# Run: pre-commit install
+# Update: pre-commit autoupdate
+#
+# Adapted from anders-repo-template (AND-1519). Deliberately OMITS the
+# conventional-pre-commit commit-msg hook: this is a writing repo whose
+# `Post NNN — title` / free-form essay commit style is intentional.
+# No prettier hook on markdown — assembled AGENTS.md must stay byte-exact
+# (the AND-1296 prettier landmine).
+fail_fast: false
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\.md$'
+      - id: end-of-file-fixer
+        exclude: '^(AGENTS\.md|AGENTS\.header\.md|AGENTS\.body\.md)$'
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
