@@ -36,6 +36,11 @@ export default {
       listUuid: "",
     },
   },
+  // Social profiles for the footer (rel="me"). Uncomment / add as accounts go live.
+  socialLinks: [
+    // { label: "Mastodon", url: "https://mas.to/@yourhandle" },
+    // { label: "Bluesky",  url: "https://bsky.app/profile/yourhandle" },
+  ],
   // Webmentions (IndieWeb) — sign up free at https://webmention.io
   webmention: {
     enabled: false,

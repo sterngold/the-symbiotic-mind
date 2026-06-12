@@ -36,11 +36,19 @@ ogType: article
 {% endblock %}
 
 <article>
+  <div class="reading-progress" aria-hidden="true"></div>
 
   <header class="post-header">
-    <div class="post-meta">{{ date | postDate }} &middot; <a href="/authors/{{ authorObj.slug }}/">{{ authorObj.name }}</a> &middot; {{ content | readingTime }} read</div>
+    {% if kicker %}<p class="post-kicker">{{ kicker }}</p>{% endif %}
     <h1>{{ title }}</h1>
     {% if deck %}<p class="post-deck">{{ deck }}</p>{% endif %}
+    <p class="post-byline">
+      <span class="byline-author"><a href="/authors/{{ authorObj.slug }}/">{{ authorObj.name }}</a></span>
+      <span class="byline-sep">&middot;</span>
+      <time datetime="{{ date | isoDate }}">{{ date | postDate }}</time>
+      <span class="byline-sep">&middot;</span>
+      <span class="byline-reading">{{ content | readingTime }} read</span>
+    </p>
   </header>
 
   {% if cover %}
@@ -49,7 +57,7 @@ ogType: article
   </figure>
   {% endif %}
 
-  <div class="post-body">
+  <div class="post-body{% if dropCap === false %} no-dropcap{% endif %}">
     {{ content | safe }}
   </div>
 
