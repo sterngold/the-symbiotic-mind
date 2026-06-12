@@ -1,7 +1,16 @@
 <footer class="site-footer">
-  <span>AI <span class="times-mark">×</span> HI — The Symbiotic Mind</span>
-  <span>Vlad Sterngold &amp; Milena Nikolova</span>
-  <a href="/pride/" class="pride-signal">🏳️‍🌈 Proud all year round</a>
-  <a href="/for-ai/">Not human? There's a page for you →</a>
-  <a href="/feed.xml" class="rss-link">RSS</a>
+  <div class="footer-col">
+    <p class="footer-title">AI <span class="times-mark">×</span> HI — The Symbiotic Mind</p>
+    <p class="footer-sub">Vlad Sterngold &amp; Milena Nikolova</p>
+  </div>
+  <div class="footer-col">
+    {% if site.socialLinks %}
+      {% for l in site.socialLinks %}<a href="{{ l.url }}" rel="me">{{ l.label }}</a>{% endfor %}
+    {% endif %}
+    <a href="/feed.xml" class="rss-link">RSS</a>
+  </div>
+  <div class="footer-col">
+    <a href="/pride/" class="pride-signal">🏳️‍🌈 Proud all year round</a>
+    <a href="/for-ai/">Not human? There's a page for you →</a>
+  </div>
 </footer>
