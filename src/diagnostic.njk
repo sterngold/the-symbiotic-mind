@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+permalink: /diagnostic/index.html
+title: "Where are you on the AI×HI matrix?"
+seoTitle: "How Deep Does Your AI Relationship Run? The 2-Minute AI×HI Self-Check"
+description: "Nine questions, two axes: how much AI has changed the way you work, and who is steering that change. A free two-minute self-check — no login, nothing stored, your answers never leave the page."
+---
+
+<div class="about-header">
+  <p class="hero-eyebrow">AI <span class="times-mark">×</span> HI</p>
+  <h1>{{ aihiDiagnostic.title }}</h1>
+  <p class="about-sub">Nine questions, two minutes. Two axes: how deep the relationship runs, and who is steering it. If none of our answers fit a question, write your own — it becomes part of your result.</p>
+  <p class="diagnostic-privacy">No login. Nothing you answer is stored or sent anywhere — your answers never leave this page. We only count, anonymously, how many people start and finish.</p>
+</div>
+
+<noscript>
+  <div class="diagnostic-noscript">
+    <p>The self-check needs JavaScript to run — nothing else on this site does, and the check itself still sends no data anywhere. Meanwhile, the essays it is built from are all here: <a href="/start-here/">start here</a> or <a href="/posts/">browse all writing</a>.</p>
+  </div>
+</noscript>
+
+<div id="diagnostic-app" class="diagnostic-app" aria-live="polite"></div>
+
+<section class="diagnostic-why">
+  <p class="section-label">Why these questions</p>
+  <p>Every question operationalizes one essay: a thesis from the writing, turned into something you can answer about yourself. Two of the intent questions come straight from the framework's design axis. We don't ask in order to label you — <strong>no position on the matrix is the bad one</strong> — we ask to show you where you already stand, and to hand you the two essays most worth your next half hour.</p>
+  <ul class="diagnostic-lineage">
+    {% for q in aihiDiagnostic.questions %}
+    <li><strong>{{ q.label }}</strong> — {% if q.essay %}from <a href="/posts/{{ q.essay.slug }}/">“{{ q.essay.title }}”</a>{% else %}from the AI×HI framework's design-intent axis{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% include "partials/newsletter.njk" %}
+
+<script type="application/json" id="diagnostic-data">{{ aihiDiagnostic | dump | safe }}</script>
+<script src="/diagnostic.js" defer></script>
