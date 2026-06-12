@@ -40,7 +40,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/css/style.css">
+  {# Version param busts the immutable /css/* edge+browser cache (_headers) — bump on every CSS change. #}
+  <link rel="stylesheet" href="/css/style.css?v=2026-06-12-editorial">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
   <link rel="alternate" type="application/feed+json" title="{{ site.title }}" href="/feed.json">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} — Podcast" href="/podcast.xml">
