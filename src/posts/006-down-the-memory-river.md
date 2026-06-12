@@ -16,7 +16,7 @@ ogImage: "/images/006-cover.png"
 tags:
   - behavior
   - memory
-# youtubeId: ""  # VIDEO PLACEHOLDER — add when the motion-cover / video version is produced (see VladWriting video-placeholder.md)
+youtubeId: "t2mv6vKLdLo"
 ---
 
 Memory is a curious thing. I was on Google Maps looking for a city my brother had told me about, a place along the river Mosel where he says he wants to retire one day. I was sure I'd found it. My memory was reading the name off the map, and I was convinced: this is the one, it can't be any other. There was just one problem. The Mosel was about a hundred kilometres from the city I was staring at.

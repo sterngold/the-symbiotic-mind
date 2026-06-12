@@ -11,7 +11,9 @@ export default {
     location: "Amsterdam",
     bio: "AI practitioner and builder based in Amsterdam. Daily user of AI systems, builder of AI products, and writer on human-AI symbiosis.",
     // Canonical bio lives on sterngold.nl (personal authority engine).
+    // `url` anchors the Person schema; `displayUrl` is what readers see and click.
     url: "https://sterngold.nl/",
+    displayUrl: "https://sterngold.ai",
     personId: "https://sterngold.nl/#person",
     sameAs: [
       "https://www.linkedin.com/in/sterngold/",
