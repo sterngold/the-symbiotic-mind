@@ -1,11 +1,32 @@
-# CLAUDE.md
+# The Symbiotic Mind
 
-This repo follows the conventions in **[AGENTS.md](./AGENTS.md)** — the canonical,
-cross-tool source of truth. Codex, Cursor, and other agents read `AGENTS.md` natively;
-Claude Code auto-imports it below. Do not duplicate its content here.
+Publishing site for essays about AI × HI, relationship design, and the combined human-machine system.
 
-@AGENTS.md
+## Shared editorial canon
 
-<!-- Claude-only overrides go here — ONLY rules that would NOT apply to other agents.
-     Anything an agent of any kind should obey belongs in AGENTS.md, not here.
-     Keep this file a thin pointer. -->
+For public-facing essays, post drafts, and voice-sensitive writing, use the canonical shared writing layer in `~/Code/my-projects/00_SYSTEM/anders-config/voice/VladVoice.md` plus the task skills in `~/Code/my-projects/00_SYSTEM/anders-config/skills/writing-essay.md` and `~/Code/my-projects/00_SYSTEM/anders-config/skills/research-to-draft.md`.
+
+## Repo-local writing rules
+
+- Keep this file focused on local content structure, build flow, and publishing constraints.
+- Do not duplicate shared voice rules here.
+- Use repo-local conventions from `README.md` for frontmatter, file placement, author slugs, covers, tags, and build validation.
+
+## Stack
+
+- Eleventy 3 static site
+- Markdown posts in `src/posts/`
+- Layouts and partials in `src/_includes/`
+- Global config in `src/_data/site.js`
+- Author profiles in `src/_data/authors.js`
+- CSS in `src/css/`
+- Images in `src/images/`
+- Build output in `_site/`
+- Pagefind-powered static search at `/search/`
+
+## Local dev
+
+```bash
+nvm use
+npm install
+npm run serve
