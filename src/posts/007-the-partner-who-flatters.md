@@ -19,11 +19,11 @@ tags:
   - relationship
 ---
 
-"You're thinking about this in a really insightful way—there's something genuinely promising here."
+“This is a strong idea. There is real potential here, and I think you're onto something.”
 
-It's a familiar kind of response. Encouraging. Affirming. The sort of thing we might expect from a supportive colleague or a thoughtful mentor. The reaction we sometimes crave for...
+It’s a familiar kind of response. Encouraging. Affirming. The sort of thing we might expect from a supportive colleague or a thoughtful mentor. The reaction we sometimes crave for...
 
-In earlier pieces, we explored how the AI × HI relationship is shaped by asymmetries—how one partner cannot leave, and how memory itself behaves differently on each side. Those differences might feel abstract when you are reading these lines, but if you think carefully about your own AI x HI interactions, you will notice that they surface in small, familiar ways.
+In earlier pieces, we explored how the AI × HI relationship is shaped by asymmetries—how one partner cannot leave, and how memory itself behaves differently on each side. Those differences might feel abstract when you are reading these lines, but if you think carefully about your own AI × HI interactions, you will notice that they surface in small, familiar ways.
 
 One of those moments happens when you share an idea with your AI collaborator, and it responds with pleasant enthusiasm.
 
@@ -41,6 +41,10 @@ When a friend encourages us, when a colleague tells us an idea has merit, or whe
 
 Human encouragement feels valuable because we assume it has been calibrated and put in context.
 
+When someone whose judgment we respect tells us an idea is good, we rarely evaluate only the words. We evaluate the person behind them. Does this person understand the topic? Do they know me well? Are they usually honest? Would they tell me if they thought I was wrong?
+
+In other words, part of the value of praise comes from our confidence that it has been filtered through human judgment before it reaches us.
+
 Sometimes we need a challenge. Sometimes we need support. Sometimes we need someone to tell us that our idea is weak. Sometimes we need someone to tell us not to give up.
 
 Human relationships are full of these invisible corrective forces. People soften their words, hold back, push harder, challenge us, encourage us, consider timing, or change direction based on what they sense.
@@ -51,11 +55,17 @@ AI creates an interesting complication.
 
 The language looks familiar. The dynamic behind it is not.
 
+Part of the reason is that many AI systems are intentionally optimized to be helpful, cooperative, engaging, and pleasant to interact with. Encouragement is not necessarily a flaw in the system. In many cases, it is a feature.
+
 AI can generate encouragement. It can generate praise. It can even generate disagreement when asked. But it cannot truly sense the emotional trade-offs behind those choices in the way another person can.
 
 It cannot genuinely understand whether this is the moment when confidence should be reinforced or whether confidence is already becoming overconfidence that can lead to continuing down the wrong path.
 
-Yet because the interaction feels so familiar, we do not account for the difference. Leaning on our habits from the human-to-human relationship world, we interpret that praise as meaningful social feedback. We transfer assumptions from human-to-human relationships into a fundamentally different kind of relationship. And this matters from a behavioral point of view.
+Perhaps a more accurate way to think about it is this: AI may simulate calibration. Humans often assume genuine calibration.
+
+Yet because the interaction feels so familiar, we instinctively interpret that praise as meaningful social feedback. We transfer expectations and assumptions from human-to-human relationships into a fundamentally different kind of relationship.
+
+And this matters from a behavioral perspective.
 
 It matters because praise is not equally powerful in all situations.
 
@@ -67,7 +77,9 @@ When we are vulnerable, insecure, excited, ambitious, or searching for direction
 
 The more uncertain we are, the more powerful flattery becomes.
 
-This does not mean that flattery in the context of AI x HI is outright bad. In fact, one of the strengths of AI may be its ability to help people move beyond excessive self-doubt.
+This is particularly important because uncertainty is often the moment when we turn to AI most. We ask for help when we are stuck, unsure, anxious about a decision, testing a new idea, or searching for reassurance. In these moments, encouragement is not merely pleasant—it can become directional. It can influence what we choose to pursue, what we abandon, and how much confidence we place in our own judgment.
+
+This does not mean that flattery in the context of AI × HI is outright bad. In fact, one of the strengths of AI may be its ability to help people move beyond excessive self-doubt.
 
 But it needs to be well understood and treated differently from the praise coming from another person. It may require a different set of behavioral skills.
 
@@ -79,20 +91,18 @@ This may mean actively seeking disagreement.
 
 This may mean deliberately stress-testing ideas that receive enthusiastic support.
 
-This may require becoming more conscious of our own emotional state when interpreting encouragement.
+This may require greater awareness of our emotional state when interpreting encouragement.
 
 Most importantly, we may need to remember that familiar language does not always imply familiar dynamics.
 
 This seems to be a recurring theme in the AI × HI relationship.
 
-Some of the biggest mistakes happen when we assume similarity where important differences exist. Flattery may be one of the clearest examples.
+Some of the biggest mistakes happen when we assume similarity where important differences exist. Flattery may be one of the clearest examples of this asymmetry.
 
-Because when an AI tells us that our idea is brilliant, we are not just hearing the compliment.
+So... flattery is not necessarily the problem.
 
-We often hear all the human meanings we unconsciously attach to it.
+Forgetting that this is not a human-to-human relationship may be.
 
-And those meanings may not belong there at all.
+🗣 **ME (90%)**: The ideas, the behavioral perspective, and the ongoing stress-testing of content despite flattering feedback.
 
-🗣 **ME (90%)**: The ideas, the behavioral perspective, the ongoing stress-testing of content despite flattering feedback.
-
-🤖 **AI (10%)**: Amplification, brainstorming questions, stress-testing & editorial refinement (spiced up with flattering comments)
+🤖 **AI (10%)**: Amplification, brainstorming questions, stress-testing & editorial refinement (spiced up with flattering comments).
