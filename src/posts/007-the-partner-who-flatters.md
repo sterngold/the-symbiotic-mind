@@ -17,6 +17,7 @@ ogImage: "/images/007-cover.png"
 tags:
   - behavior
   - relationship
+youtubeId: "az6UM1dBRv4"
 ---
 
 “This is a strong idea. There is real potential here, and I think you're onto something.”
