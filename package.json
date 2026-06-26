@@ -25,5 +25,10 @@
     "markdown-it-footnote": "^4.0.0",
     "pagefind": "^1.1.1",
     "satori": "^0.26.0"
+  },
+  "overrides": {
+    "gray-matter": {
+      "js-yaml": "4.2.0"
+    }
   }
 }
