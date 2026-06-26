@@ -16,7 +16,8 @@ Static site — "build" = render the site. There is **no unit-test suite**; corr
 nvm use                       # Node 20 (.nvmrc)
 npm install                   # devDependencies (Eleventy, Pagefind, Satori, …)
 npm run serve                 # local dev server on :8080 (OG images + live reload)
-npm run build                 # production build: OG images -> Eleventy -> Pagefind -> IndexNow ping
+npm run build                 # side-effect-free build: OG images -> Eleventy -> Pagefind
+npm run publish:indexnow      # explicit production IndexNow ping after a successful build
 npm run build:no-search       # faster build, skips the Pagefind index
 npm run clean                 # remove _site + generated OG images
 

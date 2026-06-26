@@ -5,9 +5,11 @@
   "type": "module",
   "description": "AI \u00d7 HI \u2014 The Symbiotic Mind. Static site built with Eleventy.",
   "scripts": {
-    "build": "npm run og && eleventy && npm run pagefind && node scripts/indexnow-ping.mjs",
+    "build": "npm run og && eleventy && npm run pagefind",
+    "build:publish": "npm run build && npm run publish:indexnow",
     "build:no-search": "npm run og && eleventy",
     "og": "node scripts/generate-og-images.mjs",
+    "publish:indexnow": "node scripts/indexnow-ping.mjs",
     "serve": "npm run og && eleventy --serve --port=8080",
     "clean": "rm -rf _site src/images/og",
     "pagefind": "pagefind --site _site --output-subdir pagefind"
@@ -18,7 +20,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@resvg/resvg-js": "^2.6.2",
     "luxon": "^3.5.0",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.2.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-footnote": "^4.0.0",
     "pagefind": "^1.1.1",

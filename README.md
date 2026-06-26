@@ -37,6 +37,9 @@ npm run build
 node scripts/validate-build.mjs   # also runs in CI
 ```
 
+`npm run build` is intentionally side-effect-free. Use `npm run publish:indexnow`
+only after a production build that should notify IndexNow.
+
 ## What this build produces
 
 | Output | Purpose |
@@ -100,9 +103,9 @@ Existing Giscus config in `src/_data/site.js`. No change needed — the partial 
 
 ## Deploy
 
-CI/CD: `.github/workflows/deploy.yml` builds, validates, and deploys to **Cloudflare Pages**. Add two repo secrets:
-
-- `CLOUDFLARE_API_TOKEN`
-- `CLOUDFLARE_ACCOUNT_ID`
+CI/CD: `.github/workflows/deploy.yml` builds and validates the site as a GitHub
+check. Cloudflare Pages owns production and preview deploys through its Git
+integration. Use `npm run build:publish && node scripts/validate-build.mjs` as
+the production Cloudflare build command when IndexNow pings should run.
 
 Project name on Cloudflare: `symbiotic-mind`.

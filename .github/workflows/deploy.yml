@@ -9,10 +9,10 @@ on:
 
 # Deploys (production + preview) are now owned by the Cloudflare Pages
 # project's own Git Integration build — see the project config:
-#   build_command:   npm run build && node scripts/validate-build.mjs
+#   build_command:   npm run build:publish && node scripts/validate-build.mjs
 #   destination_dir: _site
 #   NODE_VERSION:    20 (both envs)
-#   SKIP_INDEXNOW:   1 (preview only; production pings as before)
+#   SKIP_INDEXNOW:   1 (preview only; production pings via build:publish)
 # CF auto-builds every push, deploys main → apex and PR branches →
 # <slug>.the-symbiotic-mind.pages.dev. CF's build_command runs validate-
 # build.mjs too, so a failing validator blocks the deploy directly.
@@ -24,21 +24,48 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  gitleaks:
+    name: secret scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with: { fetch-depth: 0 }
+      - uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v4
+  build:
+    needs: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm ci
 
       - name: Build site
         run: npm run build
 
       - name: Validate build outputs
         run: node scripts/validate-build.mjs
+
+  ci:
+    name: ci
+    needs: [gitleaks, build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: aggregate
+        run: |
+          for r in "${{ needs.gitleaks.result }}" "${{ needs.build.result }}"; do
+            if [ "$r" = "failure" ] || [ "$r" = "cancelled" ]; then
+              echo "Upstream job failed: $r"
+              exit 1
+            fi
+          done
+          echo "All required checks passed."
