@@ -4,7 +4,7 @@ import { readFile, access } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const HOST = "symbiotic-mind.com";
-const KEY = "b8e5597ce674644b282efeff00f92344";
+const KEY_FILE = process.env.INDEXNOW_KEY_FILE || "src/static/b8e5597ce674644b282efeff00f92344.txt";
 const SITEMAP = process.env.INDEXNOW_SITEMAP || "_site/sitemap.xml";
 const DRY = process.env.INDEXNOW_DRY === "1";
 const STRICT = process.env.STRICT_INDEXNOW === "1";
@@ -13,6 +13,14 @@ if (process.env.SKIP_INDEXNOW) { console.log("[indexnow] SKIP_INDEXNOW set, skip
 function bail(msg, code = 0) { console.warn(`[indexnow] ${msg}`); process.exit(STRICT ? 1 : 0); }
 
 async function main() {
+  let key;
+  try {
+    key = (await readFile(resolve(KEY_FILE), "utf8")).trim();
+  } catch {
+    return bail(`IndexNow key file not found at ${resolve(KEY_FILE)}; skipping.`);
+  }
+  if (!/^[a-f0-9]{32}$/i.test(key)) return bail("IndexNow key file is malformed.", 2);
+
   const path = resolve(SITEMAP);
   try { await access(path); } catch { return bail(`sitemap not found at ${path}; skipping.`); }
   console.log(`[indexnow] reading sitemap: ${path}`);
@@ -23,7 +31,7 @@ async function main() {
   if (ours.length === 0) return bail(`no URLs match host ${HOST}.`, 2);
   console.log(`[indexnow] ${ours.length} URLs to submit`);
   if (DRY) { ours.forEach((u) => console.log("  " + u)); return; }
-  const body = { host: HOST, key: KEY, keyLocation: `https://${HOST}/${KEY}.txt`, urlList: ours };
+  const body = { host: HOST, key, keyLocation: `https://${HOST}/${key}.txt`, urlList: ours };
   const res = await fetch("https://api.indexnow.org/IndexNow", {
     method: "POST",
     headers: { "Content-Type": "application/json; charset=utf-8" },

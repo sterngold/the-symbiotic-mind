@@ -17,4 +17,7 @@ regexes = [
   '''sk-(test|fake|example|dummy)[a-zA-Z0-9_-]+''',
   '''xoxb-1234567890-.*''',
   '''ghp_EXAMPLE[a-zA-Z0-9]*''',
+  # Public IndexNow ownership verification token. This is intentionally served
+  # from /b8e5597ce674644b282efeff00f92344.txt and is not an API credential.
+  '''b8e5597ce674644b282efeff00f92344''',
 ]
