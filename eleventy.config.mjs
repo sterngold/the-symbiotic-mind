@@ -74,6 +74,13 @@ export default function (eleventyConfig) {
     api.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date)
   );
 
+  // Glossary entries (/concepts/). Curated order via each entry's `order` field.
+  eleventyConfig.addCollection("concepts", (api) =>
+    api
+      .getFilteredByGlob("src/concepts/*.md")
+      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99))
+  );
+
   eleventyConfig.addCollection("postsByAuthor", (api) => {
     const map = new Map();
     api.getFilteredByGlob("src/posts/*.md").forEach((p) => {

@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/concept.njk",
+  "permalink": "/concepts/{{ page.fileSlug }}/",
+  "subscribeCta": "One idea at a time, designed on purpose — new essays on AI × HI every other Thursday."
+}

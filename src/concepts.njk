@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+permalink: /concepts/index.html
+title: "Concepts"
+seoTitle: "AI × HI Glossary — Key Concepts in Human-AI Relationship Design"
+description: "A plain-language glossary of the ideas behind The Symbiotic Mind: AI×HI, relationship design, amplification vs automation, AI memory, queryable vs quotable, and more — each with the essays where we explore it."
+eleventyExcludeFromCollections: true
+---
+
+<div class="posts-header">
+  <h1>Concepts</h1>
+  <p class="about-sub">The working vocabulary of AI <span class="times-mark">×</span> HI — each idea defined in plain language, with the essays where we explore it.</p>
+</div>
+
+<ul class="post-list concept-index">
+{% for c in collections.concepts %}
+  <li>
+    <h2><a href="{{ c.url }}">{{ c.data.title }}</a></h2>
+    {% if c.data.oneLine %}<p class="post-excerpt">{{ c.data.oneLine }}</p>{% endif %}
+  </li>
+{% endfor %}
+</ul>

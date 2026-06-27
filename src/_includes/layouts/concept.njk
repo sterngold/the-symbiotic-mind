@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "url": "{{ page.url | absUrl(site.url) }}",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI × HI Glossary",
+    "@id": "{{ site.url }}/concepts/"
+  }
+}
+</script>
+{% set crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Concepts', url: '/concepts/' },
+  { name: title, url: page.url }
+] %}
+{% include "partials/breadcrumbs.njk" %}
+{% endblock %}
+
+<article class="concept">
+  <header class="post-header">
+    <p class="post-kicker">AI <span class="times-mark">×</span> HI glossary</p>
+    <h1>{{ title }}</h1>
+  </header>
+
+  <div class="post-body no-dropcap">
+    {{ content | safe }}
+  </div>
+
+  {% set essayMatches = [] %}
+  {% for slug in essays %}
+    {% for p in collections.posts %}
+      {% if p.fileSlug == slug %}{% set essayMatches = (essayMatches.push(p), essayMatches) %}{% endif %}
+    {% endfor %}
+  {% endfor %}
+  {% if essayMatches.length %}
+  <aside class="read-next concept-essays">
+    <p class="section-label">Where we explore this</p>
+    {% for p in essayMatches %}
+    <div class="related-item">
+      <div class="post-meta">{{ p.date | postDate }} &middot; {{ authors[p.data.author].name }}</div>
+      <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+    </div>
+    {% endfor %}
+  </aside>
+  {% endif %}
+
+  <p class="concept-pillar">
+    This is one piece of a larger argument about designing the AI <span class="times-mark">×</span> HI relationship on purpose. <a href="/start-here/">Start here</a> for the through-line, or read <a href="/posts/">all the essays</a>.
+  </p>
+</article>
+
+{% include "partials/newsletter.njk" %}
