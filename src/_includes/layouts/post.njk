@@ -136,6 +136,25 @@ ogType: article
   {% endif %}
   {% endif %}
 
+  {# Key concepts: links into the /concepts/ glossary, set per-post via the
+     `concepts` frontmatter (list of concept fileSlugs). Layout-rendered, so it
+     never touches the essay prose. #}
+  {% if concepts and concepts.length %}
+  <aside class="read-next post-concepts">
+    <p class="section-label">Key concepts in this essay</p>
+    {% for slug in concepts %}
+      {% for c in collections.concepts %}
+        {% if c.fileSlug == slug %}
+        <div class="related-item">
+          <h3><a href="{{ c.url }}">{{ c.data.title }}</a></h3>
+          {% if c.data.oneLine %}<p class="post-excerpt">{{ c.data.oneLine }}</p>{% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </aside>
+  {% endif %}
+
 </article>
 
 {% include "partials/newsletter.njk" %}

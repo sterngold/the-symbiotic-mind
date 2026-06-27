@@ -6,6 +6,9 @@ related:
   - "004-what-the-terrace-knew"
 date: 2026-05-14T07:30:00+02:00
 author: vlad
+concepts:
+  - "human-ai-symbiosis"
+  - "skill-atrophy"
 subscribeCta: "Your professional identity is changing with AI. Follow how, every other Thursday."
 description: "Professional identity is changing. The competitive unit is now the human plus their AI team. Most employment contracts don't know this yet."
 tags:
