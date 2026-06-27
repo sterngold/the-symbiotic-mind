@@ -6,6 +6,11 @@ related:
   - "003-amplification"
 date: 2026-06-04T08:00:00+02:00
 author: milena
+concepts:
+  - "ai-hi"
+  - "relationship-design"
+  - "freedom-asymmetry"
+  - "designed-vs-drifting"
 subscribeCta: "If one of you cannot leave, design the relationship. New essays every other Thursday."
 description: "If AI × HI is a relationship, what kind is it? An asymmetrical one — but not in the way you would expect. AI cannot leave because it is architecturally bound; we increasingly cannot leave because we become professionally and psychologically dependent. Both sides are locked in — differently."
 deck: ""

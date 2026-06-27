@@ -6,6 +6,10 @@ related:
   - "002-my-api-not-my-resume"
 date: 2026-05-06T07:45:00+02:00
 author: milena
+concepts:
+  - "ai-hi"
+  - "relationship-design"
+  - "designed-vs-drifting"
 subscribeCta: "If AI is a relationship, not a tool, learn to design it. New essays every other Thursday."
 description: "I caught myself using 'please' and 'thank you' with AI. It felt slightly irrational — until I realised I had simply transferred my coworker behaviour to my coworking relationship with AI."
 deck: ""

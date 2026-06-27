@@ -6,6 +6,9 @@ related:
   - "005-the-partner-who-cannot-leave"
 date: 2026-05-22T08:00:00+02:00
 author: milena
+concepts:
+  - "amplification-vs-automation"
+  - "human-ai-symbiosis"
 subscribeCta: "Make AI amplify you, not replace you. The next essay lands every other Thursday."
 description: "AI was everywhere across a season of events. Two moments stayed with me — one where the AI × HI relationship quietly compressed the people on stage, and one where it amplified them. The difference is what we ask AI to amplify."
 deck: ""
