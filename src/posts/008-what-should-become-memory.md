@@ -20,6 +20,7 @@ ogImage: "/images/008-cover.png"
 tags:
   - behavior
   - memory
+youtubeId: "MrsZmUNWxoM"
 ---
 
 Most AI memory systems begin with the wrong question. They ask how to remember more — how to hold more context, preserve more traces, keep more of the conversation alive than the last system could. It sounds like progress until you notice the assumption hiding inside it: that more memory is obviously better, as if remembering were neutral, and not already a verdict about what deserves to survive and what should have been allowed to pass.
