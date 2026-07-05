@@ -1,7 +1,7 @@
 [project]
 name = "the-symbiotic-mind-codex-env"
 version = "0.0.0"
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.12"
 dependencies = []
 
 [project.optional-dependencies]
@@ -9,3 +9,7 @@ dependencies = []
 # Anderson-style command: `uv sync --extra mcp --extra dev`.
 mcp = []
 dev = []
+
+[tool.setuptools]
+packages = []
+py-modules = []
