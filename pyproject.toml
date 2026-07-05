@@ -1,0 +1,11 @@
+[project]
+name = "the-symbiotic-mind-codex-env"
+version = "0.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.optional-dependencies]
+# Compatibility aliases for Codex Cloud setup scripts that use the shared
+# Anderson-style command: `uv sync --extra mcp --extra dev`.
+mcp = []
+dev = []
