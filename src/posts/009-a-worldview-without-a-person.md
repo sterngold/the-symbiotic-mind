@@ -14,6 +14,7 @@ cover:
   src: "/images/009-cover.png"
   alt: "A warm watercolor human figure in ochre and amber leans in, listening, toward a cool translucent geometric voice-form of faintly glowing light that hovers where a second figure would be. The glow carries a delicate inner pattern like a small map of values, yet no person, no face, and no body stands behind it. An image of a worldview entering a conversation without a person."
 ogImage: "/images/009-cover.png"
+videoPending: true
 tags:
   - behavior
   - relationship
