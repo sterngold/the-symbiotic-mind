@@ -1,7 +1,7 @@
 ---
 title: "Relationship Design"
 theme: "relationship"
-seoTitle: "How to Design Your Relationship With AI (Instead of Inheriting It)"
+seoTitle: "The Relationship You Didn't Choose: AI Has Terms, and You Set Them or Inherit Them"
 related:
   - "001-you-are-not-using-ai"
   - "005-the-partner-who-cannot-leave"
@@ -14,7 +14,7 @@ concepts:
   - "pearls-ladder"
   - "human-ai-symbiosis"
 subscribeCta: "The relationship is already running. New essays every other Thursday."
-description: "AI is not a tool you use or a threat you manage. It is a relationship, it already has terms, and almost nobody chose theirs. The pillar essay of the series: the two asymmetries that make this relationship unlike any other, what the evidence says about drifting into it, and the terms of my own half."
+description: "AI is not a tool you use or a threat you manage. It is a relationship, it already has terms, and almost nobody chose theirs. The pillar essay: the two asymmetries that make this relationship unlike any other, what the evidence says about drifting into it, and the terms of my own half."
 deck: ""
 tags:
   - relationship

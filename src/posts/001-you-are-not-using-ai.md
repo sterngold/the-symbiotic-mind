@@ -1,7 +1,7 @@
 ---
 title: "You Are Not Using AI. You Are in a Relationship With It."
 theme: "relationship"
-seoTitle: "You Are in a Relationship With AI, Not Using a Tool — The Symbiotic Mind"
+seoTitle: "Should You Say Thank You to ChatGPT? What Politeness to AI Reveals"
 related:
   - "005-the-partner-who-cannot-leave"
   - "002-my-api-not-my-resume"
@@ -12,7 +12,7 @@ concepts:
   - "relationship-design"
   - "designed-vs-drifting"
 subscribeCta: "If AI is a relationship, not a tool, learn to design it. New essays every other Thursday."
-description: "I caught myself using 'please' and 'thank you' with AI. It felt slightly irrational — until I realised I had simply transferred my coworker behaviour to my coworking relationship with AI."
+description: "Should you say thank you to ChatGPT? Most people do it and feel slightly irrational about it. The instinct is not silly: it shows you have already transferred your coworker behaviour to a system that does not work like a coworker, which is where the real risk starts."
 deck: ""
 cover:
   src: "/images/001-cover.png"

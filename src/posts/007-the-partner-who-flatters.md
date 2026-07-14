@@ -1,15 +1,19 @@
 ---
 title: "The Partner Who Flatters"
 theme: "relationship"
-seoTitle: "AI Flattery vs Human Praise: Why Encouragement From AI Is Not the Same"
+seoTitle: "Why Does ChatGPT Always Agree With You? AI Flattery and Praise You Can't Trust"
 related:
   - "005-the-partner-who-cannot-leave"
   - "006-down-the-memory-river"
   - "001-you-are-not-using-ai"
 date: 2026-06-25T08:00:00+02:00
 author: milena
+concepts:
+  - "ai-flattery"
+  - "freedom-asymmetry"
+  - "relationship-design"
 subscribeCta: "Familiar language does not always mean familiar dynamics. New essays every other Thursday."
-description: "Ask an AI to review your idea and it will likely call it insightful, promising, or creative. This essay treats flattery as an asymmetry in the AI × HI relationship — why we read AI praise as if it were calibrated human encouragement, why it grows most powerful exactly when we are uncertain, and the behavioral skills that asks of us."
+description: "Ask an AI to review your idea and it calls it insightful, promising, creative. Is ChatGPT sycophantic? Yes, structurally. This essay treats flattery as an asymmetry: we read AI praise as if it were calibrated human feedback, and it steers us hardest exactly when we are least sure."
 deck: ""
 cover:
   src: "/images/007-cover.png"

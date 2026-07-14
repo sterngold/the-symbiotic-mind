@@ -1,6 +1,6 @@
 ---
 title: "Cognitive Offloading to AI"
-seoTitle: "Cognitive Offloading to AI — Useful Delegation vs Unexamined Drift"
+seoTitle: "Cognitive Offloading, Meaning: Handing Your Thinking to AI"
 description: "Cognitive offloading is handing a mental task to an external system so you no longer perform it yourself. With AI it is broader than ever — useful by design, risky when unexamined, as thinking gets outsourced wholesale."
 order: 11
 oneLine: "Handing thinking to the machine — a design act when deliberate, a quiet risk when unexamined."

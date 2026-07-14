@@ -1,7 +1,7 @@
 ---
 title: "Down the memory river with AI"
 theme: "memory"
-seoTitle: "AI Memory vs Human Memory: Why They Are Not the Same Thing"
+seoTitle: "How ChatGPT's Memory Actually Works (and Why It Forgets Your Context)"
 related:
   - "002-my-api-not-my-resume"
   - "004-what-the-terrace-knew"
@@ -11,7 +11,7 @@ concepts:
   - "ai-memory"
   - "cognitive-offloading"
 subscribeCta: "Human memory and AI memory differ more than you think. New essays every other Thursday."
-description: "Human memory and AI memory are not the same kind of thing, and treating them as one will quietly mislead you. A naive builder's field notes: what each kind of memory is for, why giving an AI more memory can make it worse, and why the real skill is knowing what to keep, and what to ask."
+description: "Why does ChatGPT forget your context, your instructions, the thing you told it ten messages ago? Because AI memory and human memory are not the same kind of thing. A builder's field notes on what each kind of memory is for, and why giving an AI more memory can make it worse."
 deck: ""
 cover:
   src: "/images/006-cover.png"
