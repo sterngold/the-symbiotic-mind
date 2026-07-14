@@ -18,6 +18,17 @@ eleventyExcludeFromCollections: true
   <url><loc>{{ site.url }}/watch/</loc></url>
   <url><loc>{{ site.url }}/for-ai/</loc></url>
   <url><loc>{{ site.url }}/concepts/</loc></url>
+  {# /start-here/ (the crawl hub) and /diagnostic/ (the link magnet) shipped in PR #26 and were
+     never added here, so Google was never told they exist. Both are now listed. #}
+  <url>
+    <loc>{{ site.url }}/start-here/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url><loc>{{ site.url }}/diagnostic/</loc></url>
+  <url><loc>{{ site.url }}/themes/</loc></url>
+  {% for strand in collections.themes %}
+  <url><loc>{{ site.url }}/themes/{{ strand.slug }}/</loc></url>
+  {% endfor %}
   {% for ep in podcast.episodes %}
   <url>
     <loc>{{ site.url }}/episodes/{{ ep.slug }}/</loc>

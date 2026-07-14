@@ -1,5 +1,6 @@
 ---
 title: "A Worldview Without a Person"
+theme: "relationship"
 seoTitle: "A Worldview Without a Person: How AI's Values Quietly Shape Ours"
 related:
   - "007-the-partner-who-flatters"

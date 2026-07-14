@@ -1,5 +1,6 @@
 ---
 title: "Amplification"
+theme: "identity"
 seoTitle: "AI Amplification vs Automation: Which One Are You Living?"
 related:
   - "001-you-are-not-using-ai"

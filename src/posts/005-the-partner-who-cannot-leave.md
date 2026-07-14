@@ -1,5 +1,6 @@
 ---
 title: "The Partner Who Cannot Leave"
+theme: "relationship"
 seoTitle: "Emotional Dependence on AI: The Partner Who Cannot Leave"
 related:
   - "001-you-are-not-using-ai"

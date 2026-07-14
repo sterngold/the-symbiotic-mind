@@ -1,5 +1,6 @@
 ---
 title: "You Are Not Using AI. You Are in a Relationship With It."
+theme: "relationship"
 seoTitle: "You Are in a Relationship With AI, Not Using a Tool — The Symbiotic Mind"
 related:
   - "005-the-partner-who-cannot-leave"

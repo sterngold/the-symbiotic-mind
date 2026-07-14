@@ -1,0 +1,39 @@
+---
+title: "Themes"
+seoTitle: "Themes — The Symbiotic Mind: Relationship, Identity, Memory"
+description: "The essays run on three strands: the human-AI relationship and its asymmetries, what AI does to professional identity and capability, and how machine memory differs from human memory. Start with whichever one is currently costing you something."
+permalink: "/themes/index.html"
+ogImage: "/images/og/tags.png"
+layout: layouts/base.njk
+---
+
+{% block head %}
+{% set crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Themes', url: page.url }
+] %}
+{% include "partials/breadcrumbs.njk" %}
+{% endblock %}
+
+<div class="posts-header">
+  <h1>Themes</h1>
+  <p class="post-excerpt">The series runs on three strands. They overlap, because the thing they describe overlaps, and any essay sits in exactly one of them.</p>
+</div>
+
+<ul class="post-list">
+{% for strand in collections.themes %}
+  <li>
+    <h2><a href="/themes/{{ strand.slug }}/">{{ strand.title }}</a></h2>
+    <p class="post-excerpt">{{ strand.oneLine }}</p>
+    <div class="post-meta">{{ strand.posts.length }} essay{% if strand.posts.length != 1 %}s{% endif %}</div>
+  </li>
+{% endfor %}
+</ul>
+
+<aside class="read-next">
+  <p class="section-label">The frame behind all three</p>
+  <div class="related-item">
+    <h3><a href="/posts/010-relationship-design/">Relationship Design</a></h3>
+    <p class="post-excerpt">The pillar essay: the interaction is a relationship, it already has terms, and you either chose them or inherited them from an interface default.</p>
+  </div>
+</aside>

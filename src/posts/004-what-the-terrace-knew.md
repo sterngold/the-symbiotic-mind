@@ -1,5 +1,6 @@
 ---
 title: "Queryable vs Quotable *"
+theme: "identity"
 seoTitle: "Queryable vs Quotable: What AI Can and Cannot Take From Your Voice"
 related:
   - "006-down-the-memory-river"

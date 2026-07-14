@@ -1,5 +1,6 @@
 ---
 title: "What Should Be Allowed to Become Memory?"
+theme: "memory"
 seoTitle: "What Should AI Be Allowed to Remember? Promotion, Forgetting, and Sovereign Memory"
 related:
   - "006-down-the-memory-river"

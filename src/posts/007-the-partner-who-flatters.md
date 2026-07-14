@@ -1,5 +1,6 @@
 ---
 title: "The Partner Who Flatters"
+theme: "relationship"
 seoTitle: "AI Flattery vs Human Praise: Why Encouragement From AI Is Not the Same"
 related:
   - "005-the-partner-who-cannot-leave"

@@ -3,6 +3,7 @@ import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItFootnote from "markdown-it-footnote";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
+import themeMeta from "./src/_data/themes.js";
 
 export default function (eleventyConfig) {
   // Passthrough: keep CSS, images, and a few static files copied as-is.
@@ -80,6 +81,27 @@ export default function (eleventyConfig) {
       .getFilteredByGlob("src/concepts/*.md")
       .sort((a, b) => (a.data.order || 99) - (b.data.order || 99))
   );
+
+  // Themes (/themes/). Groups posts by their `theme` frontmatter slug, in the
+  // display order declared in src/_data/themes.js. A post with no `theme`, or
+  // with a slug not declared there, is left ungrouped rather than filed under a
+  // guessed strand — a wrong theme is worse than no theme.
+  eleventyConfig.addCollection("themes", (api) => {
+    const byTheme = new Map();
+    api
+      .getFilteredByGlob("src/posts/*.md")
+      .sort((a, b) => b.date - a.date)
+      .forEach((p) => {
+        const slug = p.data.theme;
+        if (!slug || !themeMeta[slug]) return;
+        if (!byTheme.has(slug)) byTheme.set(slug, []);
+        byTheme.get(slug).push(p);
+      });
+    return Object.keys(themeMeta)
+      .filter((slug) => byTheme.has(slug))
+      .sort((a, b) => (themeMeta[a].order || 99) - (themeMeta[b].order || 99))
+      .map((slug) => ({ slug, ...themeMeta[slug], posts: byTheme.get(slug) }));
+  });
 
   eleventyConfig.addCollection("postsByAuthor", (api) => {
     const map = new Map();

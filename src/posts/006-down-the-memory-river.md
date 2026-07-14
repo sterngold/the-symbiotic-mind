@@ -1,5 +1,6 @@
 ---
 title: "Down the memory river with AI"
+theme: "memory"
 seoTitle: "AI Memory vs Human Memory: Why They Are Not the Same Thing"
 related:
   - "002-my-api-not-my-resume"
