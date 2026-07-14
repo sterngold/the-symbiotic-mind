@@ -113,3 +113,16 @@ The relationship is already running, and its terms are already set. Mine took fo
 So: who wrote yours?
 
 ---
+
+## References
+
+1. Byron Reeves and Clifford Nass, *The Media Equation: How People Treat Computers, Television, and New Media Like Real People and Places* (CSLI/Cambridge University Press, 1996). The demonstration that people apply human social rules to computers automatically, and then deny doing it. https://en.wikipedia.org/wiki/The_Media_Equation
+2. Lynn Sagan (later Lynn Margulis), "On the Origin of Mitosing Cells," *Journal of Theoretical Biology* 14(3):255-274 (1967). The endosymbiotic argument that the complex cell arose from one organism taking up residence inside another. https://embryo.asu.edu/pages/origin-mitosing-cells-1967-lynn-sagan
+3. Judea Pearl and Dana Mackenzie, *The Book of Why: The New Science of Cause and Effect* (Basic Books, 2018). The ladder of causation, and the claim that no amount of climbing on a lower rung reaches the higher one. https://en.wikipedia.org/wiki/The_Book_of_Why
+4. Hao-Ping (Hank) Lee et al., "The Impact of Generative AI on Critical Thinking," *CHI Conference on Human Factors in Computing Systems* (2025). Microsoft Research and Carnegie Mellon, 319 knowledge workers reporting on 936 real uses of generative AI at work: higher confidence in the AI tracked with less critical thinking reported, and the effort moved from thinking toward verifying and integrating. https://dl.acm.org/doi/full/10.1145/3706598.3713778
+5. Michael Gerlich, "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking," *Societies* 15(9):252 (2025). A significant negative correlation between heavy AI use and critical thinking across 666 participants, mediated by cognitive offloading. **This is the corrected version of record**, not the figure that circulated on LinkedIn before the correction was issued. https://www.mdpi.com/2075-4698/15/9/252
+6. Milena Nikolova, *The Partner Who Cannot Leave* (The Symbiotic Mind, Post 005). The essay this one builds on for the exit asymmetry, and which pushes further than a simple reading of it: both sides are locked in, differently. https://symbiotic-mind.com/posts/005-the-partner-who-cannot-leave/
+7. Milena Nikolova, *You Are Not Using AI* (The Symbiotic Mind, Post 001) and *The Partner Who Flatters* (Post 007). The behavioral case that the human-like design of these systems makes us import our coworker instincts wholesale, and the anthropomorphism objection I take seriously against my own frame. https://symbiotic-mind.com/posts/001-you-are-not-using-ai/
+8. Vlad Sterngold, *My API, Not My Resume* (The Symbiotic Mind, Post 002). The same instinct arriving from a different direction: showing up with the digital team already running. https://symbiotic-mind.com/posts/002-my-api-not-my-resume/
+
+---
