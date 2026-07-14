@@ -66,6 +66,12 @@ const PAGES = [
     footer: "The Symbiotic Mind",
   },
   {
+    slug: "themes",
+    eyebrow: "THEMES",
+    title: "Three strands: the relationship, identity, and memory.",
+    footer: "The Symbiotic Mind",
+  },
+  {
     slug: "author-vlad",
     eyebrow: "AUTHOR",
     title: "Vlad Sterngold",
