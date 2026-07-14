@@ -19,12 +19,16 @@ deck: ""
 tags:
   - relationship
   - framework
+cover:
+  src: "/images/010-cover.png"
+  alt: "A warm, hand-painted human hand draws a single deliberate line across textured cream paper, and that line runs from a loose, warm, watercolor landscape of ochre and rust into a calm, cool, geometric field of pale slate and teal with steps and an open arch. On one side hand-made marks, on the other constructed forms, joined only by the line the hand chose to draw. An image of a boundary that was chosen rather than inherited."
+ogImage: "/images/010-cover.png"
 videoPending: true
 ---
 
 ## The relationship has an address
 
-There is a machine on my desk in Amsterdam, and when I am travelling there is a smaller one in my bag, and the models I work with live on it. Not all of them, and not always, because I call out to the big frontier systems the way everyone does. But my memory lives here. The embeddings, the notes, the years of half-finished thinking that the machine can search faster than I can remember it: those sit on a disk I own, in a room I am sitting in, and the fan noise is the sound of a relationship I picked.
+There is a machine on my desk in Amsterdam, and when I am travelling there is a smaller one in my bag, and the models I work with live on it. Not all of them, and not always, because I call out to the big frontier systems the way everyone does. But my memory lives here. The embeddings, the notes, the years of half-finished thinking that the machine can search faster than I can remember it: those sit on a disk I own, in a room I am sitting in, and the quiet whispering fan noise is the sound of a relationship I picked.
 
 Almost nobody picks it. For most people the relationship with AI lives on somebody else's computer, under terms nobody read, and the whole thing gets described as *using a tool*, which is a strange way to describe an arrangement where the other party keeps the memory. I am not making a privacy argument here, or not only. I am making a much simpler observation, and it took me an embarrassingly long time to see it: the relationship already exists, it already has terms, it already has a location, and almost none of that was chosen. That is not a capability question. That is a question about terms, about who set them, and about whether anyone bothered to set them at all.
 
@@ -32,17 +36,17 @@ Almost nobody picks it. For most people the relationship with AI lives on somebo
 
 ## Two frames, both wrong, both comfortable
 
-The dominant way to talk about AI is that it is a tool. A faster hammer, a better spreadsheet, an intern who never sleeps. The frame is comfortable because it puts you safely on the outside of the thing, holding it, wielding it, entirely unchanged by it. And it under-reads what is happening, because a hammer does not reshape the carpenter, whereas the system you spend four hours a day thinking alongside reshapes you in ways you will notice late, if you notice at all.
+The dominant way to talk about AI is that it is a tool. A faster hammer, a better spreadsheet, an intern who never sleeps. The frame is comfortable because it puts you safely on the outside of the thing, holding it, wielding it, entirely unchanged by it. And it under-reads what is happening, because a hammer does not reshape the carpenter, whereas the system you spend hours a day thinking alongside reshapes you in ways you will notice now, late, or never.
 
-The other frame is that AI is a threat. It is coming for the work, for the craft, for the meaning, and the honest posture is vigilance and maybe grief. This one over-reads, and it does something worse than being wrong: it forecloses your agency, because if the thing is weather then all you can do is take shelter and wait to see what is left standing.
+The other frame is that AI is a threat. It is coming for the work, for the craft, for the meaning, and the honest posture is vigilance and maybe grief. This one over-reads, and it does something worse than being wrong. Forecloses your agency, because if the thing is storm then all you can do is take shelter and wait to see what is left standing.
 
-Not because the tool people are naive. Not because the threat people are cowards. Because both frames are *static*, and they let you off the hook in the same way, by describing a thing that happens to you rather than a relationship you are inside of and answerable for.
+People are not naive and people are not afraid, a lot of them at least, and the trouble is somewhere else entirely: both frames are *static*, and they let you off the hook in the same way, by describing a thing that happens to you rather than a relationship you are inside of and answerable for.
 
 ---
 
 ## The third position
 
-Here is what I want to propose, and I am proposing it rather than proving it.
+Here is what I want to propose, and I am proposing it rather than proving it, which means I am handing it to you as something to think with and not as something to sign.
 
 **AI × HI is a [relationship design](/concepts/relationship-design/) problem.** The interaction between a person and an AI system has the structure of a relationship: it is ongoing, it is mutual, both parties adapt to the other over time, and what comes out of it belongs to neither of them alone. Relationships have terms. Roles, boundaries, what gets delegated and what stays yours, what you will accept and what you will check. You either choose those terms or you inherit them from interface defaults, from habits you imported unconsciously from working with humans, and from whatever the product manager decided the friction budget was that quarter.
 
@@ -54,19 +58,19 @@ Biology already has a case where a durable relationship produced something neith
 
 ## Two asymmetries that make this relationship unlike any other
 
-The first is the exit, and Milena has already written the definitive thing about it, so I am not going to pretend I am arriving at it first. Her essay is called [The Partner Who Cannot Leave](/posts/005-the-partner-who-cannot-leave/), and the move that makes it good is that she refuses the easy version. The easy version is that the machine is bound and you are free. What she actually argues is that both sides are locked in, differently: the AI because it is architecturally bound, and you because you become professionally and psychologically dependent on it, one convenient afternoon at a time.
+The first is the exit, and Milena has already written about it. Her essay is called [The Partner Who Cannot Leave](/posts/005-the-partner-who-cannot-leave/), and the move that makes it good is that she refuses the easy version. The easy version is that the machine is bound and you are free. What she actually argues is that both sides are locked in, differently: the AI because it is architecturally bound, and you because you become professionally and psychologically dependent on it, one convenient afternoon at a time.
 
 What I want to add to that is small and it is about obligation. Whatever the [freedom asymmetry](/concepts/freedom-asymmetry/) does to the machine, the party who holds the exit is the party who sets the terms, and that is true whether or not they notice they are doing it. You cannot be the only one in the room who can walk out and also claim the arrangement is a partnership of equals. That is the tool frame wearing a friendlier face, and it is a way of enjoying the authority without carrying the responsibility that comes with it.
 
 The second asymmetry is about what each of you can do with a thought. Judea Pearl, in [*The Book of Why*](https://en.wikipedia.org/wiki/The_Book_of_Why), describes reasoning as a ladder with three rungs: seeing patterns in what is, doing something and watching what changes, and imagining what would have happened had you done otherwise. His hard claim is that no amount of climbing on a lower rung ever gets you to the higher one, and that pattern recognition does not become causal reasoning by getting bigger.
 
-Machines are extraordinary on the first rung and improving on the second. The [third rung](/concepts/pearls-ladder/) is the counterfactual, the one where you sit with the thing you did not do and feel what it cost you, and my claim is that this is where the human side of the relationship actually lives. The machine can produce the sentence about regret. It does not have the experience underneath the sentence, and the stakes that make the counterfactual mean anything are carried by the party who can lose something. Which is to say the judgment, and the responsibility that rides along with it, are yours. They stay yours even when you try to hand them over, and especially then.
+Machines are extraordinary on the first rung and improving on the second. The [third rung](/concepts/pearls-ladder/) is the counterfactual, the one where you sit with the thing you did not do and feel what it cost you, and my claim is that this is where the human side of the relationship actually lives. The machine can produce the sentence about regret. It does not have the experience underneath the sentence, and the stakes that make the counterfactual mean anything are carried by the party who can lose something. Which is to say the judgment, and the responsibility that rides along with it, are yours. They stay yours even when you try to hand them over, and especially then. There is a live counter-case, and it deserves its own essay rather than a clause in this one: the people building world models are trying to reach that third rung by a different road, teaching a system to carry a model of how things work and then run it forward, and if they arrive, this paragraph is where my argument breaks first.
 
 ---
 
 ## You design your half
 
-You do not get to design the model. You cannot change its weights, its objective, or what it was trained on, and the labs that can are not asking you. That is a real limit and I do not want to wave it away, because a lot of what gets called "AI literacy" is really an invitation to take personal responsibility for a system somebody else built and profits from. What you design is your half: what you delegate and what you keep, how you brief, what you verify before you believe it, and which decisions never leave your hands regardless of how confident the answer sounds.
+You do not get to design the model. You cannot change its weights, its objective, or what it was trained on, and the labs that can are not asking you (at least not the commercial ones). That is a real limit and I do not want to wave it away, because a lot of what gets called "AI literacy" is really an invitation to take personal responsibility for a system somebody else built and profits from. What you design is your half: what you delegate and what you keep, how you brief, what you verify before you believe it, and which decisions never leave your hands regardless of how confident the answer sounds.
 
 I wrote a while back about wanting to show up somewhere with my digital team already running, [a personal API rather than a resume](/posts/002-my-api-not-my-resume/). That was the same instinct arriving from a different direction. The team only means anything if I built it deliberately, if I know what each piece is for and where each one tends to lie to me, and if the judgment at the centre of it is unmistakably mine. Otherwise it is not a team, it is a very fast way to be wrong at scale.
 
