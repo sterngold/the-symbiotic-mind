@@ -126,3 +126,7 @@ So: who wrote yours?
 8. Vlad Sterngold, *My API, Not My Resume* (The Symbiotic Mind, Post 002). The same instinct arriving from a different direction: showing up with the digital team already running. https://symbiotic-mind.com/posts/002-my-api-not-my-resume/
 
 ---
+
+🗣 **ME (75%)**: The frame and everything load-bearing in it. Relationship design as the third position between the tool frame and the threat frame; the machine with a physical address and the memory that stays on it; the obligation that follows from holding the exit; the reading of Pearl's third rung as the place the human side of the relationship lives, and the admission that extending it to language models is mine and is the part I would bet least on; the terms of my own half, named vendors and all; the world models counter-case; and the objection I have no answer to, which is that plenty of people do not hold the exit at all.
+
+🤖 **AI (25%)**: Prose shaping and the order of the argument, assembling and checking the source pack, and catching that the essay's own two pages were competing for the same query. The editorial pass on my revisions, including the removal of a cadence that turned out to be the machine's habit rather than mine.
