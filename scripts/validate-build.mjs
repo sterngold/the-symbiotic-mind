@@ -108,6 +108,82 @@ postDirs.forEach((slug) => {
   must(/<script type="application\/ld\+json">/, "JSON-LD");
 });
 
+// 9) Internal links must resolve.
+//
+// Nothing checked this before, which is how a curated `related:` / `concepts:` slug list can
+// carry a typo and silently render nothing, and how a hardcoded pillar URL in a layout could
+// 404 on 16 pages without ever turning the build red. Every internal href is now crawled
+// against the built output. This is also what makes the single-sourced `site.pillar.url` safe:
+// get it wrong and the build fails here instead of shipping dead links.
+const HREF = /href="(\/[^"#?]*)/g;
+const resolves = (url) => {
+  const rel = url.replace(/^\//, "");
+  if (!rel) return true; // "/" is the homepage
+  return (
+    fs.existsSync(path.join(SITE, rel)) ||
+    fs.existsSync(path.join(SITE, rel, "index.html"))
+  );
+};
+
+const htmlFiles = [];
+(function walk(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name !== "pagefind") walk(p); // generated search index, not our links
+    } else if (entry.name.endsWith(".html")) {
+      htmlFiles.push(p);
+    }
+  }
+})(SITE);
+
+let deadLinks = 0;
+for (const file of htmlFiles) {
+  const html = fs.readFileSync(file, "utf8");
+  const seen = new Set();
+  for (const [, href] of html.matchAll(HREF)) {
+    if (seen.has(href)) continue;
+    seen.add(href);
+    if (!resolves(href)) {
+      deadLinks++;
+      if (deadLinks <= 20) {
+        errors.push(`dead internal link: ${href}  (on /${path.relative(SITE, file)})`);
+      }
+    }
+  }
+}
+if (deadLinks > 20) errors.push(`...and ${deadLinks - 20} more dead internal links`);
+
+// 10) The sitemap must list EVERY built page, and nothing that isn't built.
+//
+// The sitemap used to be a hand-written list, and that is how /start-here/ (the crawl hub)
+// and /diagnostic/ (the link magnet) went un-submitted to Google from the day they shipped.
+// It now enumerates from collections.all — but that had its own silent hole: Eleventy adds
+// only the FIRST page of a paginated template to collections unless the template sets
+// `addAllPagesToCollections`, so /themes/identity/, /authors/milena/ and most /tags/ pages
+// vanished from the sitemap while the build stayed green. Both failure modes are silent, so
+// neither mechanism gets trusted: this asserts the invariant directly against the output.
+const SITEMAP_EXEMPT = new Set(["/404/"]);
+const sitemapXml = must("sitemap.xml") || "";
+const sitemapUrls = new Set(
+  [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, u]) =>
+    u.replace(/^https?:\/\/[^/]+/, "")
+  )
+);
+const builtPages = new Set();
+for (const file of htmlFiles) {
+  if (path.basename(file) !== "index.html") continue;
+  const dir = path.relative(SITE, path.dirname(file));
+  const url = dir === "" ? "/" : `/${dir}/`;
+  if (!SITEMAP_EXEMPT.has(url)) builtPages.add(url);
+}
+for (const url of builtPages) {
+  if (!sitemapUrls.has(url)) errors.push(`page built but missing from sitemap.xml: ${url}`);
+}
+for (const url of sitemapUrls) {
+  if (!builtPages.has(url)) errors.push(`sitemap.xml lists a page that was not built: ${url}`);
+}
+
 // Report
 if (warnings.length) {
   console.warn("Warnings:\n" + warnings.map((w) => "  - " + w).join("\n"));
@@ -116,4 +192,7 @@ if (errors.length) {
   console.error("\n❌ Build validation failed:\n" + errors.map((e) => "  - " + e).join("\n"));
   process.exit(1);
 }
-console.log(`✅ Build validation passed (${postDirs.length} posts, ${(rss.match(/<item>/g) || []).length} feed items).`);
+console.log(
+  `✅ Build validation passed (${postDirs.length} posts, ${(rss.match(/<item>/g) || []).length} feed items, ` +
+    `${htmlFiles.length} pages link-checked, ${builtPages.size} pages in sitemap).`
+);

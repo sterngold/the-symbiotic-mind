@@ -3,12 +3,13 @@ pagination:
   data: collections.themes
   size: 1
   alias: strand
+  addAllPagesToCollections: true
 permalink: "/themes/{{ strand.slug }}/index.html"
 eleventyComputed:
   title: "{{ strand.title }}"
   seoTitle: "{{ strand.seoTitle }}"
   description: "{{ strand.description }}"
-ogImage: "/images/og/tags.png"
+ogImage: "/images/og/themes.png"
 layout: layouts/base.njk
 ---
 
@@ -39,7 +40,7 @@ layout: layouts/base.njk
 <aside class="read-next">
   <p class="section-label">The frame behind all three themes</p>
   <div class="related-item">
-    <h3><a href="/posts/010-relationship-design/">Relationship Design</a></h3>
+    <h3><a href="{{ site.pillar.url }}">{{ site.pillar.title }}</a></h3>
     <p class="post-excerpt">The pillar essay: the interaction is a relationship, it already has terms, and you either chose them or inherited them.</p>
   </div>
 </aside>

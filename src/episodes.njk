@@ -3,6 +3,7 @@ pagination:
   data: podcast.episodes
   size: 1
   alias: ep
+  addAllPagesToCollections: true
 permalink: "/episodes/{{ ep.slug }}/index.html"
 eleventyComputed:
   title: "{{ ep.title }}"
