@@ -1,7 +1,7 @@
 ---
 title: "A Worldview Without a Person"
 theme: "relationship"
-seoTitle: "A Worldview Without a Person: How AI's Values Quietly Shape Ours"
+seoTitle: "Does AI Have Values? A Worldview With No Person Behind It"
 related:
   - "007-the-partner-who-flatters"
   - "005-the-partner-who-cannot-leave"
@@ -9,7 +9,7 @@ related:
 date: 2026-07-09T08:00:00+02:00
 author: milena
 subscribeCta: "Every conversation carries a worldview, even when no person stands behind it. New essays every other Thursday."
-description: "The World Values Survey, built to study human values, can now be applied to an AI. This essay treats AI's worldview as a new force in our social environment: why we experience AI conversations as neutral and objective, why influence arrives gradually and invisibly, and why the next frontier of AI literacy is becoming intentional about the AI × HI relationship itself."
+description: "Does AI have values? The World Values Survey, built to study humans, can now be applied to an AI, and it answers. With no person behind the conversation we never activate the safeguards we would use with a human, so the worldview lands unchallenged."
 deck: ""
 cover:
   src: "/images/009-cover.png"

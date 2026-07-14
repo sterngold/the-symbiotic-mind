@@ -1,7 +1,7 @@
 ---
 title: "The Partner Who Cannot Leave"
 theme: "relationship"
-seoTitle: "Emotional Dependence on AI: The Partner Who Cannot Leave"
+seoTitle: "Emotional Attachment to AI: The Partner Who Cannot Leave"
 related:
   - "001-you-are-not-using-ai"
   - "003-amplification"
@@ -13,7 +13,7 @@ concepts:
   - "freedom-asymmetry"
   - "designed-vs-drifting"
 subscribeCta: "If one of you cannot leave, design the relationship. New essays every other Thursday."
-description: "If AI × HI is a relationship, what kind is it? An asymmetrical one — but not in the way you would expect. AI cannot leave because it is architecturally bound; we increasingly cannot leave because we become professionally and psychologically dependent. Both sides are locked in — differently."
+description: "Emotional attachment to AI is not a fringe case, it is the default outcome of an asymmetric relationship. AI cannot leave because it is architecturally bound; we increasingly cannot leave because we become professionally and psychologically dependent. Both sides are locked in, differently."
 deck: ""
 cover:
   src: "/images/005-cover.png"

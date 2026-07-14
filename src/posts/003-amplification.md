@@ -1,7 +1,7 @@
 ---
 title: "Amplification"
 theme: "identity"
-seoTitle: "AI Amplification vs Automation: Which One Are You Living?"
+seoTitle: "Amplification vs Automation: What AI Is Doing to the Skills You Rely On"
 related:
   - "001-you-are-not-using-ai"
   - "005-the-partner-who-cannot-leave"
@@ -11,7 +11,7 @@ concepts:
   - "amplification-vs-automation"
   - "human-ai-symbiosis"
 subscribeCta: "Make AI amplify you, not replace you. The next essay lands every other Thursday."
-description: "AI was everywhere across a season of events. Two moments stayed with me — one where the AI × HI relationship quietly compressed the people on stage, and one where it amplified them. The difference is what we ask AI to amplify."
+description: "The same AI can amplify you or replace the part of you that was doing the thinking. The difference is not the tool, it is what you ask it to amplify. On over-reliance, and the moment amplification quietly becomes automation."
 deck: ""
 cover:
   src: "/images/003-cover.png"
