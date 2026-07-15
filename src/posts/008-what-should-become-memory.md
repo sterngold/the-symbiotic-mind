@@ -1,6 +1,7 @@
 ---
 title: "What Should Be Allowed to Become Memory?"
-seoTitle: "What Should AI Be Allowed to Remember? Promotion, Forgetting, and Sovereign Memory"
+theme: "memory"
+seoTitle: "Who Owns Your AI's Memory? Portability, Forgetting, and Keeping It Sovereign"
 related:
   - "006-down-the-memory-river"
   - "004-what-the-terrace-knew"
@@ -11,7 +12,7 @@ concepts:
   - "ai-memory"
   - "designed-vs-drifting"
 subscribeCta: "Not every trace deserves to become memory. New essays every other Thursday."
-description: "Most AI memory systems ask how to remember more. The better question is what should be allowed to become memory at all — a field note on promotion as the real boundary, forgetting by design, failure memory, and keeping a personal memory sovereign."
+description: "You can move your ChatGPT memory to Claude, and that raises the question nobody asks: what should have been allowed to become memory in the first place? On promotion as the real boundary, forgetting by design, and why a personal memory you cannot take with you is not yours."
 deck: ""
 cover:
   src: "/images/008-cover.png"

@@ -1,5 +1,6 @@
 ---
 title: "My API, Not My Resume"
+theme: "identity"
 seoTitle: "AI and Professional Identity: My API, Not My Resume"
 related:
   - "006-down-the-memory-river"

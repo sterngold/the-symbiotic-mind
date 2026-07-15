@@ -136,6 +136,31 @@ ogType: article
   {% endif %}
   {% endif %}
 
+  {# Also in this theme: the other essays on the same strand (src/_data/themes.js).
+     Rendered from the `theme` frontmatter slug, so it never touches the prose.
+     Silent when the post declares no theme, or is alone on its strand. #}
+  {% if theme and themes[theme] %}
+    {% set strandPosts = [] %}
+    {% for p in collections.posts %}
+      {% if p.data.theme == theme and p.url != page.url %}
+        {% set strandPosts = (strandPosts.push(p), strandPosts) %}
+      {% endif %}
+    {% endfor %}
+    {% if strandPosts.length %}
+  <aside class="read-next post-theme">
+    <p class="section-label">Also in <a href="/themes/{{ theme }}/">{{ themes[theme].title }}</a></p>
+    {% for p in strandPosts %}
+      {% if loop.index <= 3 %}
+      <div class="related-item">
+        <div class="post-meta">{{ p.date | postDate }} &middot; {{ authors[p.data.author].name }}</div>
+        <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </aside>
+    {% endif %}
+  {% endif %}
+
   {# Key concepts: links into the /concepts/ glossary, set per-post via the
      `concepts` frontmatter (list of concept fileSlugs). Layout-rendered, so it
      never touches the essay prose. #}

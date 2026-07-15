@@ -2,41 +2,48 @@
 permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
+{#
+  The sitemap enumerates from `collections.all`, NOT from a hand-written list.
+
+  It used to be hand-enumerated, and that is exactly how /start-here/ (the crawl hub)
+  and /diagnostic/ (the link magnet) sat un-submitted to Google from the day they
+  shipped: nobody remembered to add them, and nothing complained. A list you must
+  remember to update is a list that silently goes stale.
+
+  Now: every built page with a directory-style URL is included BY DEFAULT, and leaving
+  one out requires adding it to EXCLUDE below on purpose. Feeds, robots.txt, llms.txt,
+  the sitemap itself and the other non-HTML outputs already set
+  `eleventyExcludeFromCollections: true`, so they never appear here.
+
+  Priority overrides live in PRIORITY. Everything else takes the default.
+#}
+{% set EXCLUDE = ["/404.html"] %}
+{% set PRIORITY = { "/": "1.0", "/start-here/": "0.9" } %}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for item in collections.all %}
+  {%- if item.url and item.url.endsWith("/") and item.url not in EXCLUDE %}
   <url>
-    <loc>{{ site.url }}/</loc>
+    <loc>{{ item.url | absUrl(site.url) }}</loc>
+    {%- if item.date and item.data.tags and ("post" in item.data.tags) %}
+    <lastmod>{{ item.date | isoDate }}</lastmod>
+    {%- endif %}
+    {%- if PRIORITY[item.url] %}
+    <priority>{{ PRIORITY[item.url] }}</priority>
+    {%- endif %}
+    {%- if item.url == "/" %}
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    {%- endif %}
   </url>
-  <url><loc>{{ site.url }}/about/</loc></url>
-  <url><loc>{{ site.url }}/pride/</loc></url>
+  {%- endif %}
+  {%- endfor %}
+  {#- The two index pages that set `eleventyExcludeFromCollections: true` and therefore
+      never appear in collections.all. They must be named. If a third such page is ever
+      added, the link-check in validate-build will not catch its absence here — this is
+      the one remaining manual seam, and it is deliberately small and documented.
+      (Episodes are NOT listed here: episodes.njk now sets addAllPagesToCollections,
+      so every episode page comes through the loop above. Listing them again would
+      duplicate every <loc>.) #}
   <url><loc>{{ site.url }}/posts/</loc></url>
-  <url><loc>{{ site.url }}/tags/</loc></url>
-  <url><loc>{{ site.url }}/search/</loc></url>
-  <url><loc>{{ site.url }}/listen/</loc></url>
-  <url><loc>{{ site.url }}/watch/</loc></url>
-  <url><loc>{{ site.url }}/for-ai/</loc></url>
   <url><loc>{{ site.url }}/concepts/</loc></url>
-  {% for ep in podcast.episodes %}
-  <url>
-    <loc>{{ site.url }}/episodes/{{ ep.slug }}/</loc>
-    <lastmod>{{ ep.pubDate | isoDate }}</lastmod>
-  </url>
-  {% endfor %}
-  {% for post in collections.posts %}
-  <url>
-    <loc>{{ post.url | absUrl(site.url) }}</loc>
-    <lastmod>{{ post.date | isoDate }}</lastmod>
-  </url>
-  {% endfor %}
-  {% for c in collections.concepts %}
-  <url><loc>{{ c.url | absUrl(site.url) }}</loc></url>
-  {% endfor %}
-  {% for tag in collections.tags %}
-  <url><loc>{{ site.url }}/tags/{{ tag }}/</loc></url>
-  {% endfor %}
-  {% for slug, _ in authors %}
-  <url><loc>{{ site.url }}/authors/{{ slug }}/</loc></url>
-  {% endfor %}
 </urlset>

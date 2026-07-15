@@ -1,6 +1,6 @@
 ---
 title: "Skill Atrophy with AI"
-seoTitle: "AI Skill Atrophy — Which Skills You Lose When AI Does Them For You"
+seoTitle: "Over-Reliance on AI: Skill Atrophy and the Capability You Quietly Lose"
 description: "Skill atrophy is what happens to a human capability when AI performs it so reliably that you stop practicing it. Some skills are safe to let go; others — judgment, domain depth — are load-bearing for everything you do with AI."
 order: 12
 oneLine: "When AI does it reliably enough, you stop practicing — and some of those skills are load-bearing."

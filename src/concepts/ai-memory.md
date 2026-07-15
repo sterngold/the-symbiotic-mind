@@ -1,6 +1,6 @@
 ---
 title: "How AI Memory Works — and Why It Isn't Human Memory"
-seoTitle: "AI Memory vs Human Memory — Context, Weights, and Why AI Forgets"
+seoTitle: "How Does ChatGPT Memory Work? Context, Weights, and Why It Forgets"
 description: "AI memory is not a weaker human memory but a different kind of thing: weights hold frozen training patterns, context holds the current conversation — finite, reconstructed per session, and used worse in the middle than at the edges."
 order: 5
 oneLine: "Not a weaker human memory but a different kind of thing — weights vs context, and why more memory can make results worse."

@@ -8,6 +8,15 @@ export default {
   language: "en",
   author: "Vlad Sterngold & Milena Nikolova",
   defaultOgImage: "/images/og-default.png",
+  // The pillar essay every glossary entry and theme page links up to. Single-sourced
+  // here because it is rendered on 16 pages (12 concepts + 3 strands + the themes index),
+  // and a hardcoded slug in each of them would mean 16 dead links the day the post is
+  // renamed, with no check to catch it. validate-build now crawls internal links, so a
+  // wrong value here fails the build instead of shipping a 404.
+  pillar: {
+    url: "/posts/010-relationship-design/",
+    title: "Relationship Design",
+  },
   umamiWebsiteId: "e1afdc36-cb27-4f4d-acb3-80c08879420f",
   giscus: {
     repo: "sterngold/sterngold-discussions",

@@ -3,6 +3,7 @@ import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItFootnote from "markdown-it-footnote";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
+import themeMeta from "./src/_data/themes.js";
 
 export default function (eleventyConfig) {
   // Passthrough: keep CSS, images, and a few static files copied as-is.
@@ -75,11 +76,54 @@ export default function (eleventyConfig) {
   );
 
   // Glossary entries (/concepts/). Curated order via each entry's `order` field.
+  // `?? 99`, not `|| 99`: `order: 0` is a legitimate "sort me first", and `||`
+  // would read it as unset and sort it last.
   eleventyConfig.addCollection("concepts", (api) =>
     api
       .getFilteredByGlob("src/concepts/*.md")
-      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99))
+      .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99))
   );
+
+  // Themes (/themes/). Groups posts by their `theme` frontmatter slug, in the
+  // display order declared in src/_data/themes.js.
+  //
+  // This THROWS on a missing or unknown theme rather than skipping the post. The
+  // first version skipped, reasoning that a wrong theme is worse than no theme —
+  // true, and it missed the third option. Skipping means a typo (`theme: memroy`)
+  // silently drops the essay from its strand page, from its own "Also in this
+  // theme" block, and from the sitemap, while the build stays green and every
+  // page still renders. Nobody finds that until they count the essays by hand.
+  // Anything in src/posts/ is published by definition (there is no draft flag),
+  // so demanding a declared theme costs an author one line and buys a loud failure.
+  eleventyConfig.addCollection("themes", (api) => {
+    const known = Object.keys(themeMeta);
+    const byTheme = new Map();
+    api
+      .getFilteredByGlob("src/posts/*.md")
+      .sort((a, b) => b.date - a.date)
+      .forEach((p) => {
+        const slug = p.data.theme;
+        if (!slug) {
+          throw new Error(
+            `[themes] ${p.inputPath} declares no \`theme:\`. Every published post must ` +
+              `declare exactly one of: ${known.join(", ")}.`
+          );
+        }
+        if (!themeMeta[slug]) {
+          throw new Error(
+            `[themes] ${p.inputPath} declares \`theme: ${slug}\`, which is not a known strand. ` +
+              `Known strands: ${known.join(", ")}. Fix the typo, or declare the new strand ` +
+              `in src/_data/themes.js.`
+          );
+        }
+        if (!byTheme.has(slug)) byTheme.set(slug, []);
+        byTheme.get(slug).push(p);
+      });
+    return known
+      .filter((slug) => byTheme.has(slug))
+      .sort((a, b) => (themeMeta[a].order ?? 99) - (themeMeta[b].order ?? 99))
+      .map((slug) => ({ slug, ...themeMeta[slug], posts: byTheme.get(slug) }));
+  });
 
   eleventyConfig.addCollection("postsByAuthor", (api) => {
     const map = new Map();
