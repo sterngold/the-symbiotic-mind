@@ -23,7 +23,7 @@ cover:
   src: "/images/010-cover.png"
   alt: "A warm, hand-painted human hand draws a single deliberate line across textured cream paper, and that line runs from a loose, warm, watercolor landscape of ochre and rust into a calm, cool, geometric field of pale slate and teal with steps and an open arch. On one side hand-made marks, on the other constructed forms, joined only by the line the hand chose to draw. An image of a boundary that was chosen rather than inherited."
 ogImage: "/images/010-cover.png"
-videoPending: true
+youtubeId: "ynwOx1Fz-t0"
 ---
 
 ## The relationship you didn't design
