@@ -8,19 +8,19 @@
 
 ## Workflow and Git
 
-- Use a new task-named branch in an isolated worktree. Follow the branch and Conventional Commit formats in `AGENTS.md`; do not use an agent name as the branch prefix.
+- Work in an isolated task checkout: use a new worktree for local app work or the provider's isolated sandbox for cloud work. Follow the task-based branch and Conventional Commit formats in `AGENTS.md`; do not use an agent name as the branch prefix.
 - Keep the diff narrow, inspect all consumers before changing templates or data shapes, and stage only intended paths.
 - Never push directly to `main`, force-push `main`, merge a pull request, invoke `npm run publish:indexnow`, or trigger a production deployment. Use a pull request and wait for the required `ci` check and preview/build evidence.
 - Resolve every review thread or explain the evidence for rejecting it. Copilot review is advisory and does not replace CI or owner approval.
 
 ## Dependencies and security
 
-- Do not add a top-level dependency or change `package.json`, `package-lock.json`, another manifest, or a lockfile without explicit approval from the owner and the required AndersSecurity dependency record.
+- Do not add a top-level dependency or change `package.json`, `package-lock.json`, another manifest, or a lockfile without explicit approval from the owner and a repository-local security rationale in the pull request.
 - Use the committed lockfile. Do not introduce unpinned or `latest` specifications or add/enable lifecycle scripts without explicit approval. Never commit secrets or generated build output.
 
 ## Repository commands
 
-Use Node 20 from `.nvmrc`. There is no unit-test or separate lint command; the production build and validator are the executable correctness gates.
+Use Node 20 from `.nvmrc`. There is no unit-test or separate lint command; the production build and validator are the executable correctness gates. Use `npm ci` for the clean, lockfile-exact agent/CI checkout below; the `npm install` workflow in `AGENTS.md` and `README.md` is for an existing local development checkout.
 
 ```bash
 nvm use
