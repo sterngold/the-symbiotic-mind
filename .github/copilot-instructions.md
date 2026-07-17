@@ -10,7 +10,7 @@
 
 - Work in an isolated task checkout: use a new worktree for local Copilot work or the provider's isolated sandbox for cloud work. Follow the task-based branch and Conventional Commit formats in `AGENTS.md`; do not use an agent name as the branch prefix.
 - Keep the diff narrow, inspect all consumers before changing templates or data shapes, and stage only intended paths.
-- Never push directly to `main`, force-push `main`, merge a pull request, invoke `npm run publish:indexnow`, or trigger a production deployment. Use a pull request and wait for the required `ci` check and preview/build evidence.
+- Never push directly to `main`, force-push `main`, merge a pull request without owner approval, invoke `npm run publish:indexnow`, or trigger a production deployment. Use a pull request and wait for the required `ci` check and preview/build evidence.
 - Resolve every review thread or explain the evidence for rejecting it. Copilot review is advisory and does not replace CI or owner approval.
 
 ## Dependencies and security
