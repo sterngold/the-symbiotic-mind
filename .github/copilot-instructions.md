@@ -8,7 +8,7 @@
 
 ## Workflow and Git
 
-- Work in an isolated task checkout: use a new worktree for local app work or the provider's isolated sandbox for cloud work. Follow the task-based branch and Conventional Commit formats in `AGENTS.md`; do not use an agent name as the branch prefix.
+- Work in an isolated task checkout: use a new worktree for local Copilot work or the provider's isolated sandbox for cloud work. Follow the task-based branch and Conventional Commit formats in `AGENTS.md`; do not use an agent name as the branch prefix.
 - Keep the diff narrow, inspect all consumers before changing templates or data shapes, and stage only intended paths.
 - Never push directly to `main`, force-push `main`, merge a pull request, invoke `npm run publish:indexnow`, or trigger a production deployment. Use a pull request and wait for the required `ci` check and preview/build evidence.
 - Resolve every review thread or explain the evidence for rejecting it. Copilot review is advisory and does not replace CI or owner approval.
@@ -20,7 +20,7 @@
 
 ## Repository commands
 
-Use Node 20 from `.nvmrc`. There is no unit-test or separate lint command; the production build and validator are the executable correctness gates. Use `npm ci` for the clean, lockfile-exact agent/CI checkout below; the `npm install` workflow in `AGENTS.md` and `README.md` is for an existing local development checkout.
+Use Node 20 from `.nvmrc`. There is no unit-test or separate lint command; the production build and validator are the executable correctness gates. Use `npm ci` for deterministic CI and clean-clone installs; use the documented `npm install` workflow for iterative local development.
 
 ```bash
 nvm use
