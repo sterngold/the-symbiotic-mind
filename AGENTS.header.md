@@ -12,21 +12,27 @@
 
 Static site — "build" = render the site. There is **no unit-test suite**; correctness is gated by the production build plus `scripts/validate-build.mjs`.
 
-```bash
-nvm use                       # Node 20 (.nvmrc)
-npm install                   # devDependencies (Eleventy, Pagefind, Satori, …)
-npm run serve                 # local dev server on :8080 (OG images + live reload)
-npm run build                 # side-effect-free build: OG images -> Eleventy -> Pagefind
-npm run publish:indexnow      # explicit production IndexNow ping after a successful build
-npm run build:no-search       # faster build, skips the Pagefind index
-npm run clean                 # remove _site + generated OG images
+**Setup:** `nvm use && npm ci --ignore-scripts`.
 
-# Verify this repo's AGENTS.md is in sync with its header + the shared canon
-bash ~/anders-dotfiles/context-sync/assemble-agents.sh --check .   # 0 ok · 1 stale · 2 error
+**Blocking pre-PR validation:**
+
+```bash
+npm run build
+node scripts/validate-build.mjs
+git diff --check
+```
+
+Local development may use `npm run serve`, `npm run build:no-search`, and `npm run clean`.
+
+**Owner-only publishing** (not a pre-PR gate; has production side effects):
+
+```bash
+npm run publish:indexnow
+npm run build:publish
 ```
 
 **Deploy:** Cloudflare Pages' own Git integration auto-builds every push — `main` → production (apex), PR branches → preview (`<slug>.the-symbiotic-mind.pages.dev`). `.github/workflows/deploy.yml` is a parallel shadow gate (same build chain). **Governed live site: branch + PR only — never push to `main` or trigger a production deploy autonomously.**
 
 **Never commit** secrets, API keys, or the generated `_site/` output.
 
-**Agents:** content lives in `src/` + `content/`; the build is defined by `package.json` scripts + `eleventy.config.mjs`.
+**Agents:** content lives in `src/` + `content/`; always validate the generated site after building, and never substitute publishing for validation.
