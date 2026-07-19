@@ -43,9 +43,10 @@ Local development may use `npm run serve`, `npm run build:no-search`, and `npm r
 **Owner-only publishing** (not a pre-PR gate; has production side effects):
 
 ```bash
-npm run publish:indexnow
 npm run build:publish
 ```
+
+`npm run build:publish` already runs the build and sends one IndexNow notification. `npm run publish:indexnow` is the standalone notification command for an already-built current site; never run both sequentially.
 
 **Deploy:** Cloudflare Pages' own Git integration auto-builds every push — `main` → production (apex), PR branches → preview (`<slug>.the-symbiotic-mind.pages.dev`). `.github/workflows/deploy.yml` is a parallel shadow gate (same build chain). **Governed live site: branch + PR only — never push to `main` or trigger a production deploy autonomously.**
 

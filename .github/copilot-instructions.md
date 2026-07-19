@@ -20,11 +20,11 @@
 
 ## Repository commands
 
-Use Node 20 from `.nvmrc`. There is no unit-test or separate lint command; the production build and validator are the executable correctness gates. Use `npm ci` for deterministic CI and clean-clone installs; use the documented `npm install` workflow for iterative local development.
+Use Node 20 from `.nvmrc`. There is no unit-test or separate lint command; the production build and validator are the executable correctness gates. Use the committed lockfile and install with lifecycle scripts disabled.
 
 ```bash
 nvm use
-npm ci
+npm ci --ignore-scripts
 npm run build
 node scripts/validate-build.mjs
 ```
