@@ -15,7 +15,7 @@ cover:
   src: "/images/011-cover.png"
   alt: "On textured cream paper, two hands each paint the same S-shaped curve. On the left a warm watercolor hand in ochre and terracotta works amid the evidence of its making: paint splatter, faint circling sketch arcs, and a swash built from many layered strokes. On the right a cool, faceted geometric hand in slate blue draws the same curve as one clean unbroken line on otherwise empty paper, with no working marks anywhere around it. The same shape arrives twice; only one of them carries a history."
 ogImage: "/images/011-cover.png"
-videoPending: true
+youtubeId: "vTYi75Gcbos"
 tags:
   - behavior
   - identity
