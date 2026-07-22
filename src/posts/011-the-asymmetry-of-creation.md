@@ -13,7 +13,7 @@ description: "AI saves time, but it does not save involvement. Every meaningful 
 deck: ""
 cover:
   src: "/images/011-cover.png"
-  alt: "Two hands work the same form on textured cream paper. One is a warm watercolor hand in ochre and terracotta, its shape built from many visible layered strokes, each one a decision left showing. The other is a cool geometric hand in slate and pale teal that lays the identical form down in a single clean pass, with no working marks beneath it. The results match; only one of them carries a history."
+  alt: "On textured cream paper, two hands each paint the same S-shaped curve. On the left a warm watercolor hand in ochre and terracotta works amid the evidence of its making: paint splatter, faint circling sketch arcs, and a swash built from many layered strokes. On the right a cool, faceted geometric hand in slate blue draws the same curve as one clean unbroken line on otherwise empty paper, with no working marks anywhere around it. The same shape arrives twice; only one of them carries a history."
 ogImage: "/images/011-cover.png"
 videoPending: true
 tags:
