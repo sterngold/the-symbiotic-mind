@@ -114,3 +114,7 @@ So, when we are intentional about our AI × HI symbiosis, the important question
 The greatest opportunity AI offers us is not producing more with less effort.
 
 It is becoming more intentional about the parts of creation that are worth remaining involved in because they are the very parts that change us.
+
+🗣 **ME (85%)**: The ideas, the reflections and the stories, the behavioral perspective.
+
+🤖 **AI (15%)**: The feedback, some brainstorming questions, stress-testing & editorial refinement.
