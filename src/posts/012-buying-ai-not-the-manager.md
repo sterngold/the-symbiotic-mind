@@ -6,7 +6,8 @@ related:
   - "010-relationship-design"
   - "002-my-api-not-my-resume"
   - "003-amplification"
-date: 2026-07-23T08:00:00+02:00
+# placeholder date — Vlad finalizes before publishing
+date: 2026-08-04T08:00+02:00
 author: vlad
 concepts:
   - "relationship-design"
