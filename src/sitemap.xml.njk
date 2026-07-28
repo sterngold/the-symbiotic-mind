@@ -20,6 +20,23 @@ eleventyExcludeFromCollections: true
 {% set EXCLUDE = ["/404.html"] %}
 {% set PRIORITY = { "/": "1.0", "/start-here/": "0.9" } %}
 <?xml version="1.0" encoding="UTF-8"?>
+{#-
+  The sitemap enumerates from `collections.all`, NOT from a hand-written list.
+
+  It used to be hand-enumerated, and that is exactly how /start-here/ (the crawl hub)
+  and /diagnostic/ (the link magnet) sat un-submitted to Google from the day they
+  shipped: nobody remembered to add them, and nothing complained. A list you must
+  remember to update is a list that silently goes stale.
+
+  Now: every built page with a directory-style URL is included BY DEFAULT, and leaving
+  one out requires adding it to EXCLUDE below on purpose. Feeds, robots.txt, llms.txt,
+  the sitemap itself and the other non-HTML outputs already set
+  `eleventyExcludeFromCollections: true`, so they never appear here.
+
+  Priority overrides live in PRIORITY. Everything else takes the default.
+-#}
+{%- set EXCLUDE = ["/404.html"] %}
+{%- set PRIORITY = { "/": "1.0", "/start-here/": "0.9" } %}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {%- for item in collections.all %}
   {%- if item.url and item.url.endsWith("/") and item.url not in EXCLUDE %}

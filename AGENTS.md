@@ -28,24 +28,31 @@ This file is the **single source of truth** for repo conventions.
 
 Static site — "build" = render the site. There is **no unit-test suite**; correctness is gated by the production build plus `scripts/validate-build.mjs`.
 
-```bash
-nvm use                       # Node 20 (.nvmrc)
-npm install                   # devDependencies (Eleventy, Pagefind, Satori, …)
-npm run serve                 # local dev server on :8080 (OG images + live reload)
-npm run build                 # side-effect-free build: OG images -> Eleventy -> Pagefind
-npm run publish:indexnow      # explicit production IndexNow ping after a successful build
-npm run build:no-search       # faster build, skips the Pagefind index
-npm run clean                 # remove _site + generated OG images
+**Setup:** `nvm use && npm ci --ignore-scripts`.
 
-# Verify this repo's AGENTS.md is in sync with its header + the shared canon
-bash ~/anders-dotfiles/context-sync/assemble-agents.sh --check .   # 0 ok · 1 stale · 2 error
+**Blocking pre-PR validation:**
+
+```bash
+npm run build
+node scripts/validate-build.mjs
+git diff --check
 ```
+
+Local development may use `npm run serve`, `npm run build:no-search`, and `npm run clean`.
+
+**Owner-only publishing** (not a pre-PR gate; has production side effects):
+
+```bash
+npm run build:publish
+```
+
+`npm run build:publish` already runs the build and sends one IndexNow notification. `npm run publish:indexnow` is the standalone notification command for an already-built current site; never run both sequentially.
 
 **Deploy:** Cloudflare Pages' own Git integration auto-builds every push — `main` → production (apex), PR branches → preview (`<slug>.the-symbiotic-mind.pages.dev`). `.github/workflows/deploy.yml` is a parallel shadow gate (same build chain). **Governed live site: branch + PR only — never push to `main` or trigger a production deploy autonomously.**
 
 **Never commit** secrets, API keys, or the generated `_site/` output.
 
-**Agents:** content lives in `src/` + `content/`; the build is defined by `package.json` scripts + `eleventy.config.mjs`.
+**Agents:** content lives in `src/` + `content/`; always validate the generated site after building, and never substitute publishing for validation.
 
 ---
 
@@ -63,6 +70,7 @@ Format: `<type>(<scope>): <subject>`
 | `test` | Tests only |
 | `chore` | Tooling, deps, config |
 | `ci` | CI/CD only |
+| `build` | Build system, bundler, or packaging change |
 | `revert` | Revert prior commit |
 
 **Scope** = ticket ID when available (Linear/Jira/GitHub issue).
@@ -83,7 +91,9 @@ Breaking changes: append `!` and add `BREAKING CHANGE:` footer.
 
 Format: `<type>/<TICKET>-<kebab-slug>`
 
-`<type>` = same as commit types (`feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `ci`).
+`<type>` = **any type from the §3 table above** — deliberately not re-listed here. Two copies of one
+set is exactly what let this line drift: it enumerated 7 of the 10 types, silently rejecting `perf`,
+`revert`, and (once documented) `build`, while claiming to be "the same as commit types".
 `<TICKET>` = ticket ID in UPPER-CASE, or omit if no ticket.
 `<kebab-slug>` ≤ 50 chars, lowercase, hyphens.
 
@@ -109,6 +119,14 @@ Co-authored-by: Claude <noreply@anthropic.com>
 - **Squash-merge only.** Linear history required.
 - Required passing check: `ci` — the aggregate job in `.github/workflows/ci.yml` that gates commit convention, secret scan, and any repo-specific blocking backstops. Python/Node lint+test jobs may be advisory when configured with `continue-on-error: true`; skipped stack-conditional jobs are allowed, and making them blocking requires changing the workflow first.
 - Solo flow: 0 required human reviewers. CodeRabbit / Copilot Review = required reviewer.
+- **Review budget (bot findings):** one Codex review pass per PR — never loop `@codex review`
+  chasing zero nits. Codex is the budgeted reviewer; the single automatic pass from
+  required/always-on reviewers (Copilot, CodeRabbit) is outside this budget and not
+  something to re-trigger. Fix every P1 and any P2 that is a real correctness issue;
+  defer the remaining P2s to a follow-up issue and resolve each thread with the pointer
+  ("Deferred per Review budget — tracked in `<follow-up>`"). Bot reviews are advisory
+  input, not a gate: `ci` is the hard gate, and the absence of a fresh bot re-review is
+  never a reason to hold a green PR.
 
 ---
 
@@ -180,7 +198,7 @@ ADR format: `docs/adr/NNNN-short-title.md`. One per decision. Date + context + d
 
 - Read this file in full before making changes.
 - Follow Section 3 (commit format) and Section 4 (branch naming) exactly.
-- Run `make lint && make test` before opening a PR. If they fail, fix or stop.
+- Run the repository-specific **pre-PR validation** commands declared in Section 2 before opening a PR. Setup/install commands and operations explicitly labeled owner-only, live, preview, deploy, or publish are not pre-PR agent gates; never run them without the required context and approval. Never invent a generic `make` target or substitute a weaker command.
 - Never commit secrets. Never bypass pre-commit hooks.
 - Sign commits if possible; otherwise note in PR description so the human can amend.
 - Add yourself as co-author trailer.
