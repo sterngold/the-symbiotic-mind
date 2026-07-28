@@ -70,6 +70,7 @@ Format: `<type>(<scope>): <subject>`
 | `test` | Tests only |
 | `chore` | Tooling, deps, config |
 | `ci` | CI/CD only |
+| `build` | Build system, bundler, or packaging change |
 | `revert` | Revert prior commit |
 
 **Scope** = ticket ID when available (Linear/Jira/GitHub issue).
@@ -90,7 +91,9 @@ Breaking changes: append `!` and add `BREAKING CHANGE:` footer.
 
 Format: `<type>/<TICKET>-<kebab-slug>`
 
-`<type>` = same as commit types (`feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `ci`).
+`<type>` = **any type from the §3 table above** — deliberately not re-listed here. Two copies of one
+set is exactly what let this line drift: it enumerated 7 of the 10 types, silently rejecting `perf`,
+`revert`, and (once documented) `build`, while claiming to be "the same as commit types".
 `<TICKET>` = ticket ID in UPPER-CASE, or omit if no ticket.
 `<kebab-slug>` ≤ 50 chars, lowercase, hyphens.
 
