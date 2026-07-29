@@ -36,7 +36,7 @@ That shape repeats, and it repeats almost identically. A company buys the tools,
 
 I have a theory about where the money went, and I want to be honest that it is a theory, because most of the evidence I am going to show you is correlational and I am not going to pretend otherwise. The organisation bought the capability and skipped the only person who could have installed it. It bought the AI and it did not buy the manager.
 
-And nobody asked. Not the managers, not the people on the ground who could have walked you to the actual bottleneck in an afternoon and told you plainly what would help and what would sit unused. McKinsey's own senior partner puts it at more than eighty percent of companies reporting no bottom-line impact from what they have invested, and the same piece says in its subtitle that the challenge lies in redesigning workflows and leadership and culture rather than in the technology. You can pay a great deal of money for that sentence. You can also go downstairs, skip the deck, and talk tachles with the people who will have to live inside whatever you sign.
+And nobody asked. Not the managers, not the people on the ground who could have walked you to the actual bottleneck in an afternoon and told you plainly what would help and what would sit unused. McKinsey's own senior partner puts it at more than eighty percent of companies reporting no bottom-line impact from what they have invested, and the same piece says in its subtitle that the challenge lies in redesigning workflows and leadership and culture rather than in the technology [1]. You can pay a great deal of money for that sentence. You can also go downstairs, skip the deck, and talk tachles with the people who will have to live inside whatever you sign.
 
 ---
 
@@ -46,7 +46,7 @@ Think about how a new capability actually reaches a person doing the work. It do
 
 It arrives through the person who decides what the work is, what good looks like, whether it is safe to try something and have it not work, and whether the twenty minutes you just spent arguing with a model was diligence or slacking. That person is your direct manager, and they are the transmission mechanism between the thing the company bought and the thing the company hoped would change.
 
-Gallup's [State of the Global Workplace 2026](https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx) puts a number on it that is worth reading carefully rather than repeating. Among US employees, those who strongly agree that their manager actively supports their team's use of AI are **8.7 times as likely to strongly agree** that AI has transformed how their work gets done, and **7.4 times as likely to strongly agree** that AI gives them more opportunities to do what they do best.
+Gallup's [State of the Global Workplace 2026](https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx) puts a number on it that is worth reading carefully rather than repeating. Among US employees, those who strongly agree that their manager actively supports their team's use of AI are **8.7 times as likely to strongly agree** that AI has transformed how their work gets done, and **7.4 times as likely to strongly agree** that AI gives them more opportunities to do what they do best [2].
 
 Now the caveats, because they matter more than the headline. That is a top-box comparison, strongly-agree against everyone else, which is precisely the kind of framing that produces enormous ratios. It is self-reported. It is correlational, so I cannot tell you that the manager caused the transformation rather than, say, both facts being downstream of a functional team in a functional company. I am not selling you an 8.7x lever, and anybody who does is misreading their own source.
 
@@ -54,7 +54,7 @@ What survives all of that is still the interesting part, and it is directional: 
 
 Microsoft's [2026 Work Trend Index](https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization), surveying twenty thousand knowledge workers across ten countries, finds the same shape from a different angle. 
 
-Where managers actively **modelled** AI use rather than merely permitting it, the report records a 17-point lift in reported AI value, a 22-point lift in critical thinking about their own AI use, and a 30-point lift in trust in agentic AI. 
+Where managers actively **modelled** AI use rather than merely permitting it, the report records a 17-point lift in reported AI value, a 22-point lift in critical thinking about their own AI use, and a 30-point lift in trust in agentic AI [3].
 
 Same health warnings apply, self-reported and correlational, and a point lift means percentage points on a survey item rather than anything anyone measured about the actual work. The word doing the work in that finding is modelled. Permitting AI means telling your team the licence is there and the policy allows it. Modelling it means opening the thing in front of them, on a real piece of work that matters to you, and letting them watch you get it wrong twice before it comes out right. The second one is the one that transfers, and it is also the one almost nobody does.
 
@@ -64,15 +64,15 @@ Same health warnings apply, self-reported and correlational, and a point lift me
 
 Here is the part that should be embarrassing for an industry that has spent an extraordinary amount of money on this.
 
-**Fewer than one in three** US employees in organisations that have already begun implementing AI strongly agree that their manager actively supports their team's use of it. Not "has heard of it", not "permits it". Actively supports it. 
+**Fewer than one in three** US employees in organisations that have already begun implementing AI strongly agree that their manager actively supports their team's use of it [2]. Not "has heard of it", not "permits it". Actively supports it.
 
-In Germany, a separate Gallup study puts the equivalent figure at 21 percent, though I want to flag that these are different instruments in different years and it is not the clean cross-country comparison it looks like.
+In Germany, a separate Gallup study puts the equivalent figure at 21 percent [4], though I want to flag that these are different instruments in different years and it is not the clean cross-country comparison it looks like.
 
 So the multiplier exists, and it is almost entirely unactivated. The organisation bought the capability, installed it on everyone's laptop, and then left it sitting on the desk of a person who was never told that switching it on was now part of their job, or who was told by means of a PDF called How To Use AI, which lands in the same inbox as the fire drill notice and gets read with the same attention.
 
 And it gets worse, because of what has been happening to that person independently. 
 
-Gallup finds that manager engagement has **dropped nine points since 2022**, falling to 22 percent, with the sharpest fall between 2024 and 2025. I want to be careful here, because this is a global figure, it is general engagement rather than anything AI-specific, and it began before the current wave.
+Gallup finds that manager engagement has **dropped nine points since 2022**, falling to 22 percent, with the sharpest fall between 2024 and 2025 [2]. I want to be careful here, because this is a global figure, it is general engagement rather than anything AI-specific, and it began before the current wave.
 
 I am not claiming AI caused it, and the honest version of the claim is smaller and stranger: at the exact moment we decided that the manager would be the mechanism by which AI reached the workforce, the manager was quietly running out of road. We loaded the transmission at the point of its lowest torque.
 
@@ -82,7 +82,7 @@ I am not claiming AI caused it, and the honest version of the claim is smaller a
 
 The Microsoft data has one more finding in it that reframes the whole thing, and it is the one I would put on a slide if I still made slides.
 
-Leaders are **twice as likely as their employees** to say that reinventing how work gets done with AI is rewarded *regardless of outcome*: 21 percent against 10 percent. Read that again, because it is not a statement about optimism. 
+Leaders are **twice as likely as their employees** to say that reinventing how work gets done with AI is rewarded *regardless of outcome*: 21 percent against 10 percent [3]. Read that again, because it is not a statement about optimism.
 
 It is a statement about who thinks it is safe to fail. The people at the top believe that experimenting is rewarded even when it does not pay off, and the people doing the experimenting mostly do not believe that, and both groups are describing the same company.
 
@@ -104,7 +104,7 @@ The tooling is the cheap half, and it is the half that arrives on a predictable 
 
 If that is true then coaching managers is treating the readout instead of the illness, and the real work is whatever produced the disengagement in the first place. I do not have a clean test that separates those two for managers specifically, and I would like one.
 
-There is one experiment that gets close, and it is worth being exact about what it does and does not show. Kim, Kim and Koning ran a [randomised trial across 515 startups](https://ssrn.com/abstract=6513481) in a three month accelerator. Every firm in it received the technical AI training, the API credits and the mentorship. The only thing the treated firms received on top was information about how other companies had reorganised their work around AI. Those firms went on to find 44 percent more use cases, complete 12 percent more tasks, and generate 1.9 times the revenue of the control group, and the authors describe the result as causal evidence, which they are entitled to do because they randomised it.
+There is one experiment that gets close, and it is worth being exact about what it does and does not show. Kim, Kim and Koning ran a [randomised trial across 515 startups](https://ssrn.com/abstract=6513481) in a three month accelerator. Every firm in it received the technical AI training, the API credits and the mentorship. The only thing the treated firms received on top was information about how other companies had reorganised their work around AI. Those firms went on to find 44 percent more use cases, complete 12 percent more tasks, and generate 1.9 times the revenue of the control group, and the authors describe the result as causal evidence, which they are entitled to do because they randomised it [5].
 
 That does not vindicate me. These are startups rather than managers inside established organisations, it is a working paper rather than a peer-reviewed one, and the treatment was a set of case studies rather than anything resembling coaching. What it does settle is the half of my argument I could not settle myself: hold the tooling constant, vary only the understanding of where the work ought to change, and the performance moves. The tooling was never the variable. That is the claim I am actually making, and somebody has finally tested it under conditions where the arrow can only point one way.
 
@@ -121,3 +121,13 @@ The contract you signed has a number of seats in it, a support tier, a data-proc
 That line does not exist on any invoice I have seen. It is still the thing you are buying, or failing to.
 
 So before the next renewal: who, by name, is going to switch this on for your team?
+
+---
+
+## References
+
+1. Alexis Krivkovich with Lucia Rahilly, "AI is everywhere. The agentic organization isn't—yet," *The McKinsey Podcast* (McKinsey & Company, April 2026). The source of the figure that more than 80 percent of companies say they are not yet seeing bottom-line impact from their AI investment, and of the subtitle placing the real challenge in redesigning workflows, leadership and culture rather than in the technology. Worth knowing what this is: an edited podcast transcript, not a research report. It gives no sample size, instrument or method for the 80 percent, which is why the essay attributes it to a senior partner speaking rather than to a survey. <!-- URL NEEDED: read from the published PDF; do not guess a mckinsey.com path -->
+2. Gallup, *State of the Global Workplace 2026*. Carries three of the numbers used here: the 8.7× and 7.4× ratios for employees whose managers actively support AI use, the finding that fewer than one in three US employees in AI-implementing organisations strongly agree they have that support, and the nine-point fall in manager engagement since 2022 to 22 percent. Every ratio is a top-box comparison of "strongly agree" against everyone else, which is what makes the ratios large; all of it is self-reported and correlational, and the engagement figure is global and general rather than anything AI-specific. https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx
+3. Microsoft, *2026 Work Trend Index Annual Report* ("Agents, human agency, and the opportunity for every organization"). n=20,000 knowledge workers across 10 countries, fielded with Edelman DxI, February to April 2026. The source of the lifts where managers modelled AI use rather than merely permitting it, and of the gap between leaders and employees on whether reinventing work with AI is rewarded *regardless of outcome*, 21 percent against 10 percent. A "point lift" here means percentage points on a survey item, not a measurement of the work itself. https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization
+4. Gallup, *Engagement Index Deutschland* (March 2026). The German figure of 21 percent. This is a **separate instrument from a different year**, so the comparison against the US number in reference 2 is not like for like, and the essay says so where it uses it. <!-- URL NEEDED -->
+5. Hyunjin Kim, Dahyeon Kim and Rembrand Koning, "Mapping AI into Production: A Field Experiment on Firm Performance," INSEAD Working Paper 2026/20/STR, 30 March 2026. A randomised controlled trial across 515 high-growth startups in a three-month accelerator, preregistered on the AEA RCT Registry as AEARCTR-0016746. Both arms received the technical AI training, the API credits and the mentorship; only the treated firms also received information on how other companies had reorganised their work around AI. The one piece of genuinely causal evidence in this essay, and it bears on the layer rather than on the manager. Still a working paper, not peer-reviewed. https://ssrn.com/abstract=6513481
