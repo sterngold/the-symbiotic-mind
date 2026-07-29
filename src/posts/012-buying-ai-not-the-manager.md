@@ -26,7 +26,7 @@ ogImage: "/images/012-cover.png"
 tags:
   - relationship
   - work
-videoPending: true
+youtubeId: "wbTYcbEGvvs"
 ---
 
 ## Nobody bought the manager
