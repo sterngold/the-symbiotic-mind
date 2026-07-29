@@ -1,6 +1,6 @@
 ---
 title: "Human-AI Relationship Design"
-seoTitle: "Designing Your AI Relationship: Choosing the Terms Instead of Inheriting Them"
+seoTitle: "Relationship Design: Choosing the Terms of Your Human-AI Relationship Instead of Inheriting Them"
 description: "Relationship design is deliberately choosing the terms of your working relationship with AI: which roles each side plays, where the boundaries sit, what gets delegated and what stays human — instead of letting defaults decide."
 order: 2
 oneLine: "Deliberately choosing the terms of your working relationship with AI, instead of running on accidental defaults."
