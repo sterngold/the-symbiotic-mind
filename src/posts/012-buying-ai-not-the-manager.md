@@ -18,8 +18,10 @@ concepts:
 subscribeCta: "The tooling is the cheap half. New essays every other Thursday."
 description: "A VP asked what the ROI was on all the tech we had bought. Four weeks later the database was firing one event a day. Companies buy the AI and skip the manager who was supposed to carry it across, and what that person actually supplies is not AI expertise but cover: making it survivable to be visibly bad at something new."
 deck: ""
-# COVER NOT YET GENERATED. The layout guards on {% if cover %}, so the post renders without a
-# hero rather than with a broken image. Prompt A in the VladWriting post folder is SELECTED.
+cover:
+  src: "/images/012-cover.png"
+  alt: "On warm off-white paper, three figures of equal height stand in a row. On the left, a human form painted in loose watercolour, terracotta and rust bleeding down into ochre, head bowed and turned inward. On the right, a figure built from flat triangular facets in navy and slate blue, head also bowed and turned inward. Between them stands a third figure the same size as the other two and left unpainted: a faint outline on bare paper, with a soft rainbow wash drifting diagonally through the empty space inside it. The two who are present are turned toward someone who was never filled in."
+ogImage: "/images/012-cover.png"
 tags:
   - relationship
   - work
