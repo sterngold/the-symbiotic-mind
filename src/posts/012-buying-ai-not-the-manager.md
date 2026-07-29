@@ -6,10 +6,11 @@ related:
   - "010-relationship-design"
   - "002-my-api-not-my-resume"
   - "003-amplification"
-# PLACEHOLDER DATE - Vlad confirms before publish. Thursday, exactly 14 days after 011
-# (2026-07-23), i.e. the cadence-correct "every other Thursday" slot. The previous value
-# on this branch was 2026-08-04, which is a Tuesday.
-date: 2026-08-06T08:00:00+02:00
+# Publish date, set 2026-07-29 on Vlad's call: essay goes live this week and the LinkedIn
+# cross-cite goes Thursday 2026-07-30, so the essay carries that day. Matches the 009/010
+# precedent of dating the essay to its reading date. If the day moves, change this line
+# AND the VladWriting folder name together.
+date: 2026-07-30T08:00:00+02:00
 author: vlad
 concepts:
   - "relationship-design"
