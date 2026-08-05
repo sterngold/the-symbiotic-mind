@@ -17,7 +17,7 @@ description: "When we name a person we recognise an identity that already exists
 deck: ""
 cover:
   src: "/images/013-cover.png"
-  alt: "COVER PENDING - write against the RENDERED image, never against the prompt."
+  alt: "On warm off-white paper, two abstract standing figures of equal height face the same direction with a wide empty gap between them. The left figure is watercolour in terracotta and peach, a deeper serpentine band moving through it, its edges soft where the pigment bled. The right figure is built from flat triangular facets in navy, slate and pale blue. Neither has features beyond a suggested profile, and they never touch. A single thin terracotta line loops around both of them in one unbroken ellipse, closing at a small visible bead on the left. The line that contains them both is drawn in the human's colour."
 ogImage: "/images/013-cover.png"
 videoPending: true
 tags:
