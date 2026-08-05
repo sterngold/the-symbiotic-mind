@@ -62,7 +62,7 @@ I want to be careful not to romanticise it. The machine isn't learning to care a
 3. Ianì, F. (2019). *Embodied Memories: Reviewing the Role of the Body in Memory Processes.* Psychonomic Bulletin & Review. DOI: 10.3758/s13423-019-01674-x.
 4. Liu, N. F., et al. (2024). *Lost in the Middle: How Language Models Use Long Contexts.* Transactions of the Association for Computational Linguistics (TACL). arXiv:2307.03172.
 5. *Context Length Alone Hurts LLM Performance Despite Perfect Retrieval.* (2025). Findings of EMNLP 2025. arXiv:2510.05381.
-6. Chroma Research. (2025). *Context Rot: How Increasing Input Tokens Impacts LLM Performance.* research.trychroma.com/context-rot. *(Industry report; not peer-reviewed.)*
+6. Chroma Research. (2025). *Context Rot: How Increasing Input Tokens Impacts LLM Performance.* [research.trychroma.com/context-rot](https://research.trychroma.com/context-rot). *(Industry report; not peer-reviewed.)*
 7. Chhikara, P., et al. (2025). *Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory.* arXiv:2504.19413.
 8. Xu, W., et al. (2025). *A-MEM: Agentic Memory for LLM Agents.* arXiv:2502.12110.
 9. Park, J. S., et al. (2023). *Generative Agents: Interactive Simulacra of Human Behavior.* UIST '23. arXiv:2304.03442.
