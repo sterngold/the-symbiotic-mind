@@ -35,9 +35,7 @@ The comment made everyone smile. It was witty, natural, and somehow immediately 
 
 That triggered a question.
 
-Why do we do that?
-
-Not because AI needs a name. It doesn't.
+Why do we do that? Not because AI needs a name. It doesn't.
 
 We do.
 
@@ -51,11 +49,13 @@ Just starting to think about this made me realize that this topic reveals anothe
 
 Why is this so?
 
-When we name another human being, we are recognizing an identity that already exists.
+When we name another human being, we are recognizing an identity that already exists. When we name our AI, we are actually creating one.
 
-When we name our AI, we are actually creating one. And once that identity exists, our social instincts quietly begin filling in the blanks. "Aireen is good at strategy." "Finn is great at spotting patterns." "Ella understands how I think."
+Behavioral science explains that people naturally apply social rules to technologies that display human-like cues. A name may be one of the strongest cues of all.
 
-The AI has not become more human, but our mental model of the relationship has.
+And once an identity exists, our social instincts quietly begin filling in the blanks. "Aireen is good at strategy." "Finn is great at spotting patterns." "Ella understands how I think."
+
+As a result, AI has not become more human, but our mental model of the relationship has.
 
 So, does that mean that naming your AI is a mistake?
 
@@ -73,9 +73,9 @@ Emma.
 
 David.
 
-Those names make collaboration feel natural because they activate the same mental models we use for human relationships, and this becomes another behavioral trap.
+Those names make collaboration feel natural because they activate the same mental models we use for human relationships—and that becomes another behavioral trap.
 
-Perhaps, instead of choosing names that make AI feel more human, we should choose names that remind us we are building a partnership that is not H2H
+Perhaps, instead of choosing names that make AI feel more human, we should choose names that remind us we are building a partnership that is different from a human-to-human relationship.
 
 Compass.
 
@@ -87,7 +87,11 @@ Prism.
 
 Names that create continuity without creating confusion. Names that remind us this collaborator is neither simply software nor another person, but something new that deserves its own mental model.
 
-The question becomes even more interesting—and more complex—when we place it in the context of teams and organizations. As AI becomes a normal part of every professional team, what should we normalize? Should organizations encourage people to give their AI collaborators AI-specific names or human names? Should those names remind us that these are different kinds of partners with different strengths, different limitations, and different responsibilities?
+Of course, even these names may eventually acquire personalities of their own. The goal is probably not to eliminate anthropomorphism entirely (our natural tendency to attribute human qualities, intentions, and personalities to non-human things), but to shape the relationship more intentionally.
+
+The question becomes even more interesting—and more complex—when we place it in the context of teams and organizations.
+
+As AI becomes a normal part of every professional team, what should we normalize? Should organizations encourage people to give their AI collaborators AI-specific names or human names? Should those names remind us that these are different kinds of partners with different strengths, different limitations, and different responsibilities?
 
 There is another possibility we have not yet considered.
 
@@ -95,9 +99,9 @@ Instead of giving AI a completely independent identity, perhaps we should name t
 
 Compass (Milena)
 
-Milena AI.
+Milena AI
 
-Team Milena-Compass.
+Team Milena–Compass
 
 That would preserve something important: the reminder that every AI collaborator is also shaped by a human collaborator. Two people may both work with the same foundation model, but they are not working with the same AI. Their prompts, history, context, and ways of thinking gradually create different collaborators.
 
@@ -107,7 +111,7 @@ At this point, you are probably wondering whether I have a name for my main AI c
 
 I do not.
 
-But I am convinced I should have.
+But now I am convinced I should have.
 
 I will take a little more time to decide what it should be—and what kind of relationship I want that name to shape.
 
@@ -117,6 +121,6 @@ They will come from me... and whoever my AI collaborator becomes.
 
 ---
 
-🗣 **ME (90%)**: The idea, the behavioral read, the story and the refusal to come up with an AI name.
+🗣 **ME (90%)**: The idea, the behavioral read, the story and the hesitation in coming up with an AI name.
 
 🤖 **AI - still name-less (10%)**: The (flattering) feedback, some brainstorming questions, stress-testing & editorial refinement.
