@@ -192,10 +192,18 @@ function internalUrls(attr, raw) {
 const resolves = (url) => {
   const rel = decodeURIComponent(url).replace(/^\//, "");
   if (!rel) return true; // "/" is the homepage
-  return (
-    fs.existsSync(path.join(SITE, rel)) ||
-    fs.existsSync(path.join(SITE, rel, "index.html"))
-  );
+  const target = path.join(SITE, rel);
+  // Files (assets: src/og:image/covers) must be real files — a directory match
+  // used to green-build typos like `/images/` or `/images/og/` (Codex on #71).
+  // Page URLs may be directories only when they carry index.html.
+  try {
+    const st = fs.statSync(target);
+    if (st.isFile()) return true;
+    if (st.isDirectory()) return fs.existsSync(path.join(target, "index.html"));
+    return false;
+  } catch {
+    return fs.existsSync(path.join(SITE, rel, "index.html"));
+  }
 };
 
 // 9c) Assets from build STEPS that can be skipped locally: `og` downloads fonts from
