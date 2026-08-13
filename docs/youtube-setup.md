@@ -10,7 +10,8 @@ Free-only, brand-consistent setup for "The Symbiotic Mind". The same recording b
 1. Sign in to YouTube with the account that should own the channel.
 2. **Settings → Create a new channel** (or use a Brand Account so ownership can be transferred and you keep your personal account separate).
 3. Channel name: **The Symbiotic Mind**
-4. Once the channel exists, claim the handle: **@symbioticmind** at [youtube.com/handle](https://www.youtube.com/handle).
+4. Once the channel exists, claim the handle. **Done — the live handle is `@symbiotic-mind`**
+   (`src/_data/podcast.js` → `show.youtubeHandle`).
 5. Once you cross 100 subscribers, you can claim the matching custom URL: `youtube.com/c/symbioticmind`.
 
 ### 1.2 Branding (use the assets in `/src/images/`)
@@ -66,7 +67,9 @@ Free-only, brand-consistent setup for "The Symbiotic Mind". The same recording b
 - **Tags**: `AI, human-AI symbiosis, AI practitioner, behavioral science, Vlad Sterngold, Milena Nikolova`
 
 ### 1.6 Get the channel ID for the site
-After publishing one video, copy your channel's **canonical URL** (Studio → Customization → Basic info). It looks like `https://www.youtube.com/channel/UCxxxxxxxxxxxxxxxxxxxxxx`. Paste the `UC…` ID into `src/watch.njk` (search `UCxxxxxxxxxxxxxxxxxxxxxx`). That enables the YouTube channel RSS link on `/watch/`.
+**Done.** The channel ID lives at `src/_data/podcast.js` → `show.youtubeChannelId`
+(`UCXPq0wU1juoFnJl2ixImCsQ`), and `src/watch.njk` reads it from there — it contains no literal
+`UC…` string to replace. That enables the YouTube channel RSS link on `/watch/`.
 
 ### 1.7 Do NOT start with Shorts
 The audience is exec/practitioner, not algorithm-grazing. Shorts dilute the brand at this stage. Add them later, only as trailers for full episodes.
@@ -110,7 +113,8 @@ Recommended: **Internet Archive** for the canonical archive + **Cloudflare R2** 
 2. Note the **exact byte length** (`stat -f %z episode.mp3` on Mac).
 3. Upload to your chosen host. Copy the direct URL.
 4. In `src/_data/podcast.js`, append a new entry to `episodes` with `audio.url`, `audio.lengthBytes`, `audio.mimeType`, `pubDate`, `duration` (hh:mm:ss), `title`, `slug`, `description`, optional `youtubeId` and `transcriptUrl`.
-5. Open a PR. CI builds and deploys. The podcast RSS at `/podcast.xml` updates automatically.
+5. Open a PR and merge it. Cloudflare Pages rebuilds on the push to `main`; the podcast RSS at
+   `/podcast.xml` updates automatically. (CI builds and validates; it does not deploy.)
 
 ---
 
@@ -132,7 +136,10 @@ Update the placeholder Apple/Spotify links in `src/listen.njk` (search `idTBD` /
 
 - Don't host on Anchor/Spotify-for-Podcasters-only without the RSS escape route. Always own the feed via `/podcast.xml`.
 - Don't pay for Buzzsprout/Transistor/Libsyn at this stage — you have free options that scale to thousands of listeners.
-- Don't start a Substack newsletter spinoff. The newsletter lives on symbiotic-mind.com via the existing Buttondown/listmonk wiring. One feed of trust, not three.
+- Don't add a second list. The newsletter **is** Substack (`thesymbioticmind.substack.com`),
+  embedded on symbiotic-mind.com since 2026-06-11; Buttondown and listmonk are dormant config.
+  One feed of trust, not three. *(This bullet said the opposite until 2026-08-13 — it predated
+  the switch.)*
 - Don't enable Patreon, Buy Me a Coffee, or YouTube memberships until episode 12+. Build the catalog first.
 
 ---
@@ -154,6 +161,6 @@ Three episodes is the threshold where the Apple "New & Noteworthy" review actual
 | File | Edit when |
 |---|---|
 | `src/_data/podcast.js` | Adding/editing an episode, or updating show metadata |
-| `src/watch.njk` | After channel exists — replace `UCxxxxxxxxxxxxxxxxxxxxxx` with real channel ID |
+| `src/_data/podcast.js` | Channel ID + handle live here (`show.youtubeChannelId`, `show.youtubeHandle`) — done, nothing to replace |
 | `src/listen.njk` | After Apple/Spotify approval — replace `idTBD`/`TBD` with real show IDs |
 | `src/images/podcast-cover.png` | Replace the placeholder with your real cover (3000×3000 PNG) |

@@ -19,8 +19,8 @@ This file is the **single source of truth** for repo conventions.
 - **Repo:** `the-symbiotic-mind`
 - **Purpose:** Static content site for *The Symbiotic Mind* — AI × HI (Artificial Intelligence × Human Intelligence) framed as a relationship-design problem. Essays, episodes, and author pages published at **symbiotic-mind.com**. A content/marketing site, not an application.
 - **Owner:** @sterngold
-- **Status:** active — **governed live site** (PR-based; owner approves + deploys).
-- **Stack:** Eleventy 3 static-site generator (Node 20, ESM — `eleventy.config.mjs`). Markdown/Nunjucks content under `src/` + `content/`, Pagefind search, Satori + resvg OG-image generation (`scripts/`). Hosted on **Cloudflare Pages** (`functions/` + CF Git-integration build); no backend.
+- **Status:** active — **governed live site** (PR-based; owner approves and merges — merging to `main` auto-deploys via Cloudflare Pages, so a merge IS a production deploy).
+- **Stack:** Eleventy 3 static-site generator (Node 20, ESM — `eleventy.config.mjs`). Published Markdown/Nunjucks content under `src/` — Eleventy's input dir is `src` only, so nothing in `content/` is ever built (it holds unbuilt drafts and recording briefs). Pagefind search, Satori + resvg OG-image generation (`scripts/`). Hosted on **Cloudflare Pages** (`functions/` + CF Git-integration build); no backend.
 
 ---
 
@@ -52,7 +52,7 @@ npm run build:publish
 
 **Never commit** secrets, API keys, or the generated `_site/` output.
 
-**Agents:** content lives in `src/` + `content/`; always validate the generated site after building, and never substitute publishing for validation.
+**Agents:** published content lives in `src/` ONLY — `content/` is drafts and is never built. Any `.md` added to `src/posts/` publishes on the next build; there is no draft flag and no date filter, so a future-dated file ships immediately. Always validate the generated site after building, and never substitute publishing for validation.
 
 ---
 
@@ -114,7 +114,7 @@ Co-authored-by: Claude <noreply@anthropic.com>
 ## 5. Pull requests
 
 - **All changes** to `main` go through a PR. No direct pushes.
-- PR title MUST follow Conventional Commits (CI enforces).
+- PR title SHOULD follow Conventional Commits. **CI enforcement is per-repo, not universal** — as of 2026-08-12 `ai-context` and `seo-ops` no longer run commitlint / pr-title / signature jobs. Do not assume a gate exists; check the repo's own `ci.yml`.
 - PR description MUST fill the template (`.github/pull_request_template.md`).
 - **Squash-merge only.** Linear history required.
 - Required passing check: `ci` — the aggregate job in `.github/workflows/ci.yml` that gates commit convention, secret scan, and any repo-specific blocking backstops. Python/Node lint+test jobs may be advisory when configured with `continue-on-error: true`; skipped stack-conditional jobs are allowed, and making them blocking requires changing the workflow first.
@@ -133,7 +133,7 @@ Co-authored-by: Claude <noreply@anthropic.com>
 ## 6. Versioning & releases
 
 - **SemVer 2.0.** `MAJOR.MINOR.PATCH`.
-- Releases managed by [release-please](https://github.com/googleapis/release-please) — opens a release PR that bumps version + updates `CHANGELOG.md` from Conventional Commits.
+- **No release tooling by default.** release-please was removed from `werkanders-os` on 2026-08-12 (it opened a release PR on every push, staling every other open PR). If a repo still runs it, that is repo-local — this canon does not mandate it.
 - Tags: `v<MAJOR>.<MINOR>.<PATCH>` (e.g. `v1.4.2`).
 - Pre-1.0 repos: breaking changes allowed in `MINOR` per SemVer §4.
 
@@ -185,7 +185,7 @@ Then add the same SSH key as a **Signing Key** in GitHub → Settings → SSH an
 Repos must contain:
 - `README.md` — what it is, how to run it, how to test it
 - `AGENTS.md` — this file
-- `CHANGELOG.md` — auto-maintained by release-please
+- `CHANGELOG.md` — optional; hand-edited where it exists. Nothing auto-maintains it.
 - `docs/` — design notes, ADRs (Architecture Decision Records) for non-trivial choices
 
 ADR format: `docs/adr/NNNN-short-title.md`. One per decision. Date + context + decision + consequences.
@@ -218,4 +218,4 @@ ADR format: `docs/adr/NNNN-short-title.md`. One per decision. Date + context + d
 | `update README` as a commit | `docs: clarify install steps` |
 | Branch named after yourself or your tool | Branch named after the work (`feat/AND-1234-…`) |
 | Storing secrets in `config.py` "just for now" | `.env` + `python-decouple` / `os.getenv`. |
-| Manual CHANGELOG edits | release-please owns CHANGELOG. |
+| Assuming a CI gate exists | Check the repo's `ci.yml`; enforcement is per-repo. |

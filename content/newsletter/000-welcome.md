@@ -1,7 +1,7 @@
 ---
 type: welcome-email
 status: draft
-provider: buttondown
+provider: substack  # was buttondown; the live provider changed 2026-06-11 and this draft was never swept
 send_to: all-subscribers
 send_when: "Manually, the day you flip provider to live. Not via RSS-to-email."
 subject_line_options:
@@ -13,11 +13,11 @@ from_name: "Vlad & Milena — The Symbiotic Mind"
 from_email: "hello@symbiotic-mind.com"
 notes:
   - "Send manually. This is the only newsletter you ever write by hand."
-  - "After this, RSS-to-email handles every future post automatically."
-  - "Plain text and markdown versions are both below. Buttondown renders the markdown; the plain text is for accessibility and for the few clients that strip HTML."
+  - "RSS-to-email is NOT configured. Merging a post sends nothing. This claim was a Buttondown assumption and is unverified for Substack — confirm in the Substack dashboard before relying on it."
+  - "Plain text and markdown versions are both below. Substack renders the markdown; the plain text is for accessibility and for the few clients that strip HTML."
 ---
 
-# Markdown version (paste into Buttondown's compose window)
+# Markdown version (paste into Substack's compose window)
 
 Hi —
 

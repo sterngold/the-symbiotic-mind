@@ -3,8 +3,8 @@
 - **Repo:** `the-symbiotic-mind`
 - **Purpose:** Static content site for *The Symbiotic Mind* — AI × HI (Artificial Intelligence × Human Intelligence) framed as a relationship-design problem. Essays, episodes, and author pages published at **symbiotic-mind.com**. A content/marketing site, not an application.
 - **Owner:** @sterngold
-- **Status:** active — **governed live site** (PR-based; owner approves + deploys).
-- **Stack:** Eleventy 3 static-site generator (Node 20, ESM — `eleventy.config.mjs`). Markdown/Nunjucks content under `src/` + `content/`, Pagefind search, Satori + resvg OG-image generation (`scripts/`). Hosted on **Cloudflare Pages** (`functions/` + CF Git-integration build); no backend.
+- **Status:** active — **governed live site** (PR-based; owner approves and merges — merging to `main` auto-deploys via Cloudflare Pages, so a merge IS a production deploy).
+- **Stack:** Eleventy 3 static-site generator (Node 20, ESM — `eleventy.config.mjs`). Published Markdown/Nunjucks content under `src/` — Eleventy's input dir is `src` only, so nothing in `content/` is ever built (it holds unbuilt drafts and recording briefs). Pagefind search, Satori + resvg OG-image generation (`scripts/`). Hosted on **Cloudflare Pages** (`functions/` + CF Git-integration build); no backend.
 
 ---
 
@@ -36,4 +36,4 @@ npm run build:publish
 
 **Never commit** secrets, API keys, or the generated `_site/` output.
 
-**Agents:** content lives in `src/` + `content/`; always validate the generated site after building, and never substitute publishing for validation.
+**Agents:** published content lives in `src/` ONLY — `content/` is drafts and is never built. Any `.md` added to `src/posts/` publishes on the next build; there is no draft flag and no date filter, so a future-dated file ships immediately. Always validate the generated site after building, and never substitute publishing for validation.

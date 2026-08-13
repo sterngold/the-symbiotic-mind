@@ -1,17 +1,25 @@
 # Content drafts
 
-This folder holds *drafts* — not published content. Everything here is meant to be reviewed, edited, and then either copied into Buttondown (newsletters) or used as the recording brief (episodes).
+This folder holds *drafts* — not published content. Everything here is meant to be reviewed, edited, and then either copied into Substack
+(newsletters — the live provider since 2026-06-11) or used as the recording brief (episodes).
 
 ## Article drafts
 
 - [`posts/`](./posts/) — in-progress article drafts. **Nothing here is built or published.**
   When a draft's prose is final and reviewed, rename it `NNN-slug.md` and move it into
   `src/posts/` — that, and only that, publishes it (any `.md` in `src/posts/` auto-publishes; there is no draft flag).
-  - `posts/relationship-design.md` — foundational "pillar" article skeleton (frame the series rests on).
+  - `posts/relationship-design.md` — foundational "pillar" article skeleton. ⚠ The pillar itself
+    **shipped 2026-07-16 as post 010**; this scaffold was never the published text.
+  - `posts/004-what-the-terrace-knew.md` — a complete 2026-05-26 draft titled *"What the Terrace
+    Knew"*, never published under that title. ⚠ The slug `004-what-the-terrace-knew` was reused by
+    a different essay, live as *"Queryable vs Quotable"*. Keep the URL; do not "tidy" the slug.
 
 ## Newsletter
 
-- [`newsletter/000-welcome.md`](./newsletter/000-welcome.md) — Inaugural welcome email. Send manually, once. After this, RSS-to-email handles everything.
+- [`newsletter/000-welcome.md`](./newsletter/000-welcome.md) — Inaugural welcome email, still
+  `status: draft`; never sent. Send manually, once, via Substack. ⚠ The "after this, RSS-to-email
+  handles everything" claim was a Buttondown assumption and is **unverified for Substack** —
+  confirm before relying on it.
 
 ## First three podcast episodes
 

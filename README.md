@@ -17,7 +17,7 @@ Static site built with **[Eleventy 3](https://www.11ty.dev/)**.
 - Markdown posts in `src/posts/` with frontmatter (title, date, author slug, description, tags, optional cover and video retell).
 - Layouts and partials in `src/_includes/`.
 - Global config in `src/_data/site.js`; author profiles in `src/_data/authors.js`.
-- CSS in `src/css/` (the original `style.css`, unchanged).
+- CSS in `src/css/style.css`.
 - Images in `src/images/`.
 - Build outputs to `_site/`.
 - **Pagefind** indexes the built site for client-side, fully static search at `/search/`.
@@ -37,8 +37,9 @@ npm run build
 node scripts/validate-build.mjs   # also runs in CI
 ```
 
-`npm run build` is intentionally side-effect-free. Use `npm run publish:indexnow`
-only after a production build that should notify IndexNow.
+`npm run build` is intentionally side-effect-free. Production uses `npm run build:publish`,
+which builds **and** sends one IndexNow ping — never run `publish:indexnow` after it, or the
+ping goes twice.
 
 ## What this build produces
 
@@ -80,22 +81,29 @@ videoRetell:                # optional
 Body in markdown.
 ```
 
-Open a PR → CI builds, validates, deploys on merge.
+Open a PR → GitHub Actions builds and validates (the `ci` check); Cloudflare Pages builds a
+preview. **Merging to `main` triggers the production Cloudflare build** — CI does not deploy.
+
+⚠ Any `.md` in `src/posts/` publishes on the next build. There is no draft flag and no date
+filter, so a future-dated file ships immediately. Keep unfinished work in `content/posts/`.
 
 ## Newsletter
 
-Two providers are wired in. Edit `src/_data/site.js`:
+The live provider is **Substack** — <https://thesymbioticmind.substack.com> — set since
+2026-06-11. Three providers are wired; `newsletter.provider` in `src/_data/site.js` selects one,
+and `src/_includes/partials/newsletter.njk` renders whichever is named.
 
 ```js
 newsletter: {
-  provider: "both", // "buttondown" | "listmonk" | "both"
-  buttondown: { username: "symbioticmind", embedUrl: "..." },
-  listmonk: { formActionUrl: "https://lists.example.com/subscription/form", listUuid: "..." }
+  provider: "substack", // "substack" | "buttondown" | "listmonk" | "both"
+  substack: { publicationUrl: "https://thesymbioticmind.substack.com" },
+  ...
 }
 ```
 
-- **Buttondown** (SaaS, free under 100 subs, RSS-to-email built in).
-- **listmonk** (self-hosted, free, no ceiling). When you stand it up, fill in the `formActionUrl` and `listUuid` — both forms will then render on the home page and at the end of each post.
+Substack was chosen for the network effects — recommendations, Notes, restacks. **Buttondown**
+(handle `sterngold`, 0 subscribers, nothing migrated) and **listmonk** are retained as dormant
+config for a future sovereign move. See `docs/newsletter.md`.
 
 ## Comments
 
