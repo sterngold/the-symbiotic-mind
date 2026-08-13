@@ -9,10 +9,11 @@ rests on. Co-authored: Vlad (practitioner lens) + Milena (behavioral-science len
 Per touch policy, Milena's contributed prose ships verbatim — this skeleton is a
 shared structure to write into, not a draft of her words.
 
-Canonical framework sources to write from (do not restate from memory):
-  - 30_DOMAINS/VladWriting/symbiotic-mind/framework-v1.md        (Pearl's Ladder, freedom asymmetry, symbiogenesis)
-  - 30_DOMAINS/VladWriting/symbiotic-mind/ai-hi-symbiotic-mind-v1.md  (public 2×2 matrix + operating loop)
-  - 30_DOMAINS/VladWriting/symbiotic-mind/program-blueprint-v1.md     (positioning)
+Canonical framework sources to write from (do not restate from memory).
+Moved 2026-08-13: these live in the prose repo sterngold/symbiotic-mind, not the monorepo.
+  - ~/claude2/symbiotic-mind/framework-v1.md             (Pearl's Ladder, freedom asymmetry, symbiogenesis)
+  - ~/claude2/symbiotic-mind/ai-hi-symbiotic-mind-v1.md  (public 2×2 matrix + operating loop)
+  - ~/claude2/symbiotic-mind/program-blueprint-v1.md     (positioning)
 Citation slots are marked [CITE: …]. Replace each with a real, checked source
 before publish (run the editorial source pass).
 -->

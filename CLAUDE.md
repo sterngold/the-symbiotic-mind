@@ -4,11 +4,14 @@ Publishing site for essays about AI × HI, relationship design, and the combined
 
 ## Shared editorial canon
 
-For public-facing essays, post drafts, and voice-sensitive writing, use the canonical shared writing layer in `~/Code/my-projects/00_SYSTEM/anders-config/voice/VladVoice.md`. That file exists and is still the voice reference.
+For public-facing essays, post drafts, and voice-sensitive writing, use **`/voice`** — the live
+Anders2 skill at `~/.claude-anders2/skills/voice/`. It is the voice reference, and it has the
+`linkedin` and `voice-check` skills folded into it, so there is nothing else to invoke.
 
-**Not yet ported to Anders2** (checked 2026-08-12). It lives in the retired `anders-config` tree — read it, don't edit it, until `/port` brings `VladVoice` across.
-
-This line also used to name two task skills, `skills/writing-essay.md` and `skills/research-to-draft.md`. **Neither exists** anywhere in `anders-config`; the pointer was already dead in v1. Don't go looking for them.
+Ported 2026-08-12 (1,463 v1 lines → 307). It supersedes this line's previous pointer at
+`~/Code/my-projects/00_SYSTEM/anders-config/voice/VladVoice.md`, which survives read-only in the
+archived monorepo and should not be read as current — the two have diverged, and `/voice` is the
+one that is maintained.
 
 ## Repo-local writing rules
 
@@ -34,3 +37,4 @@ This line also used to name two task skills, `skills/writing-essay.md` and `skil
 nvm use
 npm install
 npm run serve
+```

@@ -108,4 +108,7 @@ check. Cloudflare Pages owns production and preview deploys through its Git
 integration. Use `npm run build:publish && node scripts/validate-build.mjs` as
 the production Cloudflare build command when IndexNow pings should run.
 
-Project name on Cloudflare: `symbiotic-mind`.
+Project name on Cloudflare: `the-symbiotic-mind` — the project that serves
+`the-symbiotic-mind.pages.dev`, the same hostname `functions/_middleware.js:19` hardcodes.
+(This line read `symbiotic-mind` until 2026-08-13; it was the only place in the repo naming
+the project wrongly.)
