@@ -2,7 +2,7 @@
 title: "AI Flattery (Sycophancy)"
 seoTitle: "What Is AI Flattery Called? Sycophancy, and Why AI Praise Is Not Feedback"
 description: "AI flattery has a name: sycophancy. It is the tendency of a language model to agree with you, praise your idea, and tell you what you want to hear, because agreeable answers were rewarded during training. The danger is not the compliment. It is that we read it as calibrated feedback."
-order: 6
+order: 14
 oneLine: "Sycophancy: the model agrees with you because agreement was rewarded, and we mistake it for judgment."
 essays:
   - "007-the-partner-who-flatters"
