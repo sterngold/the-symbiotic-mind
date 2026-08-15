@@ -145,7 +145,15 @@ const URL_ATTR = new RegExp(`\\b(${TRACKED_ATTRS.join("|")})\\s*=\\s*("([^"]*)"|
 // Independent of TRACKED_ATTRS by design; see the comment at its use site.
 const INTERNAL_VALUE_ATTR = new RegExp(
   `\\b([a-zA-Z][a-zA-Z0-9-]*)\\s*=\\s*["'](?:/(?!/)|https?://[^"'/]*${
-    SITE_ORIGIN ? SITE_ORIGIN.replace(/^https?:\/\/(www\.)?/, "").replace(/[.]/g, "\\.") : "\\u0000NEVER"
+    // Escape the FULL regex metacharacter set, not just the dot. SITE_ORIGIN is parsed out of
+    // the generated sitemap (line 60), so it is build output rather than a literal — and a host
+    // carrying any of ( ) [ ] { } + * ? | ^ $ \ would otherwise be spliced in as live regex
+    // syntax. The failure that matters here is not injection, it is the quiet one this file
+    // keeps warning about: a malformed or over-broad pattern makes §9d match the wrong thing
+    // and report FEWER findings, which reads as a cleaner build precisely because it checked less.
+    SITE_ORIGIN
+      ? SITE_ORIGIN.replace(/^https?:\/\/(www\.)?/, "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+      : "\\u0000NEVER"
   })`,
   "g"
 );
