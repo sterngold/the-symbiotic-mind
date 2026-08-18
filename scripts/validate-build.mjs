@@ -137,7 +137,12 @@ postDirs.forEach((slug) => {
 // allowlist of meta names, so a NEW url-bearing meta is covered the day it is added.
 // `srcset`/`poster` are unused in today's output and included anyway, so the day a responsive
 // image or a <video poster> lands it is already covered instead of quietly reopening the hole.
-const TRACKED_ATTRS = ["href", "src", "srcset", "poster", "content"];
+// `data-theme` carries the giscus theme stylesheet (partials/giscus.njk). It is site-internal
+// and absolute by necessity — giscus fetches it from ITS origin — so §9d saw 13 of them and
+// refused to call the run clean over an attribute nothing examined. Tracking it also buys the
+// stronger guarantee: rename the theme file and the build fails here, instead of the comment
+// thread silently falling back to GitHub's white default on every post.
+const TRACKED_ATTRS = ["href", "src", "srcset", "poster", "content", "data-theme"];
 const URL_ATTR = new RegExp(`\\b(${TRACKED_ATTRS.join("|")})\\s*=\\s*("([^"]*)"|'([^']*)')`, "g");
 
 // Any attribute whose value is site-internal — a root-relative path, or an absolute URL on
