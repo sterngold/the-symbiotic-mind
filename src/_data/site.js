@@ -23,6 +23,10 @@ export default {
     repoId: "R_kgDORiRCPQ",
     category: "Announcements",
     categoryId: "DIC_kwDORiRCPc4C4As0",
+    // Absolute by necessity: giscus fetches the theme from its own origin, so a
+    // root-relative path would resolve against giscus.app and 404 into a silent
+    // fallback to GitHub's white default. Served with CORS via src/static/_headers.
+    theme: "https://symbiotic-mind.com/css/giscus-theme.css",
   },
   // Newsletter — providers controlled by a single flag.
   // Set provider to "substack", "buttondown", "listmonk", or "both" (buttondown+listmonk).

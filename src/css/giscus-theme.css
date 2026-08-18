@@ -1,0 +1,95 @@
+/* giscus theme — The Symbiotic Mind
+ *
+ * giscus ships GitHub's own light theme, which renders a white Primer card on
+ * this site's cream paper. This overrides the Primer custom properties inside
+ * the giscus iframe with the palette from style.css :root, so the comment
+ * thread reads as part of the page rather than as an embedded widget.
+ *
+ * Values here MIRROR src/css/style.css — they are not a second source of truth.
+ * Change a colour there and change it here in the same commit.
+ *
+ * Served with `Access-Control-Allow-Origin: *` (src/static/_headers): giscus
+ * fetches this file from its own origin, so without CORS it silently falls back
+ * to the default theme — the failure looks like "the theme didn't apply",
+ * never like an error.
+ *
+ * No webfont import on purpose. Pulling Google Fonts into a comment iframe
+ * costs a third-party request on every post for a marginal type match; the
+ * system stack is close enough and this site does not spend a reader's
+ * privacy on decoration.
+ */
+
+main {
+  /* Surfaces — --paper / --paper-off */
+  --color-canvas-default: #f6f2ea;
+  --color-canvas-overlay: #f6f2ea;
+  --color-canvas-inset: #ece6db;
+  --color-canvas-subtle: #ece6db;
+
+  /* Text — --ink / --ink-muted / --ink-faint */
+  --color-fg-default: #141414;
+  --color-fg-muted: #6b6b6b;
+  --color-fg-subtle: #a89e92;
+
+  /* Rules — --border */
+  --color-border-default: #e2dccf;
+  --color-border-muted: #e2dccf;
+
+  /* Accent — --accent oxblood */
+  --color-accent-fg: #7a1f1f;
+  --color-accent-emphasis: #7a1f1f;
+  --color-accent-muted: rgba(122, 31, 31, 0.24);
+  --color-accent-subtle: rgba(122, 31, 31, 0.08);
+
+  /* Secondary buttons */
+  --color-btn-text: #141414;
+  --color-btn-bg: #ece6db;
+  --color-btn-border: #e2dccf;
+  --color-btn-shadow: none;
+  --color-btn-inset-shadow: none;
+  --color-btn-hover-bg: #e2dccf;
+  --color-btn-hover-border: #a89e92;
+  --color-btn-active-bg: #e2dccf;
+
+  /* "Sign in with GitHub" — oxblood, matching site links */
+  --color-btn-primary-text: #f6f2ea;
+  --color-btn-primary-bg: #7a1f1f;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-hover-bg: #5a1515;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-shadow: none;
+  --color-btn-primary-inset-shadow: none;
+
+  /* Reactions */
+  --color-social-reaction-bg-hover: #ece6db;
+  --color-social-reaction-bg-reacted-hover: #e2dccf;
+
+  /* Inline code and quotes inside comments */
+  --color-neutral-muted: rgba(122, 31, 31, 0.08);
+  --color-primer-fg-disabled: #a89e92;
+
+  /* Timeline connector between comments */
+  --color-border-subtle: #e2dccf;
+
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI",
+    sans-serif;
+  color-scheme: light;
+}
+
+/* The iframe paints its own ground; without this the default white shows
+   through at the edges before the variables above take effect. */
+main,
+body {
+  background-color: #f6f2ea;
+}
+
+/* Drop the card border so the thread sits flat on the page, the way the rest
+   of the post's sections do. */
+.gsc-comment-box,
+.gsc-timeline {
+  border-color: #e2dccf;
+}
+
+.gsc-comment-box-tabs {
+  border-bottom-color: #e2dccf;
+}

@@ -30,5 +30,14 @@
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
+# giscus fetches this from ITS origin, so it needs CORS or the theme silently
+# falls back to GitHub's default light — a failure that looks like "it didn't
+# apply", never like an error. This block sits AFTER /css/* on purpose: it also
+# overrides the 1-year immutable above, so the theme can be iterated on without
+# waiting out a year of cache.
+/css/giscus-theme.css
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
 /images/*
   Cache-Control: public, max-age=31536000, immutable
