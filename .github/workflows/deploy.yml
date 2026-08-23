@@ -32,8 +32,8 @@ jobs:
     name: secret scan
     runs-on: ubuntu-latest
     # The secret scanner is the worst third-party action to have compromised: it reads
-    # the full history (fetch-depth: 0) precisely because that is where secrets hide,
-    # and this is a PUBLIC repository. So the action is not used at all — the release
+    # the whole repository deliberately available to it, and this is a PUBLIC repository.
+    # So the action is not used at all — the release
     # binary is downloaded and its sha256 verified before it runs. Same pattern, same
     # version and digest as behaviorsmart/ops. Bump both values together.
     env:
