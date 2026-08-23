@@ -38,3 +38,26 @@ nvm use
 npm install
 npm run serve
 ```
+
+## Verifying a change the way CI does
+
+```bash
+npm ci --ignore-scripts
+npm run build
+node scripts/validate-build.mjs
+```
+
+⛔ **Never run `npm run build:publish` or `npm run publish:indexnow` in a sandbox or an agent
+session.** Both ping IndexNow, which is a live external side effect on a real search index — it
+is not undone by reverting the commit. `npm run build` is the safe equivalent.
+
+## What a merge does
+
+**Merging to `main` publishes symbiotic-mind.com.** The deploy is owned by the Cloudflare Pages
+project's own Git Integration, which builds every push: `main` → the apex domain, PR branches →
+`<slug>.the-symbiotic-mind.pages.dev`.
+
+`.github/workflows/deploy.yml` is **not** the deploy despite its name — it is a parallel shadow
+gate running the same build chain (gitleaks, then `npm ci && npm run build && validate-build`) so
+branch protection has a required check. Turning it off would not stop a deploy; changing the
+Cloudflare project would.
