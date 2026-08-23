@@ -24,23 +24,89 @@ permissions:
   contents: read
 
 jobs:
+  # Every `uses:` in this file is pinned to a commit SHA with the tag in a trailing
+  # comment. A tag is mutable: whoever controls the action can repoint `v3` at new
+  # code that then runs with this repository's token. A SHA cannot be repointed.
+  # Dependabot reads the trailing comment and still proposes upgrades.
   gitleaks:
     name: secret scan
     runs-on: ubuntu-latest
+    # The secret scanner is the worst third-party action to have compromised: it reads
+    # the whole repository deliberately available to it, and this is a PUBLIC repository.
+    # So the action is not used at all — the release
+    # binary is downloaded and its sha256 verified before it runs. Same pattern, same
+    # version and digest as behaviorsmart/ops. Bump both values together.
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
     steps:
-      - uses: actions/checkout@v7
-        with: { fetch-depth: 0 }
-      - uses: gitleaks/gitleaks-action@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          # Do not leave the token in .git/config for a later step to read.
+          persist-credentials: false
+
+      - name: Install checksum-pinned Gitleaks CLI
+        run: |
+          set -euo pipefail
+          archive="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          # Retry + connect timeout: a transient network blip must not read as a
+          # failed secret scan. (Copilot review, the-symbiotic-mind#79.)
+          curl --fail --silent --show-error --location \
+            --retry 3 --retry-delay 2 --retry-connrefused --connect-timeout 10 \
+            --output "$RUNNER_TEMP/$archive" \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/$archive"
+          printf '%s  %s\n' "$GITLEAKS_SHA256" "$RUNNER_TEMP/$archive" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/$archive" -C "$RUNNER_TEMP" gitleaks
+          install -m 0755 "$RUNNER_TEMP/gitleaks" "$RUNNER_TEMP/bin-gitleaks"
+
+      - name: Scan the pull-request or push commit range
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            scan_range="${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"
+          elif [[ "${{ github.event_name }}" == "push" && -n "${{ github.event.before }}" && "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
+            scan_range="${{ github.event.before }}..${{ github.sha }}"
+          else
+            scan_range="${{ github.sha }}^!"
+          fi
+          "$RUNNER_TEMP/bin-gitleaks" git --redact --no-banner --log-opts="$scan_range"
+
+  hardening:
+    name: actions hardening
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      # Pinning by hand does not stay done. This is the gate that keeps it done:
+      # zizmor fails the build on an unpinned `uses:`, on `${{ }}` interpolation of
+      # attacker-controllable data into a shell, and on over-scoped tokens.
+      # Run via pipx (preinstalled on ubuntu-latest) at a pinned version, so the gate
+      # itself does not become another unpinned third-party dependency.
+      #
+      # ⚠ SCOPE, stated precisely: on `pull_request` this workflow runs from the PR's
+      # OWN checkout, so a pull request that edits this job out of `needs:` and out of
+      # the aggregate loop passes `ci` without ever running the audit. This gate
+      # therefore catches ACCIDENTAL drift -- ours -- and does NOT withstand a hostile
+      # pull request. Enforcing it against an untrusted PR requires the audit to run
+      # from a trusted ref (a reusable workflow pinned in another repository) or branch
+      # protection that requires review of workflow changes. Neither lives in this file.
+      # Raised by Copilot review on sterngold/sterngold-discussions#2, 2026-08-23.
+      - name: zizmor
+        run: pipx run zizmor==1.29.0 --no-online-audits --persona=regular .github/workflows/
 
   build:
     needs: gitleaks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          # This job runs `npm ci`, which executes lifecycle scripts from the tree
+          # under test. On a fork PR that code is untrusted; do not hand it the token.
+          persist-credentials: false
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 20
           cache: npm
@@ -56,13 +122,16 @@ jobs:
 
   ci:
     name: ci
-    needs: [gitleaks, build]
+    needs: [gitleaks, build, hardening]
     if: always()
     runs-on: ubuntu-latest
     steps:
       - name: aggregate
         run: |
-          for r in "${{ needs.gitleaks.result }}" "${{ needs.build.result }}"; do
+          # `ci` is the single required check in branch protection, so a job missing
+          # from this list is a job that cannot block a merge. actions-hardening is
+          # listed in `needs:` above AND read here — both are required for it to gate.
+          for r in "${{ needs.gitleaks.result }}" "${{ needs.build.result }}" "${{ needs.hardening.result }}"; do
             if [ "$r" = "failure" ] || [ "$r" = "cancelled" ]; then
               echo "Upstream job failed: $r"
               exit 1
