@@ -6,11 +6,18 @@ Model-agnostic by design — read once, applies whether you're Claude Code, Code
 This file is the **single source of truth** for repo conventions.
 `CLAUDE.md`, `.cursorrules`, `.aider.conf.yml` are pointers — do not duplicate content into them.
 
-<!-- ASSEMBLED — DO NOT EDIT AGENTS.md DIRECTLY.
-     Per-repo header (§1–2) = this repo's AGENTS.header.md (hand-edited, repo-specific).
-     Shared canon (§3–13)  = anders-dotfiles/context-sync/agents-canon.md (ONE source, all repos).
-     Regenerate:  bash <dotfiles>/context-sync/assemble-agents.sh <repo-dir>
-     Drift-check: bash <dotfiles>/context-sync/assemble-agents.sh --check <repo-dir>  (0 ok · 1 stale · 2 err) -->
+<!-- ASSEMBLY NOTE (updated 2026-08-23). This file was assembled once; it is
+     hand-maintained now. EDIT IT DIRECTLY.
+
+     ⛔ Do NOT run assemble-agents.sh. The `anders-dotfiles` repo it lives in was
+     archived 2026-08-17 and running its scripts is barred — the command the old
+     banner printed here would rebuild this file from a canon that stopped being
+     maintained, silently reverting anything written since.
+
+     Source split, for reference only: §1–2 also exist in AGENTS.header.md.
+     Nothing reassembles it, so an edit made only there does not reach this file.
+     Change this file; mirror into the header by hand if you want them to agree.
+     §3–13 live directly here. -->
 
 ---
 

@@ -38,3 +38,21 @@ nvm use
 npm install
 npm run serve
 ```
+
+## Build and deploy
+
+`AGENTS.md` is the single source of truth for the build and publishing contract — read it there,
+it is not repeated here.
+
+Two Claude-only notes that are not in it:
+
+⛔ **Never run `npm run build:publish` or `npm run publish:indexnow` in a sandbox or an agent
+session.** By default `publish:indexnow` pings IndexNow, a live external side effect on a real
+search index that reverting the commit does not undo. `scripts/indexnow-ping.mjs` does exit early
+when `SKIP_INDEXNOW` is set — but that is an opt-out you have to remember, so treat the plain
+commands as forbidden and use `npm run build` when you just need a build.
+
+⚠ **`.github/workflows/deploy.yml` is not the deploy, despite its name.** The Cloudflare Pages Git
+Integration builds and deploys every push; that workflow runs a parallel build as a shadow gate so
+branch protection has a required check. Turning it off would not stop a deploy — changing the
+Cloudflare project would.
