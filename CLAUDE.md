@@ -39,25 +39,20 @@ npm install
 npm run serve
 ```
 
-## Verifying a change the way CI does
+## Build and deploy
 
-```bash
-npm ci --ignore-scripts
-npm run build
-node scripts/validate-build.mjs
-```
+`AGENTS.md` is the single source of truth for the build and publishing contract — read it there,
+it is not repeated here.
+
+Two Claude-only notes that are not in it:
 
 ⛔ **Never run `npm run build:publish` or `npm run publish:indexnow` in a sandbox or an agent
-session.** Both ping IndexNow, which is a live external side effect on a real search index — it
-is not undone by reverting the commit. `npm run build` is the safe equivalent.
+session.** By default `publish:indexnow` pings IndexNow, a live external side effect on a real
+search index that reverting the commit does not undo. `scripts/indexnow-ping.mjs` does exit early
+when `SKIP_INDEXNOW` is set — but that is an opt-out you have to remember, so treat the plain
+commands as forbidden and use `npm run build` when you just need a build.
 
-## What a merge does
-
-**Merging to `main` publishes symbiotic-mind.com.** The deploy is owned by the Cloudflare Pages
-project's own Git Integration, which builds every push: `main` → the apex domain, PR branches →
-`<slug>.the-symbiotic-mind.pages.dev`.
-
-`.github/workflows/deploy.yml` is **not** the deploy despite its name — it is a parallel shadow
-gate running the same build chain (gitleaks, then `npm ci && npm run build && validate-build`) so
-branch protection has a required check. Turning it off would not stop a deploy; changing the
+⚠ **`.github/workflows/deploy.yml` is not the deploy, despite its name.** The Cloudflare Pages Git
+Integration builds and deploys every push; that workflow runs a parallel build as a shadow gate so
+branch protection has a required check. Turning it off would not stop a deploy — changing the
 Cloudflare project would.
