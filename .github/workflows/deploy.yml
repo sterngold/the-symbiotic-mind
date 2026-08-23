@@ -50,7 +50,10 @@ jobs:
         run: |
           set -euo pipefail
           archive="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          # Retry + connect timeout: a transient network blip must not read as a
+          # failed secret scan. (Copilot review, the-symbiotic-mind#79.)
           curl --fail --silent --show-error --location \
+            --retry 3 --retry-delay 2 --retry-connrefused --connect-timeout 10 \
             --output "$RUNNER_TEMP/$archive" \
             "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/$archive"
           printf '%s  %s\n' "$GITLEAKS_SHA256" "$RUNNER_TEMP/$archive" | sha256sum --check
@@ -81,6 +84,15 @@ jobs:
       # attacker-controllable data into a shell, and on over-scoped tokens.
       # Run via pipx (preinstalled on ubuntu-latest) at a pinned version, so the gate
       # itself does not become another unpinned third-party dependency.
+      #
+      # ⚠ SCOPE, stated precisely: on `pull_request` this workflow runs from the PR's
+      # OWN checkout, so a pull request that edits this job out of `needs:` and out of
+      # the aggregate loop passes `ci` without ever running the audit. This gate
+      # therefore catches ACCIDENTAL drift -- ours -- and does NOT withstand a hostile
+      # pull request. Enforcing it against an untrusted PR requires the audit to run
+      # from a trusted ref (a reusable workflow pinned in another repository) or branch
+      # protection that requires review of workflow changes. Neither lives in this file.
+      # Raised by Copilot review on sterngold/sterngold-discussions#2, 2026-08-23.
       - name: zizmor
         run: pipx run zizmor==1.29.0 --no-online-audits --persona=regular .github/workflows/
 
@@ -117,7 +129,7 @@ jobs:
       - name: aggregate
         run: |
           # `ci` is the single required check in branch protection, so a job missing
-          # from this list is a job that cannot block a merge. The hardening job is
+          # from this list is a job that cannot block a merge. actions-hardening is
           # listed in `needs:` above AND read here — both are required for it to gate.
           for r in "${{ needs.gitleaks.result }}" "${{ needs.build.result }}" "${{ needs.hardening.result }}"; do
             if [ "$r" = "failure" ] || [ "$r" = "cancelled" ]; then
