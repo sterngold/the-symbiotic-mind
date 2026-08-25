@@ -45,7 +45,7 @@ The model was not getting tired.
 
 ## What actually gets heavier
 
-What changes over a long session is the weight of the conversation the model carries. Re-reading all of it every turn is how the caching is designed to work. I measured mine, after a number I had been repeating turned out to have no source. Across seventy-one Opus sessions in eleven days this month, one operator only, so a window rather than an industry fact, ninety-nine percent of every token that moved was the machine re-reading something already said. Fourteen billion of them, and on current pricing roughly four fifths of the bill. Rookie AI mistake I guess.
+What changes over a long session is the weight of the conversation the model carries. Re-reading all of it every turn is how the caching is designed to work. I measured mine, after a number I had been repeating turned out to have no source. Across seventy-one Opus sessions in eleven days in August 2026, one operator only, so a window rather than an industry fact, ninety-nine percent of every token that moved was the machine re-reading something already said. Fourteen billion of them, and at August 2026 pricing roughly four fifths of the bill. Rookie AI mistake I guess.
 
 You can hear it in how the thing addresses you. Early on it says Vlad. Deep into a long session, Vlad becomes the user. The name goes first and a category assembled from everything I have ever asked for takes its place. I doubt it stopped knowing who I was. I think I stopped being the most recent thing in a very crowded room.
 
@@ -53,7 +53,7 @@ But do I know when to stop, I measure with a human approach and I just want to g
 
 ## Can a machine burn out?
 
-The World Health Organization is careful with burnout. Not a medical condition, it says, an occupational phenomenon, with three named dimensions: energy depletion or exhaustion, increased mental distance or cynicism about the job, and reduced professional efficacy.
+[The World Health Organization](https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases) is careful with burnout. Not a medical condition, it says, an occupational phenomenon, with three named dimensions: energy depletion or exhaustion, increased mental distance or cynicism about the job, and reduced professional efficacy.
 
 Hold that list against hour six and it stops being a definition. The third one, reduced efficacy, we both had, plainly. My work was getting worse and so was its. The first two were mine alone: the exhaustion, and the creeping contempt for the pull request, the bot, the whole errand.
 
@@ -61,7 +61,7 @@ So a machine cannot burn out (well it can, but then it is a hazard and we need t
 
 The line to watch is review capacity. I think companies should focus on figuring out Review KPIs that reward quality and human relaxation instead of push, push, push. I would like to see that in a modern company.
 
-NIST, the American standards agency, publishes a risk profile for generative AI. Anthropomorphising the system, deferring to it too readily, becoming entangled with it: all of it sits under a heading they call Human-AI Configuration, arrangements of or interactions between a human and an AI system. The risk is filed under the arrangement rather than either party inside it.
+[NIST](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf), the American standards agency, publishes a risk profile for generative AI. Anthropomorphising the system, deferring to it too readily, becoming entangled with it: all of it sits under a heading they call Human-AI Configuration, arrangements of or interactions between a human and an AI system. The risk is filed under the arrangement rather than either party inside it.
 
 My take on all of the above: the fatigue in a long session belongs to neither party on its own. It belongs to the coupling. My depletion goes into the prompts, the heavier context degrades the answers, and the worse answers arrive when I have stopped checking them properly. Neither of us has an instrument pointed at that loop. It has a cost meter, I have a body, and the two do not talk.
 
