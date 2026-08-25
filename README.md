@@ -60,32 +60,80 @@ ping goes twice.
 
 ## Writing a new post
 
-Create `src/posts/NNN-slug.md` (NNN is the next sequence number):
+**Start the session here, not in the prose repo.** The drafting repo is `~/claude2/symbiotic-mind`;
+publishing happens from a session whose working directory is *this* one. That is not a preference:
+the publish gate's `review=ok` marker keys to the repo of the session's working directory, so a
+review run from the drafting repo can never satisfy the gate here, and `cd` does not persist
+between tool calls. Learned publishing 014, 2026-08-25.
+
+```bash
+git fetch origin && git checkout -b <branch> origin/main
+```
+
+Branch from a **freshly fetched** `origin/main`. A stale local `main` makes a reviewer diff against
+a baseline the PR never touched — on 014 that produced a review of workflow files the PR did not
+contain.
+
+Then write `src/posts/NNN-slug.md` (NNN is the next sequence number) by hand, from the piece's
+`article.md` and `_deploy-frontmatter.md` in the drafting repo. Those two files plus the cover and
+the image prompts are the only things that cross between the repos.
+
+### Frontmatter
+
+Counts are against the 14 live posts, checked 2026-08-25 — this block used to document
+`videoRetell`, which **no post has ever used**, while omitting four fields that every post carries.
 
 ```markdown
 ---
-title: "Post title"
-date: 2026-06-01T07:30:00+02:00
-author: vlad   # or milena
-description: "One-sentence summary used in OG, RSS, and post lists."
-tags:
+title: "Post title"                       # 14/14
+theme: "relationship"                     # 14/14  relationship | identity | memory — drives /themes/
+seoTitle: "The query this page bids on"   # 14/14  the search-facing title; may differ from `title`
+date: 2026-06-01T07:30:00+02:00           # 14/14
+author: vlad                              # 14/14  vlad | milena
+description: "One sentence. OG, RSS, and printed UNBOUNDED into the post cards on / and /posts/,
+  so an over-long one visibly stretches its card. Corpus median ~274 chars; Google cuts ~155, so
+  put the payoff first."                  # 14/14
+subscribeCta: "One line under the post."  # 14/14
+related:                                  # 14/14  cross-strand is normal — 12 of 12 do it
+  - "011-the-asymmetry-of-creation"
+concepts:                                 # 12/14  what the essay TOUCHES, not where it shelves
+  - "relationship-design"
+tags:                                     # 14/14
   - relationship-design
-cover:                     # optional
+deck: ""                                  # 13/14  standfirst under the title; usually empty
+cover:
   src: "/images/NNN-cover.png"
-  alt: "Alt text."
-ogImage: "/images/NNN-cover.png"  # optional, defaults to /images/og-default.png
-videoRetell:                # optional
-  url: "https://www.canva.com/design/.../view?embed"
+  alt: "Written against the RENDERED image, never the prompt. Corpus median ~376 chars."
+ogImage: "/images/NNN-cover.png"          # defaults to /images/og-default.png
+youtubeId: "abc123"                       # 13/14  the video retell
+videoPending: true                        #  1/14  use INSTEAD of youtubeId when the video is not
+                                          #        ready; renders the placeholder. Swap it promptly
+                                          #        — post 009 sat on this flag for 3.5 weeks.
 ---
 
 Body in markdown.
 ```
+
+### Before opening the PR
+
+```bash
+python3 ~/claude2/symbiotic-mind/scripts/check-deploy.py src/posts/NNN-slug.md
+npm run build && node scripts/validate-build.mjs && git diff --check
+```
+
+`check-deploy.py` asserts the drafting notes did not travel from the piece folder, rather than
+leaving it to the eye — post 010 nearly shipped with its internal comment attached. `0` clean ·
+`1` something internal would ship · `2` could-not-run, **which is never a pass**.
 
 Open a PR → GitHub Actions builds and validates (the `ci` check); Cloudflare Pages builds a
 preview. **Merging to `main` triggers the production Cloudflare build** — CI does not deploy.
 
 ⚠ Any `.md` in `src/posts/` publishes on the next build. There is no draft flag and no date
 filter, so a future-dated file ships immediately. Keep unfinished work in `content/posts/`.
+**Nothing here relies on `date:` to hold a post back.**
+
+⚠ Verify against **production**, not the merge. On 014 the live URL took three polls after the
+merge before it served the new state.
 
 ## Newsletter
 
