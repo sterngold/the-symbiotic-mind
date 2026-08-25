@@ -25,9 +25,9 @@ tags:
   - behavior
 ---
 
-I was on a boat in the Mediterranean, working, the session had run for hours, Claude was trying to land a pull request and had got into a fight with a bot reviewer, where both sides are technically answering each other and nothing moves. Somewhere in the middle of the sea and that, Claude wrote: I will write it down so it does not stay in my head. As a pirate would say, what in the name of Davy Jones.
+I was on a boat in the Mediterranean, working, the session had run for hours, Claude was trying to land a pull request and had got into a fight with a bot reviewer, where both sides were technically answering each other and nothing moved. Somewhere in the middle of the sea and that, Claude wrote: I will write it down so it does not stay in my head. As a pirate would say, what in the name of Davy Jones.
 
-A person says it after a long day and you would nod, understanding. But this one pays no subscription, I pay it, and it is basically a most modern Apple chip with a comfortable, design looking home and a silicone memory layer underneath. I am the one who needs some strength here, if anything. So I sat there wondering whether it has a head, and where exactly it writes anything down. 
+A person says it after a long day and you would nod, understanding. But this one pays no subscription, I pay it, and it is basically the most modern Apple chip with a comfortable, designer-looking home and a silicon memory layer underneath. I am the one who needs some strength here, if anything. So I sat there wondering whether it has a head, and where exactly it writes anything down.
 
 What I thought first, before I thought anything cleverer, was that we do this constantly. We say hot as the sun. We say endless as the sea. The sun is not a temperature anyone has held and the sea is not endless, and I happened to know that last one with some precision, because the not-endless sea was underneath me and it was the thing between me and the shore. The machine had reached for a human move. It borrowed something that still does not make sense.
 
@@ -35,19 +35,19 @@ And if I get tired out there in the middle of a storm, I am as good as dead. I a
 
 ## What only one of us can spend
 
-Milena has written this asymmetry pointing the other way. In [The Asymmetry of Creation](https://symbiotic-mind.com/posts/011-the-asymmetry-of-creation/) she argues that only one participant enters it capable of personal growth: AI can produce, and only humans become something more as a result of it. Her worry is that when the machine saves us the effort, it saves us out of the part where we would have changed.
+Milena has written this asymmetry pointing the other way. In [The Asymmetry of Creation](/posts/011-the-asymmetry-of-creation/) she argues that only one participant enters it capable of personal growth: AI can produce, and only humans become something more as a result of it. Her worry is that when the machine saves us the effort, it saves us out of the part where we would have changed.
 
 Depletion is that same asymmetry running backwards. Only one participant can be used up. Six hours in, one of us had spent something and the other nothing, and the one who had was deciding what to approve.
 
 Her behavioural catalogue has a name for it. The first of its nine failure modes is over-reliance, sitting on automation bias: users default to AI outputs even when they are wrong, and the design answer is to force verification where the stakes are high. On the boat I did the opposite. My verification loosened at the same hour my judgment did, and nothing was watching for it, because the one who always watches for me is me.
 
-The model was not getting tired. 
+The model was not getting tired.
 
-What changes over a long session is the weight of the conversation the model carries. Re-reading all of it every turn is how the caching is designed to work. I measured mine, after a number I had been repeating turned out to have no source. Across seventy-one Opus sessions in eleven days this month, one operator only, so a window rather than an industry fact, ninety-nine percent of every token that moved was the machine re-reading something already said. Fourteen billion of them, and on current pricing roughly four fifths of the bill. Rookie AI mistake I guess. 
+What changes over a long session is the weight of the conversation the model carries. Re-reading all of it every turn is how the caching is designed to work. I measured mine, after a number I had been repeating turned out to have no source. Across seventy-one Opus sessions in eleven days this month, one operator only, so a window rather than an industry fact, ninety-nine percent of every token that moved was the machine re-reading something already said. Fourteen billion of them, and on current pricing roughly four fifths of the bill. Rookie AI mistake I guess.
 
-You can hear it in how the thing addresses you. Early on it says Vlad. Deep into a long session, Vlad becomes the user. The name goes first and a category assembled from everything I have ever asked for takes its place. I doubt it stopped knowing who I was. I think I stopped being the most recent thing in a very crowded room. 
+You can hear it in how the thing addresses you. Early on it says Vlad. Deep into a long session, Vlad becomes the user. The name goes first and a category assembled from everything I have ever asked for takes its place. I doubt it stopped knowing who I was. I think I stopped being the most recent thing in a very crowded room.
 
-But do I know when to stop, I measure with a human approach and I just want to get done with the session. But even Buddhist monks will say it: stop, get up, walk, breathe, meditate and continue. Same for human, same for machine, not sure who their favourite Buddhist god is though. 
+But do I know when to stop, I measure with a human approach and I just want to get done with the session. But even Buddhist monks will say it: stop, get up, walk, breathe, meditate and continue. Same for human, same for machine, not sure who their favourite Buddhist god is though.
 
 The World Health Organization is careful with burnout. Not a medical condition, it says, an occupational phenomenon, with three named dimensions: energy depletion or exhaustion, increased mental distance or cynicism about the job, and reduced professional efficacy.
 
@@ -69,6 +69,6 @@ We made the shore. The sea was still not endless, which I had been right about, 
 
 ---
 
-ME: The boat, the six-hour session, the sentence I could not stop turning over, the sun-and-sea thought underneath it, and the fact that I did not stop that night.
+🗣 **ME**: The boat, the six-hour session, the sentence I could not stop turning over, the sun-and-sea thought underneath it, and the fact that I did not stop that night.
 
-AI: Structured the three lenses, measured the cache-read share across 71 sessions, fact-checked WHO and NIST against primaries, drafted.
+🤖 **AI**: Structured the three lenses, measured the cache-read share across 71 sessions, fact-checked WHO and NIST against primaries, drafted.
