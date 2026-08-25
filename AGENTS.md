@@ -59,6 +59,19 @@ npm run build:publish
 
 **Never commit** secrets, API keys, or the generated `_site/` output.
 
+⛔ **Some files in `src/posts/` have an upstream source. Check before you edit one.**
+Posts 013 and 014 have a source folder in the private prose repo
+(`~/claude2/symbiotic-mind/posts/<date>_<slug>/`) holding `article.md` + `_deploy-frontmatter.md`.
+The other 12 posts are hand-authored, and **nothing in any file marks which is which**, so the two
+kinds are indistinguishable by inspection — which is how an edit gets lost with no warning.
+Before editing anything under `src/posts/`, check whether that slug has a folder there. If it does,
+the fix probably belongs upstream in `article.md`, not here.
+⚠ The mechanism is changing as of 2026-08-25: `scripts/make-deploy.py` is being demoted from
+generator to `--check`-mode verifier, after which the site file is hand-written and the script only
+asserts that drafting notes did not travel. **Until that lands, treat 013 and 014 as generated
+output that a regeneration will overwrite.** Re-confirm which regime is live before relying on this.
+Crossing into the prose repo to fix something upstream is a second repository — ask first.
+
 **Agents:** published content lives in `src/` ONLY — `content/` is drafts and is never built. Any `.md` added to `src/posts/` publishes on the next build; there is no draft flag and no date filter, so a future-dated file ships immediately. Always validate the generated site after building, and never substitute publishing for validation.
 
 ---

@@ -44,7 +44,13 @@ npm run serve
 `AGENTS.md` is the single source of truth for the build and publishing contract — read it there,
 it is not repeated here.
 
-Two Claude-only notes that are not in it:
+Three Claude-only notes that are not in it:
+
+⛔ **Check whether a post has an upstream source before editing it.** Posts 013 and 014 under
+`src/posts/` have a source folder in the prose repo (`~/claude2/symbiotic-mind/posts/`); the other
+12 are hand-authored and nothing marks which is which. Editing a sourced post here can be silently
+lost. See AGENTS.md §2 — including the note that the generator is being demoted to a checker, so
+confirm which regime is live. Crossing into the prose repo is a second repository — ask first.
 
 ⛔ **Never run `npm run build:publish` or `npm run publish:indexnow` in a sandbox or an agent
 session.** By default `publish:indexnow` pings IndexNow, a live external side effect on a real
