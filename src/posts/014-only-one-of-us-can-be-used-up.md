@@ -1,6 +1,6 @@
 ---
 title: "Only One of Us Can Be Used Up"
-theme: "memory"
+theme: "relationship"
 seoTitle: "Can AI Burn Out? What Actually Gets Used Up in a Long AI Session"
 related:
   - "011-the-asymmetry-of-creation"
@@ -13,7 +13,7 @@ concepts:
   - "ai-memory"
   - "cognitive-offloading"
 subscribeCta: "The machine cannot burn out. The pair can. New essays every other Thursday."
-description: "Six hours into a session at sea, the model wrote that it wanted to put something down so it would not stay in its head. It cannot get tired and it cannot burn out, and one of the WHO's three dimensions matching is a coincidence of vocabulary. What degrades is the pair — and a company buying throughput buys that pair. The line to watch is review capacity."
+description: "A machine cannot burn out. The pair can, and the line to watch is review capacity. Four agents give you four times the unverified work, arriving fastest at the hour the reviewer is worst."
 deck: ""
 cover:
   src: "/images/014-cover.png"
@@ -25,7 +25,7 @@ tags:
   - behavior
 ---
 
-I was on a boat in the Mediterranean, working, the session had run for hours, Claude was trying to land a pull request and had got into a fight with a bot reviewer, where both sides were technically answering each other and nothing moved. Somewhere in the middle of the sea and that, Claude wrote: I will write it down so it does not stay in my head. As a pirate would say, what in the name of Davy Jones.
+I was on a boat in the Mediterranean, working, the session had run for hours, Claude was trying to land a pull request and had got into a fight with a bot reviewer, where both sides are technically answering each other and nothing moves. Somewhere in the middle of the sea and that, Claude wrote: I will write it down so it does not stay in my head. As a pirate would say, what in the name of Davy Jones.
 
 A person says it after a long day and you would nod, understanding. But this one pays no subscription, I pay it, and it is basically the most modern Apple chip with a comfortable, designer-looking home and a silicon memory layer underneath. I am the one who needs some strength here, if anything. So I sat there wondering whether it has a head, and where exactly it writes anything down.
 
@@ -69,6 +69,6 @@ We made the shore. The sea was still not endless, which I had been right about, 
 
 ---
 
-🗣 **ME**: The boat, the six-hour session, the sentence I could not stop turning over, the sun-and-sea thought underneath it, and the fact that I did not stop that night.
+🗣 **ME (45%)**: The boat, the six-hour session, the sentence I could not stop turning over, the sun-and-sea thought underneath it, and the fact that I did not stop that night.
 
-🤖 **AI**: Structured the three lenses, measured the cache-read share across 71 sessions, fact-checked WHO and NIST against primaries, drafted.
+🤖 **AI (55%)**: Structured the three lenses, measured the cache-read share across 71 sessions, fact-checked WHO and NIST against primaries, drafted.
