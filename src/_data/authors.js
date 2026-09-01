@@ -6,8 +6,8 @@ export default {
     slug: "vlad",
     name: "Vlad Sterngold",
     honorific: null,
-    email: "vlad@sterngold.nl",
-    role: "AI practitioner and builder",
+    email: "vlad@sterngold.ai",
+    role: "AI-Native Practitioner, Mentor & Coach",
     location: "Amsterdam",
     bio: "AI practitioner and builder based in Amsterdam. Daily user of AI systems, builder of AI products, and writer on human-AI symbiosis.",
     // Canonical bio lives on sterngold.nl (personal authority engine).
@@ -23,7 +23,6 @@ export default {
       "https://sterngold.ai/",
       "https://werkanders.com/",
       "https://symbiotic-mind.com/",
-      "https://andersreality.com/",
     ],
   },
   milena: {

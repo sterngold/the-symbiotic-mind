@@ -8,7 +8,7 @@ pagination:
 permalink: "/authors/{{ author.slug }}/index.html"
 eleventyComputed:
   title: "{{ author.name }}"
-  description: "Writing by {{ author.name }} on The Symbiotic Mind — {{ author.role }}, {{ author.location }}."
+  description: "Writing by {{ author.name }} on The Symbiotic Mind — {{ author.role | safe }}, {{ author.location }}."
   ogImage: "/images/og/author-{{ author.slug }}.png"
 layout: layouts/base.njk
 ---
