@@ -61,15 +61,18 @@ npm run build:publish
 
 ⛔ **Some files in `src/posts/` have an upstream source. Check before you edit one.**
 Posts 013 and 014 have a source folder in the private prose repo
-(`~/claude2/symbiotic-mind/posts/<date>_<slug>/`) holding `article.md` + `_deploy-frontmatter.md`.
-The other 12 posts are hand-authored, and **nothing in any file marks which is which**, so the two
-kinds are indistinguishable by inspection — which is how an edit gets lost with no warning.
-Before editing anything under `src/posts/`, check whether that slug has a folder there. If it does,
-the fix probably belongs upstream in `article.md`, not here.
-⚠ The mechanism is changing as of 2026-08-25: `scripts/make-deploy.py` is being demoted from
-generator to `--check`-mode verifier, after which the site file is hand-written and the script only
-asserts that drafting notes did not travel. **Until that lands, treat 013 and 014 as generated
-output that a regeneration will overwrite.** Re-confirm which regime is live before relying on this.
+(`~/claude2/symbiotic-mind/posts/<date>_<working-title>/`) holding `article.md` +
+`_deploy-frontmatter.md`. The folder name carries the date and a *working* title, not always the
+published slug (014 lives in `2026-08-23_dance-for-two`), so match on the `title:` line of
+`_deploy-frontmatter.md`, never on the folder name. The other 12 posts are hand-authored, and
+**nothing in any file marks which is which**, so the two kinds are indistinguishable by
+inspection — which is how an edit gets lost with no warning. Before editing anything under
+`src/posts/`, check whether that piece has a folder there. If it does, the fix belongs in
+`article.md` **as well as** here.
+⚠ Regime, confirmed 2026-09-02: there is **no generator**. The site file is written by hand from
+`article.md` + `_deploy-frontmatter.md`, and the prose repo's `scripts/check-deploy.py` only
+asserts that nothing internal (drafting notes, HTML comments, TODOs) travelled — it never writes.
+So nothing will overwrite a fix made here; it will silently **diverge** from `article.md` instead.
 Crossing into the prose repo to fix something upstream is a second repository — ask first.
 
 **Agents:** published content lives in `src/` ONLY — `content/` is drafts and is never built. Any `.md` added to `src/posts/` publishes on the next build; there is no draft flag and no date filter, so a future-dated file ships immediately. Always validate the generated site after building, and never substitute publishing for validation.

@@ -47,10 +47,11 @@ it is not repeated here.
 Three Claude-only notes that are not in it:
 
 ⛔ **Check whether a post has an upstream source before editing it.** Posts 013 and 014 under
-`src/posts/` have a source folder in the prose repo (`~/claude2/symbiotic-mind/posts/`); the other
-12 are hand-authored and nothing marks which is which. Editing a sourced post here can be silently
-lost. See AGENTS.md §2 — including the note that the generator is being demoted to a checker, so
-confirm which regime is live. Crossing into the prose repo is a second repository — ask first.
+`src/posts/` have a source folder in the prose repo (`~/claude2/symbiotic-mind/posts/`, matched by
+the `title:` in `_deploy-frontmatter.md`, not by folder name); the other 12 are hand-authored and
+nothing marks which is which. There is no generator any more (`check-deploy.py` only checks), so an
+edit here is not overwritten — it silently diverges from `article.md` unless made in both. See
+AGENTS.md §2. Crossing into the prose repo is a second repository — ask first.
 
 ⛔ **Never run `npm run build:publish` or `npm run publish:indexnow` in a sandbox or an agent
 session.** By default `publish:indexnow` pings IndexNow, a live external side effect on a real
