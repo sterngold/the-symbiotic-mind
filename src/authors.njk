@@ -35,9 +35,12 @@ layout: layouts/base.njk
     ],
     "worksFor": {
       "@type": "Organization",
-      "name": "The Symbiotic Mind",
-      "url": "{{ site.url }}"
-    }
+      "name": {{ author.worksFor.name | dump | safe }},
+      "url": {{ author.worksFor.url | dump | safe }}
+    },
+    "affiliation": [
+      {% for a in author.affiliation %}{ "@id": {{ a | dump | safe }} }{% if not loop.last %},{% endif %}{% endfor %}
+    ]
   }
 }
 </script>
