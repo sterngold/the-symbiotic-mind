@@ -44,7 +44,8 @@ npm run serve
 `AGENTS.md` is the single source of truth for the build and publishing contract — read it there,
 it is not repeated here.
 
-Three Claude-only notes that are not in it:
+Three notes repeated here because they are the ones an agent session trips over (each has its
+fuller form in `AGENTS.md` §2):
 
 ⛔ **Check whether a post has an upstream source before editing it.** Posts 013 and 014 under
 `src/posts/` have a source folder in the prose repo (`~/claude2/symbiotic-mind/posts/`, matched by
