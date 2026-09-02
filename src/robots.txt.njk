@@ -7,3 +7,36 @@ Allow: /
 Disallow: /cdn-cgi/
 
 Sitemap: {{ site.url }}/sitemap.xml
+
+# Major AI / answer-engine crawlers welcome — but on the same terms as everyone
+# else. A named user-agent group REPLACES the `*` group for that crawler (RFC 9309);
+# it does not inherit from it. So each group below must repeat the Disallow lines,
+# or these crawlers are allowed into `/cdn-cgi/`, which `*` excludes.
+
+User-agent: GPTBot
+Allow: /
+Disallow: /cdn-cgi/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /cdn-cgi/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /cdn-cgi/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /cdn-cgi/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /cdn-cgi/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /cdn-cgi/
+
+User-agent: CCBot
+Allow: /
+Disallow: /cdn-cgi/
