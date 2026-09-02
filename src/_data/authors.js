@@ -15,6 +15,11 @@ export default {
     url: "https://sterngold.nl/",
     displayUrl: "https://sterngold.ai",
     personId: "https://sterngold.nl/#person",
+    worksFor: { name: "Danone", url: "https://www.danone.com/" },
+    affiliation: [
+      "https://werkanders.com/#organization",
+      "https://symbiotic-mind.com/#organization",
+    ],
     sameAs: [
       "https://www.linkedin.com/in/sterngold/",
       "https://medium.com/@Sterngold",
@@ -35,6 +40,8 @@ export default {
     bio: "PhD behavioral scientist and founder of BehaviorSMART. Works with organizations across four continents on how humans actually change — what AI does and doesn't change about that, and how to design for the difference.",
     url: "https://behavior-smart.com",
     personId: "https://behavior-smart.com/#person",
+    worksFor: { name: "BehaviorSMART", url: "https://behavior-smart.com" },
+    affiliation: ["https://symbiotic-mind.com/#organization"],
     sameAs: [
       "https://behavior-smart.com",
       "https://behavior-smart.com/milena-nikolova/",
