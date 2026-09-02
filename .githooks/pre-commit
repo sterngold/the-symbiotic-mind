@@ -1,0 +1,3 @@
+#!/bin/sh
+# gitleaks over staged content; a leak refuses the commit. Activate per clone: git config core.hooksPath .githooks
+bash ~/.claude-anders2/hooks/pre-commit-gitleaks.sh "$@" || exit 1
