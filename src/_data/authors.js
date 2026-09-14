@@ -19,6 +19,7 @@ export default {
     affiliation: [
       "https://werkanders.com/#organization",
       "https://symbiotic-mind.com/#organization",
+      "https://behavior-smart.com/#organization",
     ],
     sameAs: [
       "https://www.linkedin.com/in/sterngold/",
