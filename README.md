@@ -61,8 +61,10 @@ ping goes twice.
 ## Writing a new post
 
 **The drafting repo is `~/claude2/symbiotic-mind`; the post ships from here.** Use absolute paths
-(`git -C <repo>`) for every command — `cd` does not persist between tool calls, and a publish that
-half-runs in the wrong repo is the failure mode this line exists for.
+(`git -C <repo>`) for any git command that could land in the wrong one, as the branch recipe below
+does — `cd` does not persist between tool calls, and a publish that half-runs in the wrong repo is
+the failure mode this line exists for. The pre-PR block further down is the exception on purpose:
+`npm` and `validate-build.mjs` only work from this repo's root, so run that block from here.
 
 ⛔ **Corrected 2026-09-17.** This used to say the session's working directory had to be this repo,
 because "the publish gate's `review=ok` marker keys to the repo of the session's working
@@ -73,7 +75,8 @@ the port to Anders2, and a rule whose reason has been removed reads as a constra
 being honoured. One session can work both repos.
 
 ```bash
-git fetch origin && git checkout -b <branch> origin/main
+SITE=~/Code/the-symbiotic-mind
+git -C $SITE fetch origin && git -C $SITE checkout -b <branch> origin/main
 ```
 
 Branch from a **freshly fetched** `origin/main`. A stale local `main` makes a reviewer diff against
