@@ -60,14 +60,23 @@ ping goes twice.
 
 ## Writing a new post
 
-**Start the session here, not in the prose repo.** The drafting repo is `~/claude2/symbiotic-mind`;
-publishing happens from a session whose working directory is *this* one. That is not a preference:
-the publish gate's `review=ok` marker keys to the repo of the session's working directory, so a
-review run from the drafting repo can never satisfy the gate here, and `cd` does not persist
-between tool calls. Learned publishing 014, 2026-08-25.
+**The drafting repo is `~/claude2/symbiotic-mind`; the post ships from here.** Use absolute paths
+(`git -C <repo>`) for any git command that could land in the wrong one, as the branch recipe below
+does — `cd` does not persist between tool calls, and a publish that half-runs in the wrong repo is
+the failure mode this line exists for. The pre-PR block further down is the exception on purpose:
+`npm` and `validate-build.mjs` only work from this repo's root, so run that block from here.
+
+⛔ **Corrected 2026-09-17.** This used to say the session's working directory had to be this repo,
+because "the publish gate's `review=ok` marker keys to the repo of the session's working
+directory". Measured today: there is no such gate. No `gate-mark.sh` exists on disk, the active
+config `~/.claude-anders2/settings.json` has no hook that writes it, and this repo's
+`.claude/settings.local.json` has no `hooks` key at all. It was a v1 mechanism that did not survive
+the port to Anders2, and a rule whose reason has been removed reads as a constraint that is still
+being honoured. One session can work both repos.
 
 ```bash
-git fetch origin && git checkout -b <branch> origin/main
+SITE=~/Code/the-symbiotic-mind
+git -C $SITE fetch origin && git -C $SITE checkout -b <branch> origin/main
 ```
 
 Branch from a **freshly fetched** `origin/main`. A stale local `main` makes a reviewer diff against
