@@ -7,6 +7,7 @@ oneLine: "A working relationship where neither intelligence stays unchanged and 
 essays:
   - "002-my-api-not-my-resume"
   - "003-amplification"
+  - "015-the-partner-who-never-has-a-bad-day"
 ---
 
 Human-AI symbiosis is a working relationship in which neither intelligence stays unchanged and neither can produce the combined result alone. The biological metaphor is chosen carefully: symbiosis is not assistance, and it is not replacement. It is two organisms whose ongoing exchange changes both.

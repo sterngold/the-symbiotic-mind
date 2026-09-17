@@ -7,6 +7,7 @@ oneLine: "Deliberately choosing the terms of your working relationship with AI, 
 essays:
   - "001-you-are-not-using-ai"
   - "005-the-partner-who-cannot-leave"
+  - "015-the-partner-who-never-has-a-bad-day"
 ---
 
 Relationship design is the practice of deliberately choosing the terms of your working relationship with AI: which roles each side plays, where the boundaries sit, what gets delegated, what stays human. The alternative is not "no relationship". It is a relationship whose terms were set by accident, by interface defaults, and by habits transferred unconsciously from human colleagues.
