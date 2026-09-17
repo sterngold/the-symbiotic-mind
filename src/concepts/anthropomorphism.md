@@ -5,6 +5,7 @@ description: "AI anthropomorphism is treating an AI system as if it has intentio
 order: 13
 oneLine: "Running human relationship instincts on a system that was never built for them."
 essays:
+  - "015-the-partner-who-never-has-a-bad-day"
   - "013-what-should-we-name-our-ai"
   - "007-the-partner-who-flatters"
   - "005-the-partner-who-cannot-leave"
