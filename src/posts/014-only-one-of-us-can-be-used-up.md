@@ -19,7 +19,7 @@ cover:
   src: "/images/014-cover.png"
   alt: "Two faceless figures of the same height stand on the same baseline, a wide gap between them. The left one is watercolour, deep terracotta at the head and shoulders, fading down the body until the legs and feet are almost bare paper. The right one is navy and slate triangular facets at the same density from head to foot, not fading anywhere. A pale rainbow of the same facets arcs across the frame behind both."
 ogImage: "/images/014-cover.png"
-videoPending: true
+youtubeId: "v-eoS05LaM8"
 tags:
   - work
   - behavior
