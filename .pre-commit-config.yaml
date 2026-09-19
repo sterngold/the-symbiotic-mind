@@ -1,6 +1,13 @@
 # https://pre-commit.com
-# Run: pre-commit install
-# Update: pre-commit autoupdate
+# ⛔ Do NOT run `pre-commit install`. This repo owns its entry point at
+#    .githooks/pre-commit, which chains gitleaks THEN these hooks, and
+#    core.hooksPath points at it. Measured on pre-commit 4.6.1: the installer
+#    refuses outright ("Cowardly refusing to install hooks with core.hooksPath
+#    set"), so it cannot overwrite the wrapper — but its error hints at
+#    `git config --unset-all core.hooksPath`, and following THAT silently
+#    disables the gitleaks gate. That is the real hazard.
+# Activate per clone:  git config core.hooksPath .githooks
+# Update:              pre-commit autoupdate
 #
 # Adapted from anders-repo-template (AND-1519). Deliberately OMITS the
 # conventional-pre-commit commit-msg hook: this is a writing repo whose
@@ -30,7 +37,9 @@ repos:
         # silently delete 20 line breaks from live essays.
         # The old exclude was '\.md$' — EVERY markdown file. This one checks AGENTS.md,
         # READMEs and docs for the first time while leaving published prose alone.
-        exclude: '^src/posts/'
+        # markdown only: src/posts/index.njk and posts.json are templates, not
+        # prose, and stay checked (Copilot review, PR #97).
+        exclude: '^src/posts/.*\.md$'
       - id: end-of-file-fixer
         exclude: '^(AGENTS\.md|AGENTS\.header\.md|AGENTS\.body\.md)$'
       - id: check-yaml
