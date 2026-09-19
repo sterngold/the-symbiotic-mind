@@ -1,3 +1,16 @@
 #!/bin/sh
-# gitleaks over staged content; a leak refuses the commit. Activate per clone: git config core.hooksPath .githooks
+# Two gates, both blocking. Activate per clone: git config core.hooksPath .githooks
+#
+# 1. gitleaks over staged content; a leak refuses the commit.
 bash ~/.claude-anders2/hooks/pre-commit-gitleaks.sh "$@" || exit 1
+
+# 2. the 10 hooks in .pre-commit-config.yaml. Until 2026-09-19 this file ran gitleaks
+#    ONLY, so every one of them executed on zero commits while core.hooksPath being set
+#    made it look wired (AND-2204). A missing binary is a BLOCK, never a silent skip:
+#    a gate that cannot run must not read as a gate that found nothing.
+if command -v pre-commit >/dev/null 2>&1; then
+  pre-commit run --hook-stage pre-commit || exit 1
+else
+  echo "pre-commit: not installed — install it or remove this gate; refusing to pass blind" >&2
+  exit 1
+fi

@@ -23,14 +23,21 @@ repos:
     rev: v4.6.0
     hooks:
       - id: trailing-whitespace
-        exclude: '\.md$'
+        # ⛔ Excludes src/posts/ ONLY. A line ending in 2+ spaces is a rendered <br>, not
+        # lint. Measured 2026-09-19: 003-amplification has 12 and production renders
+        # exactly 12 <br>; 005-the-partner-who-cannot-leave has 8 and renders 8. Both are
+        # Milena's, whose text is byte-identical by project rule. Stripping them would
+        # silently delete 20 line breaks from live essays.
+        # The old exclude was '\.md$' — EVERY markdown file. This one checks AGENTS.md,
+        # READMEs and docs for the first time while leaving published prose alone.
+        exclude: '^src/posts/'
       - id: end-of-file-fixer
         exclude: '^(AGENTS\.md|AGENTS\.header\.md|AGENTS\.body\.md)$'
       - id: check-yaml
       - id: check-json
       - id: check-merge-conflict
       - id: check-added-large-files
-        args: ['--maxkb=1000']
+        args: ['--maxkb=4000']   # largest cover is 009 at 2,571 KB; 1000 blocked 14 of 17 images
       - id: detect-private-key
       - id: mixed-line-ending
         args: ['--fix=lf']

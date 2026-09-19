@@ -165,7 +165,10 @@ Co-authored-by: Claude <noreply@anthropic.com>
 ## 7. Secrets & sensitive data
 
 - **Never** commit secrets, API keys, tokens, `.env` files, credentials.
-- `gitleaks` runs pre-commit AND in CI. Both must pass.
+- `gitleaks` runs pre-commit AND in CI. Both must pass. Pre-commit is wired through
+  `.githooks/pre-commit`, which is tracked, so it travels with the clone — but
+  `core.hooksPath` is per-clone config: run `git config core.hooksPath .githooks` once
+  per checkout, then prove it rather than assuming it.
 - `.env` is gitignored. Use `.env.example` for templates.
 - For vault repos (medical, financial, personal): hybrid pattern — text tracked, blobs in `.gitignore` under `vault/blobs/`.
 - If a secret leaks: rotate first, then `git filter-repo` to scrub history, then force-push (one of the few times force-push is allowed — to a non-protected branch).
