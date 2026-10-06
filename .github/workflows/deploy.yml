@@ -131,10 +131,17 @@ jobs:
           # `ci` is the single required check in branch protection, so a job missing
           # from this list is a job that cannot block a merge. actions-hardening is
           # listed in `needs:` above AND read here — both are required for it to gate.
-          for r in "${{ needs.gitleaks.result }}" "${{ needs.build.result }}" "${{ needs.hardening.result }}"; do
-            if [ "$r" = "failure" ] || [ "$r" = "cancelled" ]; then
-              echo "Upstream job failed: $r"
-              exit 1
-            fi
-          done
+          # Allowlist, not denylist. A job that never got a runner reports
+          # "abandoned", which a failure/cancelled check let through. Unconditional
+          # gates must succeed; only a job with a job-level `if:` may be skipped.
+          gate() {  # $1 = job, $2 = result, $3 = results it may have
+            echo "$1=$2"
+            case " $3 " in
+              *" $2 "*) ;;
+              *) echo "Upstream job $1 did not succeed: '${2}' (allowed: $3)"; exit 1 ;;
+            esac
+          }
+          gate gitleaks "${{ needs.gitleaks.result }}" "success"
+          gate build "${{ needs.build.result }}" "success"
+          gate hardening "${{ needs.hardening.result }}" "success"
           echo "All required checks passed."
