@@ -7,7 +7,7 @@ export default {
     name: "Vlad Sterngold",
     honorific: null,
     email: "vlad@sterngold.ai",
-    role: "AI-Native Practitioner, Mentor & Coach",
+    role: "Tech & Product Officer",
     location: "Amsterdam",
     bio: "AI practitioner and builder based in Amsterdam. Daily user of AI systems, builder of AI products, and writer on human-AI symbiosis.",
     // Canonical bio lives on sterngold.nl (personal authority engine).
@@ -15,11 +15,14 @@ export default {
     url: "https://sterngold.nl/",
     displayUrl: "https://sterngold.ai",
     personId: "https://sterngold.nl/#person",
-    worksFor: { name: "Danone", url: "https://www.danone.com/" },
+    worksFor: { id: "https://behavior-smart.com/#organization" },
+    alumniOf: [
+      { name: "Booking.com", url: "https://www.booking.com/" },
+      { name: "Danone", url: "https://www.danone.com/" },
+    ],
     affiliation: [
       "https://werkanders.com/#organization",
       "https://symbiotic-mind.com/#organization",
-      "https://behavior-smart.com/#organization",
     ],
     sameAs: [
       "https://www.linkedin.com/in/sterngold/",
