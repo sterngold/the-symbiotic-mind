@@ -43,7 +43,7 @@ export default {
     location: "Lausanne",
     bio: "PhD behavioral scientist and founder of BehaviorSMART. Works with organizations across four continents on how humans actually change — what AI does and doesn't change about that, and how to design for the difference.",
     url: "https://behavior-smart.com",
-    personId: "https://behavior-smart.com/#person",
+    personId: "https://behavior-smart.com/milena-nikolova#person",
     worksFor: { name: "BehaviorSMART", url: "https://behavior-smart.com" },
     affiliation: ["https://symbiotic-mind.com/#organization"],
     sameAs: [
