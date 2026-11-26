@@ -33,11 +33,14 @@ layout: layouts/base.njk
     "sameAs": [
       {% for s in author.sameAs %}{{ s | dump | safe }}{% if not loop.last %},{% endif %}{% endfor %}
     ],
-    "worksFor": {
+    "worksFor": {% if author.worksFor.id %}{ "@id": {{ author.worksFor.id | dump | safe }} }{% else %}{
       "@type": "Organization",
       "name": {{ author.worksFor.name | dump | safe }},
       "url": {{ author.worksFor.url | dump | safe }}
-    },
+    }{% endif %},{% if author.alumniOf %}
+    "alumniOf": [
+      {% for o in author.alumniOf %}{ "@type": "Organization", "name": {{ o.name | dump | safe }}, "url": {{ o.url | dump | safe }} }{% if not loop.last %},{% endif %}{% endfor %}
+    ],{% endif %}
     "affiliation": [
       {% for a in author.affiliation %}{ "@id": {{ a | dump | safe }} }{% if not loop.last %},{% endif %}{% endfor %}
     ]
